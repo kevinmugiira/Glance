@@ -8,37 +8,27 @@
 
 
 
-
         <!-- main content start-->
         <div id="page-wrapper">
             <div class="main-page">
                 <div class="forms">
-                    <h2 class="title1">Products</h2>
+                    <h2 class="title1">Category</h2>
                     <div class="form-grids row widget-shadow" data-example-id="basic-forms">
                         <div class="form-title">
-                            <h4>Product update :</h4>
+                            <h4> Update Category:</h4>
                         </div>
                         <div class="form-body">
                             <form>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Product name</label>
+                                    <label for="exampleInputEmail1">Category name</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Product Type</label>
+                                    <label for="exampleInputPassword1">Category Type</label>
                                     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Product type">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Product description</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Description">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Upload new image</label>
-                                    <input type="file" id="exampleInputFile">
-                                    <!--<p class="help-block">Example block-level help text here.</p>-->
-                                </div>
                                 <div class="checkbox">
                                     <!--<label><input type="checkbox"> Check me out </label>-->
                                 </div>

@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title> SignUp Page :: NewGreen</title>
+    <title>Glance Design Dashboard an Admin Panel Category Flat Bootstrap Responsive Website Template | Login Page :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -16,9 +16,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <!-- Custom CSS -->
     <link href="{{asset('asset/css/style.css')}}" rel='stylesheet' type='text/css' />
 
-    <!-- font-awesome icons CSS -->
+    <!-- font-awesome icons CSS-->
     <link href="{{asset('asset/css/font-awesome.css')}}" rel="stylesheet">
-    <!-- //font-awesome icons CSS -->
+    <!-- //font-awesome icons CSS-->
 
     <!-- side nav css file -->
     <link href='{{asset('asset/css/SidebarNav.min.css')}}' media='all' rel='stylesheet' type='text/css'/>
@@ -38,60 +38,52 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <link href="{{asset('asset/css/custom.css')}}" rel="stylesheet">
     <!--//Metis Menu -->
 
-</head>
 
+<div id="page-wrapper">
+    <div class="main-page login-page ">
+        <h2 class="title1">Login</h2>
+        <div class="widget-shadow">
+            <div class="login-body">
 
+                @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-green-600">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
+                <form action="{{ route('login') }}" method="post">
 
-        <!-- main content start-->
-        <div id="page-wrapper">
-            <div class="main-page signup-page">
-                <h2 class="title1">SignUp Here</h2>
-                <div class="sign-up-row widget-shadow">
-                    <h5>Personal Information :</h5>
-                    <form action="{{ route('register') }}" method="post">
+                    @csrf
 
-                        @csrf
-
-                        <div class="sign-u">
-                            <input type="text" name="firstname" placeholder="First Name" required="">
-                            <div class="clearfix"> </div>
+                    <input type="email" class="user" name="email" placeholder="Enter Your Email" :value="old('email')" required="">
+                    <input type="password" name="password" class="lock" placeholder="Password" required="">
+                    <div class="forgot-grid">
+                        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>{{ __('Remember me') }}</label>
+                        <div class="forgot">
+                            @if (Route::has('password.request'))
+                            <a href="{{ route('password.request') }}"> {{ __('Forgot your password?') }}</a>
+                                @endif
                         </div>
-                        <div class="sign-u">
-                            <input type="text" placeholder="Last Name" required="">
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="sign-u">
-                            <input type="email" placeholder="Email Address" required="">
-                            <div class="clearfix"> </div>
-                        </div>
 
 
-                        <h6>Login Information :</h6>
-                        <div class="sign-u">
-                            <input type="password" placeholder="Password" required="">
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="sign-u">
-                            <input type="password" placeholder="Confirm Password" required="">
-                        </div>
+
                         <div class="clearfix"> </div>
-                        <div class="sub_home">
-                            <input type="submit" value="Submit">
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="registration">
-                            Already Registered.
-                            <a class="" href="{{ route('login') }}">
-                                Login
-                            </a>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <input type="submit" name="Sign In" value="Sign In">
+                    <div class="registration">
+                        Don't have an account ?
+                        <a class="" href=" {{ __('Log in') }}">
+                            Create an account
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
 
     </div>
+</div>
+
+
 
     <!-- side nav js -->
     <script src='{{asset('asset/js/SidebarNav.min.js')}}' type='text/javascript'></script>
@@ -129,7 +121,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('asset/js/bootstrap.js')}}"> </script>
+    <!-- //Bootstrap Core JavaScript -->
 
-
+    </body>
 </html>
-

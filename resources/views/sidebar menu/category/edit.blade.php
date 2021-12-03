@@ -7,52 +7,53 @@
 
     @include('dashboard-header')
 
-    <body class="cbp-spmenu-push">
-    <div class="main-content">
-
-        <!-- main content start-->
-        <div id="page-wrapper">
-            <div class="main-page">
-                <div class="forms">
-                    <h2 class="title1">CATEGORY</h2>
-
-                    <div class=" form-grids row form-grids-right">
-                        <div class="widget-shadow " data-example-id="basic-forms">
-                            <div class="form-title">
-                                <h4>Edit Category :</h4>
-                            </div>
-                            <div class="form-body">
-                                <form class="form-horizontal">
+    <div id="page-wrapper">
+        <div class="main-page">
+            <div class="tables">
+                <h2 class="title1">Category</h2>
 
 
-                                    <div class="form-group">
-                                        <label for="mediuminput" class="col-sm-2 control-label">Category Name</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control1" id="mediuminput" placeholder="Category Name">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="mediuminput" class="col-sm-2 control-label">Category Type</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control1" id="mediuminput" placeholder="Category Type">
-                                        </div>
-                                    </div>
+                <div class="bs-example widget-shadow" data-example-id="hoverable-table">
+                    <h4>Edit Categories:</h4>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Category Name</th>
+                            <th>Category Type</th>
 
 
-                                    <div class="col-sm-offset-2">
-                                        <button type="submit" class="btn btn-default">Edit</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Food Crop</td>
+                            <td>Cereal</td>
+                            <td><a href="{{route('update-category')}}"><span class="label label-warning">Edit</span></a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Food Crop</td>
+                            <td>Vegetable</td>
+                            <td><a href="{{route('update-category')}}"><span class="label label-warning">Edit</span></a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Cash Crop</td>
+                            <td>Cereal</td>
+                            <td><a href="{{route('update-category')}}"><span class="label label-warning">Edit</span></a></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+
             </div>
         </div>
-
     </div>
-    </body>
 
     @include('footer')
 @endsection

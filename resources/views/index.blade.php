@@ -182,8 +182,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 <a href="{{url('orders')}}">
                                     <i class="fa fa-pie-chart"></i>
                                     <span>Orders</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
                                     <span class="label label-primary pull-right">new</span>
+
                                 </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="{{route('add-product')}}"><i class="fa fa-angle-right"></i> New </a></li>
+                                    <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> All</a></li>
+                                    <!--<li><a href="{{route('edit-product')}}"><i class="fa fa-angle-right"></i> Edit Product</a></li>-->
+                                </ul>
                             </li>
                             <li class="treeview">
                             <li class="treeview">
@@ -211,9 +218,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Purchase reports</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Purchase report</a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Buy report</a></li>
-                                    <!--<li><a href="#"><i class="fa fa-angle-right"></i> Sell report</a></li>-->
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Stock report</a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -222,11 +229,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Permission Setup</a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Add Role</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit Role</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Delete Role</a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i> List Roles</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit Role</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Delete Roles</a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -251,8 +257,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </ul>
                             </li>
                             <li class="header">LABELS</li>
-                            <li><a href="#"><i class="fa fa-angle-right text-red"></i> <span>Important</span></a></li>
-                            <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Warning</span></a></li>
+                            <!--<li><a href="#"><i class="fa fa-angle-right text-red"></i> <span>Important</span></a></li>
+                            <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Warning</span></a></li>-->
                             <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>Information</span></a></li>
                         </ul>
                     </div>
@@ -455,7 +461,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
                                 <li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li>
                                 <li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li>
-                                <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                <li> <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a> </li>
                             </ul>
                         </li>
                     </ul>

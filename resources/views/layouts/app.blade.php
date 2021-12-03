@@ -123,7 +123,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <!-- //requried-jsfiles-for owl -->
         <!-- //index -->
     </head>
-    <body class="cbp-spmenu-push">
+
     <!--<body class="font-sans antialiased">-->
 
 

@@ -68,7 +68,7 @@ class CategoryController extends Controller
      */
     public function update()
     {
-        return view('sidebar menu.reports');
+        return view('sidebar menu.category.update');
     }
 
     /**

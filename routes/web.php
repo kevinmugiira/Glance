@@ -16,12 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('index');
 })->name('dashboard');
+
+Route::group(['middleware' => ['auth']], function() {
+    /**
+     * Logout Route
+     */
+    Route::get('/logout', [\App\Http\Controllers\LogoutController::class,'logout'])->name('logout');
+});
+
 
 
 Route::resource('home', \App\Http\Controllers\MainController::class);
@@ -43,6 +51,7 @@ Route::get('update-prod',[\App\Http\Controllers\ProductsController::class,'updat
 Route::get('add-cat',[\App\Http\Controllers\CategoryController::class,'create'])->name('add-category');
 Route::get('edit-cat',[\App\Http\Controllers\CategoryController::class,'edit'])->name('edit-category');
 Route::get('list-cat', [\App\Http\Controllers\CategoryController::class,'show'])->name('list-category');
+Route::get('update-cat',[\App\Http\Controllers\CategoryController::class,'update'])->name('update-category');
 Route::get('delete-cat', [\App\Http\Controllers\CategoryController::class,'destroy'])->name('delete-category');
 
 
@@ -61,3 +70,7 @@ Route::get('form', [\App\Http\Controllers\CategoryController::class,'update']);
 
 //testing tables
 Route::get('table', [\App\Http\Controllers\CheckController::class,'create']);
+
+
+//testing login
+Route::get('logiin', [\App\Http\Controllers\CheckController::class,'login']);

@@ -7,8 +7,6 @@
 
     @include('dashboard-header')
 
-    <body class="cbp-spmenu-push">
-    <div class="main-content">
 
         <!-- main content start-->
         <div id="page-wrapper">
@@ -50,9 +48,6 @@
                 </div>
             </div>
         </div>
-
-    </div>
-    </body>
 
     @include('footer')
 @endsection

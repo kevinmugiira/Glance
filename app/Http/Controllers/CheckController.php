@@ -11,6 +11,14 @@ class CheckController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function login()
+    {
+        return view('sidebar menu.logiin');
+    }
+
+
     public function index()
     {
         return view('sidebar menu.mail.inbox');
