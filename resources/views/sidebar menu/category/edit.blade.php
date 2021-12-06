@@ -26,27 +26,16 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($cat as $category)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Food Crop</td>
-                            <td>Cereal</td>
-                            <td><a href="{{route('update-category')}}"><span class="label label-warning">Edit</span></a></td>
+                            <th scope="row">{{ $category->id}}</th>
+                            <td>{{ $category->name }}</td>
+                            <td>{{ $category->type }}</td>
+                            <td><a href="{{route('update-category' )}}/ {{ $category->id }}"><span class="label label-warning">Edit</span></a></td>
 
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Food Crop</td>
-                            <td>Vegetable</td>
-                            <td><a href="{{route('update-category')}}"><span class="label label-warning">Edit</span></a></td>
+                        @endforeach
 
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Cash Crop</td>
-                            <td>Cereal</td>
-                            <td><a href="{{route('update-category')}}"><span class="label label-warning">Edit</span></a></td>
-
-                        </tr>
                         </tbody>
                     </table>
                 </div>

@@ -173,7 +173,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{route('add-product')}}"><i class="fa fa-angle-right"></i> Add Product</a></li>
+                                    <li><a href="{{url('/products/create')}}"><i class="fa fa-angle-right"></i> Add Product</a></li>
                                     <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> Product list</a></li>
                                     <li><a href="{{route('edit-product')}}"><i class="fa fa-angle-right"></i> Edit Product</a></li>
                                 </ul>
@@ -449,8 +449,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 <div class="profile_img">
                                     <span class="prfil-img"><img src="{{asset('asset/images/2.jpg')}}" alt=""> </span>
                                     <div class="user-name">
-                                        <p>Admin Name</p>
-                                        <span>Administrator</span>
+                                        <p>Admin</p>
+                                        <span>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</span>
                                     </div>
                                     <i class="fa fa-angle-down lnr"></i>
                                     <i class="fa fa-angle-up lnr"></i>

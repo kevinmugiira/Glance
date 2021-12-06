@@ -18,32 +18,26 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Id</th>
                             <th>Category Name</th>
                             <th>Category Type</th>
 
                         </tr>
                         </thead>
+
+
                         <tbody>
+                        @foreach($cat as $category)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Food Crop</td>
-                            <td>Cereal</td>
+                            <th scope="row">{{$category->id}}</th>
+                            <td>{{ $category->name }}</td>
+                            <td>{{ $category->type }}</td>
 
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Food Crop</td>
-                            <td>Vegetable</td>
+                        @endforeach
 
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Cash Crop</td>
-                            <td>Cereal</td>
-
-                        </tr>
                         </tbody>
+
                     </table>
                 </div>
 

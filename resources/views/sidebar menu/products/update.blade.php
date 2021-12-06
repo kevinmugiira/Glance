@@ -25,10 +25,6 @@
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Product Type</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Product type">
-                                </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product description</label>

@@ -14,7 +14,7 @@
             <div class="profile_details_left"><!--notifications of menu start -->
                 <ul class="nofitications-dropdown">
                     <li class="dropdown head-dpdn">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+                        <a href="{{url('/home')}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="notification_header">
@@ -186,8 +186,8 @@
                             <div class="profile_img">
                                 <span class="prfil-img"><img src="{{asset('asset/images/2.jpg')}}" alt=""> </span>
                                 <div class="user-name">
-                                    <p>Admin Name</p>
-                                    <span>Administrator</span>
+                                    <p>Admin</p>
+                                    <span>{{auth()->user()->firstname}} {{ auth()->user()->lastname }}</span>
                                 </div>
                                 <i class="fa fa-angle-down lnr"></i>
                                 <i class="fa fa-angle-up lnr"></i>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -23,6 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+
         return view('sidebar menu.category.create');
     }
 
@@ -34,7 +36,27 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+         request()->validate([
+            'name' => 'required',
+            'type' => 'required',
+        ]);
+
+
+
+        $category = new Category();
+
+        $category->name = $request->input('name');
+        $category->type = $request->input('type');
+
+
+        $category->save();
+
+
+        return redirect()->route('list-category')
+           ->with('Success', 'category added successfully!');
+
     }
 
     /**
@@ -45,7 +67,9 @@ class CategoryController extends Controller
      */
     public function show()
     {
-        return view('sidebar menu.category.show');
+        $cat = Category::all();
+
+        return view('sidebar menu.category.show',compact('cat'));
     }
 
     /**
@@ -56,7 +80,9 @@ class CategoryController extends Controller
      */
     public function edit()
     {
-        return view('sidebar menu.category.edit');
+
+        $cat = Category::all();
+        return view('sidebar menu.category.edit', compact('cat'));
     }
 
     /**
@@ -66,9 +92,19 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Category $category)
     {
-        return view('sidebar menu.category.update');
+        request()->validate([
+            'name' => 'required',
+            'type' => 'required'
+        ]);
+
+        $category->name = \request('name');
+        $category->type = \request('type');
+
+        $category->save();
+
+        return view('sidebar menu.category.show');
     }
 
     /**
@@ -80,5 +116,10 @@ class CategoryController extends Controller
     public function destroy()
     {
         return view('sidebar menu.category.delete');
+    }
+
+    public function check()
+    {
+        return view('myform');
     }
 }

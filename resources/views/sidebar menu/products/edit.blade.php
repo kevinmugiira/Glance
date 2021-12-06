@@ -1,5 +1,5 @@
-@extends('layouts.app')
 
+@extends('layouts.app')
 
 
 
@@ -14,39 +14,28 @@
 
 
                 <div class="bs-example widget-shadow" data-example-id="hoverable-table">
-                    <h4>List:</h4>
+                    <h4>Edit Categories:</h4>
                     <table class="table table-hover">
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Category Name</th>
-                            <th>Category Type</th>
+                            <th>Product Name</th>
+                            <th>Product Description</th>
 
 
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Food Crop</td>
-                            <td>Cereal</td>
-                            <td><a href="{{route('update-product')}}"><span class="label label-warning">Edit</span></a></td>
+                        @foreach($prod as $product)
+                            <tr>
+                                <th scope="row">{{ $product->id}}</th>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->description }}</td>
+                                <td><a href="{{route('update-product' )}}"><span class="label label-warning">Edit</span></a></td>
 
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Food Crop</td>
-                            <td>Vegetable</td>
-                            <td><a href="{{route('update-product')}}"><span class="label label-warning">Edit</span></a></td>
+                            </tr>
+                        @endforeach
 
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Cash Crop</td>
-                            <td>Cereal</td>
-                            <td><a href="{{route('update-product')}}"><span class="label label-warning">Edit</span></a></td>
-
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -56,4 +45,8 @@
     </div>
 
     @include('footer')
-@stop
+@endsection
+
+
+@include('myform')
+

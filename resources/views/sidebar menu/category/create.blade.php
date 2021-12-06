@@ -20,20 +20,36 @@
                                 <h4>ADD Category :</h4>
                             </div>
                             <div class="form-body">
-                                <form class="form-horizontal">
+                                <form action="/category/create" method="POST" class="form-horizontal">
 
+                                    @csrf
 
                                     <div class="form-group">
+
                                         <label for="mediuminput" class="col-sm-2 control-label">Category Name</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" id="mediuminput" placeholder="Category Name">
+                                            <input type="text"
+                                                   class="form-control1 @error('name') list-group-item-danger @enderror"
+                                                   name="name"
+                                                   placeholder="Category Name">
+
+                                            @error('name')
+                                               <p class="help list-group-item-danger">{{ $errors->first('name') }}</p>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="mediuminput" class="col-sm-2 control-label">Category Type</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" id="mediuminput" placeholder="Category Type">
+                                            <input type="text"
+                                                   class="form-control1 @error('type') list-group-item-danger @enderror"
+                                                   name="type"
+                                                   placeholder="Category Type">
+
+                                            @error('type')
+                                                <p class="help list-group-item-danger">{{ $errors->first('type') }}</p>
+                                            @enderror
                                         </div>
                                     </div>
 

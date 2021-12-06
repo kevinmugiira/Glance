@@ -500,7 +500,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3 class="agileinfo_sign">Sign In </h3>
                     <p>
                         Sign In now, To Shop. Don't have an account?
-                        <a href="#" data-toggle="modal" data-target="#myModal2">
+                        <a href="{{url('auth.login')}}" data-toggle="modal" data-target="#myModal2">
                             Sign Up</a>
                     </p>
                     <form action="#" method="post">
@@ -540,7 +540,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <p>
                         Join NewGreen! Let's set up your Account.
                     </p>
-                    <form action="#" method="post">
+                    <form action="{{ route('register') }}" method="post">
                         <div class="styled-input agile-styled-input-top">
                             <input type="text" placeholder="Name" name="Name" required="">
                         </div>
@@ -667,7 +667,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </ul>-->
                                         </div>
                                         <div class="col-sm-4 multi-gd-img">
-                                            <img src="images/nav.png" alt="">
+                                            <img src="{{asset('assets/images/nav.png')}}" alt="">
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -751,7 +751,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <a href="{{url('products')}}">Products</a>
                                     </li>
                                     <li>
-                                        <a href="{{url('contact')}}">Contact</a>
+                                        <a href="{{url('contact')}}">Contact us</a>
                                     </li>
                                 </ul>
                             </li>
@@ -795,10 +795,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <!-- footer first section -->
         <p class="footer-main">
-            <span>"NewGreen"</span> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-            beatae vitae dicta sunt explicabo.</p>
+            <span>"NewGreen"</span>Order online. All your favourite products from the low price online supermarket for grocery home delivery in Ruiru,
+            Gwa Kairu, Bypass and Kahawa in Nairobi. Good affordable prices guaranteed by the farmers themselves. We get it straight from the shamba to you. Our sellers are accredited and approved to sell their produce by the government. No GMO'S</p>
         <!-- //footer first section -->
         <!-- footer second section -->
         <div class="w3l-grids-footer">
@@ -882,7 +880,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </ul>
                 </div>
                 <div class="clearfix"></div>
-            </div>
+            </div>-->
             <!-- //footer categories -->
             <!-- quick links -->
            <!-- <div class="col-sm-5 address-right">
@@ -924,7 +922,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>-->
             <!-- //quick links -->
             <!-- social icons -->
            <!-- <div class="col-sm-2 footer-grids  w3l-socialmk">
@@ -958,7 +956,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                     <div class="clearfix"> </div>
                 </div>
-            </div>
+            </div>-->
             <!-- //social icons -->
             <div class="clearfix"></div>
         </div>
@@ -975,7 +973,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h5>Shop online with the best deals & offers</h5>
                 <p>Now Get Upto 40% Off On Everyday Essential Products Shown On The Offer Page. The range includes Grocery, Personal Care,
                     Baby Care, Pet Supplies, Healthcare and Other Daily Need Products. Discount May Vary From Product To Product.</p>
-            </div>
+            </div>-->
             <!-- brands -->
           <!--  <div class="sub-some">
                 <h5>Popular Brands</h5>

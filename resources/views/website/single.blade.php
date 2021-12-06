@@ -15,10 +15,10 @@
             <div class="container">
                 <ul class="w3_short">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{url('mtaa')}}">Home</a>
                         <i>|</i>
                     </li>
-                    <li>Single Page</li>
+                    <li>Product Page</li>
                 </ul>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <div class="banner-bootom-w3-agileits">
         <div class="container">
             <!-- tittle heading -->
-            <h3 class="tittle-w3l">Single Page
+            <h3 class="tittle-w3l">Product Page
                 <span class="heading-style">
 					<i></i>
 					<i></i>
@@ -40,13 +40,13 @@
                 <div class="grid images_3_of_2">
                     <div class="flexslider">
                         <ul class="slides">
-                            <li data-thumb="{{asset('asset2/images/si.jpg')}}">
+                            <li data-thumb="{{asset('asset2/images/Fruit2.jpg')}}">
                                 <div class="thumb-image">
-                                    <img src="{{asset('asset2/images/si.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
-                            <li data-thumb="{{asset('asset2/images/si2.jpg')}}">
+                            <li data-thumb="{{asset('asset2/images/Fruit2.jpg')}}">
                                 <div class="thumb-image">
-                                    <img src="{{asset('asset2/images/si2.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
                             <li data-thumb="{{asset('asset2/images/si3.jpg')}}">
                                 <div class="thumb-image">
@@ -98,10 +98,10 @@
                 <div class="product-single-w3l">
                     <p>
                         <i class="fa fa-hand-o-right" aria-hidden="true"></i>This is a
-                        <label>Vegetarian</label> product.</p>
+                        <label>{{ $product->type }}</label> product.</p>
                     <ul>
                         <li>
-                            Best for Biryani and Pulao.
+                            {{ $product->description }}
                         </li>
                         <li>
                             After cooking, Zeeba Basmati rice grains attain an extra ordinary length of upto 2.4 cm/~1 inch.
@@ -114,7 +114,7 @@
                         </li>
                     </ul>
                     <p>
-                        <i class="fa fa-refresh" aria-hidden="true"></i>All food products are
+                        <i class="fa fa-refresh" aria-hidden="true"></i>All perishable food products are
                         <label>non-returnable.</label>
                     </p>
                 </div>

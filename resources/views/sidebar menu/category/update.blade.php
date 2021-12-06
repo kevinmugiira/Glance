@@ -18,21 +18,34 @@
                             <h4> Update Category:</h4>
                         </div>
                         <div class="form-body">
-                            <form>
+                            <form action="/category/edit/{{ $category->id }}" method="POST">
+
+                                @csrf
+
+                                @method('PUT')
+
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Category name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="name"
+                                           value="{{ $category->name }}"
+                                           placeholder="Product name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Category Type</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Product type">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="type"
+                                           value="{{ $category->type }}"
+                                           placeholder="Product type">
                                 </div>
 
                                 <div class="checkbox">
                                     <!--<label><input type="checkbox"> Check me out </label>-->
                                 </div>
-                                <!--<a href="#"><span class="label label-success">Success</span></a>-->
+
                                 <button type="submit"  class="btn btn-default ">Update</button>
                             </form>
                         </div>
@@ -41,8 +54,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    </body>
 
     @include('footer')
 
