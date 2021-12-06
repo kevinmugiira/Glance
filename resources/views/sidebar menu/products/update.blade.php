@@ -22,13 +22,19 @@
                             <form>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="exampleInputEmail1"
+                                           placeholder="Update name">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product description</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Description">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="exampleInputEmail1"
+                                           placeholder="Update description">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Upload new image</label>

@@ -83,12 +83,8 @@ class ProductsController extends Controller
 
     public function tore(Request $request)
     {
-        /*
-        $product = new Product();
 
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        */
+
 
         $request->validate([
             'name' => 'required',
@@ -96,46 +92,37 @@ class ProductsController extends Controller
         ]);
 
 
-        if ($request->hasFile('file')) {
 
-            /**
+
+        $product = new Product();
+
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+
+        if ($request->hasFile('file_path')) {
+
             $file = $request->file('file_path');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . "." . $extension;
-            $file->move('uploads/prod/', $filename);
+            $file->move('uploads/products/', $filename);
             $product->file_path = $filename;
-             }else {
-            return $request;
-            $product->file_path = '';
-             */
-            $request->validate([
-                'image' => 'mimes:jpeg,bmp,png'
-            ]);
 
-            $request->file->store('product', 'public');
-
-            $product = new Product([
-                "name" => $request->get('name'),
-                "description" => $request->get('description'),
-                "file_path" => $request->file->hashName()
-            ]);
-
-
-            $product->save();
-
+           } else {
+             return $request;
+             $product->file_path = '';
         }
 
 
+        $product->save();
 
 
-
-
-
-
-         return redirect()->route('list-product')
-            ->with('Success','Product created successfully');
-
-       # return redirect()->route('add-product');
+        if ($product) {
+            return back()
+                ->with('success', 'Product added successfully');
+        } else {
+            return back()
+                ->with('fail', 'something went wrong');
+        }
     }
 
     /**

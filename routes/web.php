@@ -40,7 +40,7 @@ Route::resource('master', \App\Http\Controllers\MasterController::class);
 //products
 //Route::resource('products', '\App\Http\Controllers\ProductsController');
 Route::get('/products/create', [\App\Http\Controllers\ProductsController::class,'create'])->name('add-product');
-Route::post('/product/add', [\App\Http\Controllers\ProductsController::class,'sore']);
+Route::post('/product/add', [\App\Http\Controllers\ProductsController::class,'tore']);
 Route::get('show-prod', [\App\Http\Controllers\ProductsController::class,'show'])->name('list-product');
 Route::get('edit-prod',[\App\Http\Controllers\ProductsController::class,'edit'])->name('edit-product');
 Route::get('edit', [\App\Http\Controllers\ProductsController::class,'index']);

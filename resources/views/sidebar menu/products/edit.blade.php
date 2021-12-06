@@ -48,5 +48,5 @@
 @endsection
 
 
-@include('myform')
+
 

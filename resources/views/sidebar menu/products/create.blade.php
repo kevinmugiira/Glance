@@ -29,8 +29,9 @@
                             <div class="alert alert-danger">
                                 {{ Session::get('fail') }}
                             </div>
+                        @endif
 
-                        <form action="/product/add" method="POST">
+                        <form action="/product/add" method="POST" enctype="multipart/form-data">
 
                             @csrf
 
@@ -40,8 +41,7 @@
                                        name="name"
                                        class="form-control @error('name') list-group-item-danger @enderror"
                                        id="exampleInputEmail1"
-                                       placeholder="Name"
-                                       value="{{ old('name') }}">
+                                       placeholder="Name">
                                 @error('name')
                                 <p class="help list-group-item-danger">{{ $errors->first('name') }}</p>
                                 @enderror
@@ -53,8 +53,7 @@
                                        name="description"
                                        class="form-control @error('description') list-group-item-danger @enderror"
                                        id="exampleInputPassword1"
-                                       placeholder="Description"
-                                       value="{{ old('description') }}">
+                                       placeholder="Description">
 
                                 @error('description')
                                 <p class="help list-group-item-danger">{{ $errors->first('description') }}</p>
