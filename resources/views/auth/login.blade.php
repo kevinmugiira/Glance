@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Glance Design Dashboard an Admin Panel Category Flat Bootstrap Responsive Website Template | Login Page :: w3layouts</title>
+    <title>{{ config('app.name', 'New Green') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -37,7 +37,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <script src="{{asset('asset/js/custom.js')}}"></script>
     <link href="{{asset('asset/css/custom.css')}}" rel="stylesheet">
     <!--//Metis Menu -->
-
+</head>
 
     <div id="page-wrapper">
         <div class="main-page login-page ">

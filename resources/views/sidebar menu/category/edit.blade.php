@@ -1,48 +1,67 @@
 
+
 @extends('layouts.app')
 
 
 
 @section('content')
-
     @include('dashboard-header')
 
+
+
+
+    <!-- main content start-->
     <div id="page-wrapper">
         <div class="main-page">
-            <div class="tables">
-                <h2 class="title1">Category</h2>
+            <div class="forms">
+                <h2 class="title1">Categories</h2>
+                <div class="form-grids row widget-shadow" data-example-id="basic-forms">
+                    <div class="form-title">
+                        <h4>Update Category :
+                            <a href="{{ url('home') }}" class="btn btn-primary pull-right">Back</a>
+                        </h4>
+                    </div>
+                    <div class="form-body">
+                        <form action="{{ url('/edit-cat/'.$cat->id) }}" method="POST" enctype="multipart/form-data">
+
+                            @csrf
+
+                            @method('PUT')
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Category name</label>
+                                <input type="text"
+                                       name="name"
+                                       class="form-control"
+                                       id="exampleInputEmail1"
+                                       value="{{ $cat->name }}"
+                                       placeholder="Update name">
+                            </div>
 
 
-                <div class="bs-example widget-shadow" data-example-id="hoverable-table">
-                    <h4>Edit Categories:</h4>
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Category Name</th>
-                            <th>Category Type</th>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Category type</label>
+                                <input type="text"
+                                       name="type"
+                                       class="form-control"
+                                       id="exampleInputEmail1"
+                                       value="{{ $cat->type }}"
+                                       placeholder="Update description">
+                            </div>
 
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($cat as $category)
-                        <tr>
-                            <th scope="row">{{ $category->id}}</th>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ $category->type }}</td>
-                            <td><a href="{{route('update-category' )}}/ {{ $category->id }}"><span class="label label-warning">Edit</span></a></td>
-
-                        </tr>
-                        @endforeach
-
-                        </tbody>
-                    </table>
+                            <!--<a href="#"><span class="label label-success">Success</span></a>-->
+                            <button type="submit"  class="btn btn-default ">Update category</button>
+                        </form>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
+    </div>
+    </body>
 
     @include('footer')
+
 @endsection
+

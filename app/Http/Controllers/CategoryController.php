@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('sidebar menu.products');
+        $category = Category::all();
+        return view('sidebar menu.category.index', compact('category'));
     }
 
     /**
@@ -53,9 +54,16 @@ class CategoryController extends Controller
 
         $category->save();
 
+        if ($category) {
+            return back()
+                ->with('success', 'Category added successfully');
+        } else {
+            return back()
+                ->with('fail', 'something went wrong');
+        }
 
-        return redirect()->route('list-category')
-           ->with('Success', 'category added successfully!');
+//        return redirect()->route('list-category')
+//           ->with('Success', 'category added successfully!');
 
     }
 
@@ -78,10 +86,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
 
-        $cat = Category::all();
+        $cat = Category::find($id=1);
         return view('sidebar menu.category.edit', compact('cat'));
     }
 
@@ -113,9 +121,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        return view('sidebar menu.category.delete');
+        $category = Category::find($id);
+
+        $category->delete();
+
+        return redirect()->back()->with('status','Category Deleted Successfully');
     }
 
     public function check()

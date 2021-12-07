@@ -14,9 +14,12 @@
         <div class="main-page">
             <div class="forms">
                 <h2 class="title1">Products</h2>
+                <div class="card-header">
                 <div class="form-grids row widget-shadow" data-example-id="basic-forms">
                     <div class="form-title">
-                        <h4>Add your Product :</h4>
+                        <h4>Add your Product :
+                            <a href="{{ url('home') }}" class="btn btn-primary pull-right">Back</a>
+                        </h4>
                     </div>
                     <div class="form-body">
                         @if(Session::get('success'))
@@ -70,6 +73,7 @@
                             <button type="submit" class="btn btn-default">Add Product</button>
                         </form>
                     </div>
+                </div>
                 </div>
 
 

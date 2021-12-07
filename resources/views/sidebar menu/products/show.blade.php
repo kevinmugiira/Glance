@@ -14,7 +14,9 @@
 
 
                 <div class="bs-example widget-shadow" data-example-id="hoverable-table">
-                    <h4>List:</h4>
+                    <h4>List:
+                        <a href="{{ url('home') }}" class="btn btn-primary pull-right"> Back</a>
+                    </h4>
                     <table class="table table-hover">
                         <thead>
 

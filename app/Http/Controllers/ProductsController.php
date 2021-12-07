@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductsController extends Controller
 {
@@ -14,7 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('myform');
+        $prod = Product::all();
+        return view('sidebar menu.products.index',compact('prod'));
+        //return view('myform');
     }
 
     /**
@@ -34,54 +37,7 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function sore(Request $request)
-    {
-        /*
-        $products = \request()->validate([
-            'name' => 'string|required|max:255',
-            'description' => 'string|required',
-            #'file_path' => ['file']
-        ]);
-
-        if (\request('file_path')) {
-            $products['file_path'] = \request('file_path')->store('file_path');
-        }
-
-
-        $products->save(); */
-
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'file_path' => ['file']
-        ]);
-
-
-        $product = new Product([
-            "name" => $request->get('name'),
-            "description" => $request->get('description'),
-
-            ]);
-
-        if (\request('file_path')) {
-            $product['file_path'] = \request('file_path')->store('file_path');
-        }
-
-        $product->save();
-
-
-        return redirect()->route('list-product');
-
-        if ($product) {
-            return back()->with('success', 'Product has been added successfully');
-        } else {
-            return back()->with('fail', 'something went wrong');
-        }
-
-    }
-
-
-    public function tore(Request $request)
+    public function store(Request $request)
     {
 
 
@@ -145,11 +101,16 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
 
+        $prod = Product::find($id);
+        #dd($prod);
+        return view('sidebar menu.products.edit',compact('prod'));
+        /*
         $prod = Product::all();
         return view('sidebar menu.products.edit', compact('prod'));
+        */
     }
 
     /**
@@ -159,9 +120,51 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request, $id)
     {
-        return view('sidebar menu.products.update');
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        $product = Product::find($id);
+
+
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+
+        if ($request->hasFile('file_path'))
+        {
+            $destination = 'uploads/products/'.$product->file_path;
+            if (File::exists($destination))
+            {
+                File::delete($destination);
+            }
+
+            $file = $request->file('file_path');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . "." . $extension;
+            $file->move('uploads/products/', $filename);
+            $product->file_path = $filename;
+
+        }
+
+
+        $product->update();
+
+        //return redirect()->back()->with('status','Product Updated Successfully');
+
+
+        if ($product) {
+            return back()
+                ->with('success', 'Product updated successfully');
+        } else {
+            return back()
+                ->with('fail', 'something went wrong');
+        }
+
+
+        #return view('sidebar menu.products.update');
     }
 
     /**
@@ -172,7 +175,16 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        $destination = 'uploads/products/'. $product->file_path;
+        if (File::exists($destination))
+        {
+            File::delete($destination);
+        }
+        $product->delete();
+
+        return redirect()->back()->with('status','Product Deleted Successfully');
     }
 
 

@@ -175,7 +175,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 <ul class="treeview-menu">
                                     <li><a href="{{url('/products/create')}}"><i class="fa fa-angle-right"></i> Add Product</a></li>
                                     <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> Product list</a></li>
-                                    <li><a href="{{route('edit-product')}}"><i class="fa fa-angle-right"></i> Edit Product</a></li>
+                                    <li><a href="{{ url('/list-prod')}}"><i class="fa fa-angle-right"></i> Edit Products</a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -183,13 +183,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-pie-chart"></i>
                                     <span>Orders</span>
                                     <i class="fa fa-angle-left pull-right"></i>
-                                    <span class="label label-primary pull-right">new</span>
+                                    <!--<span class="label label-primary pull-right">new</span>-->
 
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="{{route('add-product')}}"><i class="fa fa-angle-right"></i> New </a></li>
                                     <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> All</a></li>
-                                    <!--<li><a href="{{route('edit-product')}}"><i class="fa fa-angle-right"></i> Edit Product</a></li>-->
+                                    <!--<li><a href=""><i class="fa fa-angle-right"></i> Edit Product</a></li>-->
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -201,15 +201,14 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="{{route('add-category')}}"><i class="fa fa-angle-right"></i> Add Category</a></li>
-                                    <li><a href="{{route('edit-category')}}"><i class="fa fa-angle-right"></i> Edit Category</a></li>
-                                    <li><a href="{{route('list-category')}}"><i class="fa fa-angle-right"></i> List Categories</a></li>
-                                    <li><a href="{{route('delete-category')}}"><i class="fa fa-angle-right"></i> Delete Category</a></li>
+                                    <li><a href="{{url('list-categories')}}"><i class="fa fa-angle-right"></i> Category List</a></li>
+                                    <li><a href="{{url('list-cat')}}"><i class="fa fa-angle-right"></i> Edit Category</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="{{url('mtaa')}}">
                                     <i class="fa fa-th"></i> <span>Website</span>
-                                    <small class="label pull-right label-info">08</small>
+                                    <small class="label pull-right label-info">Customer</small>
                                 </a>
                             </li>
                             <li class="treeview">
@@ -219,8 +218,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Purchase report</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Buy report</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Stock report</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Users report</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> General report</a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -229,10 +228,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Add Role</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> List Roles</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit Role</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Delete Roles</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Add User</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit User</a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -240,19 +237,19 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-envelope"></i> <span>Mailbox </span>
                                     <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1">08</small><span class="label label-primary1 pull-right">02</span></a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{url('inbox')}}"><i class="fa fa-angle-right"></i> Mail Inbox </a></li>
+                                    <li><a href="{{url('inbox')}}"><i class="fa fa-angle-right"></i> Inbox </a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Timeline </a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
                                 <a href="#">
-                                    <i class="fa fa-folder"></i> <span>Auth</span>
+                                    <i class="fa fa-folder"></i> <span>Account</span>
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Login</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Register</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Profile</a></li>
+                                    <li><a href="{{route('logout')}}"><i class="fa fa-angle-right"></i> Logout</a></li>
 
                                 </ul>
                             </li>

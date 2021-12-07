@@ -40,19 +40,22 @@ Route::resource('master', \App\Http\Controllers\MasterController::class);
 //products
 //Route::resource('products', '\App\Http\Controllers\ProductsController');
 Route::get('/products/create', [\App\Http\Controllers\ProductsController::class,'create'])->name('add-product');
-Route::post('/product/add', [\App\Http\Controllers\ProductsController::class,'tore']);
+Route::post('/product/add', [\App\Http\Controllers\ProductsController::class,'store']);
 Route::get('show-prod', [\App\Http\Controllers\ProductsController::class,'show'])->name('list-product');
-Route::get('edit-prod',[\App\Http\Controllers\ProductsController::class,'edit'])->name('edit-product');
-Route::get('edit', [\App\Http\Controllers\ProductsController::class,'index']);
-Route::get('/product/edit',[\App\Http\Controllers\ProductsController::class,'update'])->name('update-product');
+Route::get('edit-prod/{id}',[\App\Http\Controllers\ProductsController::class,'edit']);
+Route::get('list-prod', [\App\Http\Controllers\ProductsController::class,'index']);
+//Route::get('/product/edit',[\App\Http\Controllers\ProductsController::class,'update'])->name('update-product');
+Route::put('/update-product/{id}', [\App\Http\Controllers\ProductsController::class,'update']);
+Route::delete('delete-product/{id}', [\App\Http\Controllers\ProductsController::class,'destroy']);
 
 //category
 Route::get('add-cat',[\App\Http\Controllers\CategoryController::class,'create'])->name('add-category');
 Route::post('/category/create',[\App\Http\Controllers\CategoryController::class,'store']);
-Route::get('/list/edit-cat',[\App\Http\Controllers\CategoryController::class,'edit'])->name('edit-category');
-Route::get('list-cat', [\App\Http\Controllers\CategoryController::class,'show'])->name('list-category');
+Route::get('list-categories', [\App\Http\Controllers\CategoryController::class,'show']);
+Route::get('/edit-cat/{id}',[\App\Http\Controllers\CategoryController::class,'edit']);
+Route::get('list-cat', [\App\Http\Controllers\CategoryController::class,'index'])->name('list-category');
 Route::put('/category/edit/{category}',[\App\Http\Controllers\CategoryController::class,'update'])->name('update-category');
-Route::get('delete-cat', [\App\Http\Controllers\CategoryController::class,'destroy'])->name('delete-category');
+Route::delete('delete-category/{id}', [\App\Http\Controllers\CategoryController::class,'destroy'])->name('delete-category');
 
 
 

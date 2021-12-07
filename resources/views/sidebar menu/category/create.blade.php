@@ -1,69 +1,85 @@
 
+
 @extends('layouts.app')
 
 
 
 @section('content')
-
     @include('dashboard-header')
 
 
-        <!-- main content start-->
-        <div id="page-wrapper">
-            <div class="main-page">
-                <div class="forms">
-                    <h2 class="title1">CATEGORY</h2>
 
-                    <div class=" form-grids row form-grids-right">
-                        <div class="widget-shadow " data-example-id="basic-forms">
-                            <div class="form-title">
-                                <h4>ADD Category :</h4>
-                            </div>
-                            <div class="form-body">
-                                <form action="/category/create" method="POST" class="form-horizontal">
+    <!-- main content start-->
+    <div id="page-wrapper">
+        <div class="main-page">
+            <div class="forms">
+                <h2 class="title1">Category</h2>
+                <div class="card-header">
+                    <div class="form-grids row widget-shadow" data-example-id="basic-forms">
+                        <div class="form-title">
+                            <h4>Add Category :
+                                <a href="{{ url('home') }}" class="btn btn-primary pull-right">Back</a>
+                            </h4>
+                        </div>
+                        <div class="form-body">
+                            @if(Session::get('success'))
+                                <div class="alert alert-success">
+                                    {{ Session::get('success') }}
+                                </div>
+                            @endif
 
-                                    @csrf
+                            @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail') }}
+                                </div>
+                            @endif
 
-                                    <div class="form-group">
+                            <form action="/category/create" method="POST" enctype="multipart/form-data">
 
-                                        <label for="mediuminput" class="col-sm-2 control-label">Category Name</label>
-                                        <div class="col-sm-8">
-                                            <input type="text"
-                                                   class="form-control1 @error('name') list-group-item-danger @enderror"
-                                                   name="name"
-                                                   placeholder="Category Name">
+                                @csrf
 
-                                            @error('name')
-                                               <p class="help list-group-item-danger">{{ $errors->first('name') }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Category name</label>
+                                    <input type="text"
+                                           name="name"
+                                           class="form-control @error('name') list-group-item-danger @enderror"
+                                           id="exampleInputEmail1"
+                                           placeholder="Name">
+                                    @error('name')
+                                    <p class="help list-group-item-danger">{{ $errors->first('name') }}</p>
+                                    @enderror
 
-                                    <div class="form-group">
-                                        <label for="mediuminput" class="col-sm-2 control-label">Category Type</label>
-                                        <div class="col-sm-8">
-                                            <input type="text"
-                                                   class="form-control1 @error('type') list-group-item-danger @enderror"
-                                                   name="type"
-                                                   placeholder="Category Type">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Category Type</label>
+                                    <input type="text"
+                                           name="type"
+                                           class="form-control @error('type') list-group-item-danger @enderror"
+                                           id="exampleInputPassword1"
+                                           placeholder="Description">
 
-                                            @error('type')
-                                                <p class="help list-group-item-danger">{{ $errors->first('type') }}</p>
-                                            @enderror
-                                        </div>
-                                    </div>
+                                    @error('type')
+                                    <p class="help list-group-item-danger">{{ $errors->first('type') }}</p>
+                                    @enderror
+
+                                </div>
 
 
-                                    <div class="col-sm-offset-2">
-                                        <button type="submit" class="btn btn-default">Add</button>
-                                    </div>
-                                </form>
-                            </div>
+                                <button type="submit" class="btn btn-default">Add Category</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
+    </div>
+
+
 
     @include('footer')
+
 @endsection
+
+

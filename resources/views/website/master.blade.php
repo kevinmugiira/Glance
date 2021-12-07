@@ -742,7 +742,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </a>
                                 <ul class="dropdown-menu agile_short_dropdown">
                                     <li>
-                                        <a href="{{url('home')}}">Home</a>
+                                        <a href="{{url('mtaa')}}">Home</a>
                                     </li>
                                     <li>
                                         <a href="{{url('about')}}">About us</a>
@@ -795,8 +795,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <!-- footer first section -->
         <p class="footer-main">
-            <span>"NewGreen"</span>Order online. All your favourite products from the low price online supermarket for grocery home delivery in Ruiru,
-            Gwa Kairu, Bypass and Kahawa in Nairobi. Good affordable prices guaranteed by the farmers themselves. We get it straight from the shamba to you. Our sellers are accredited and approved to sell their produce by the government. No GMO'S</p>
+            <span>"NewGreen"</span>Order online. All your farm products at low price at our online supermarket. Shop for grocery and we will deliver. We are located in Ruiru,
+            Gwa Kairu, Bypass and Kahawa in Nairobi. Good affordable prices guaranteed by the farmers themselves. We get it straight from the Shamba to you. Our sellers are accredited and have the best in the market. No GMO'S</p>
         <!-- //footer first section -->
         <!-- footer second section -->
         <div class="w3l-grids-footer">
@@ -814,7 +814,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="fa fa-refresh" aria-hidden="true"></span>
                 </div>
                 <div class="col-xs-8 text-form-footer">
-                    <h3>Easy Returns</h3>
+                    <h3>Immediate Returns allowed</h3>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -1117,7 +1117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </div>-->
             <!-- //payment -->
-        </div>-->
+        </div>
         <!-- //footer fourth section (text) -->
     </div>
 </footer>
@@ -1126,7 +1126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="copy-right">
     <div class="container">
         <p>Door step deliveries available |
-            <a href="kevinm@net-co.online"> Delivery</a>
+            <a href="kevinm@net-co.online"> We Deliver</a>
         </p>
     </div>
 </div>
@@ -1177,8 +1177,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             total += items[i].get('quantity');
         }
 
-        if (total < 3) {
-            alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+        if (total < 1) {
+            alert('The minimum order quantity is 1. Please add to your shopping cart before checking out');
             evt.preventDefault();
         }
     });

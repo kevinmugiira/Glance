@@ -79,7 +79,7 @@
     <div class="ads-grid">
         <div class="container">
             <!-- tittle heading -->
-            <h3 class="tittle-w3l">Highest Produces
+            <h3 class="tittle-w3l">Most Selling Products
                 <span class="heading-style">
 					<i></i>
 					<i></i>
@@ -320,25 +320,25 @@
                 <div class="wrapper">
                     <!-- first section (nuts) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Nuts</h3>
+                        <h3 class="heading-tittle">Fruits</h3>
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('website.single')}}">Almonds, 100g</a>
+                                        <a href="{{url('website.single')}}">Product name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$149.00</span>
-                                        <del>$280.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -363,22 +363,22 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+
 
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('website.single')}}">Cashew Nuts, 100g</a>
+                                        <a href="{{url('website.single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$200.00</span>
-                                        <del>$420.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -403,22 +403,22 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+
 
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('website.single')}}">Pista..., 250g</a>
+                                        <a href="{{url('website.single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$520.99</span>
-                                        <del>$600.99</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -459,25 +459,25 @@
                     <!-- //second section (nuts special) -->
                     <!-- third section (oils) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Oils</h3>
+                        <h3 class="heading-tittle">Cereals</h3>
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+                                    <!--<span class="product-new-top">Instock</span>-->
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('website.single')}}">Freedom Oil, 1L</a>
+                                        <a href="{{url('website.single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$78.00</span>
-                                        <del>$110.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -502,22 +502,22 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href=""{{url('single')}} class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+                                    <!--<span class="product-new-top">Out of Stock</span>-->
 
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('single')}}">Saffola Gold, 1L</a>
+                                        <a href="{{url('single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$130.00</span>
-                                        <del>$150.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -542,22 +542,22 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+                                    <!--<span class="product-new-top">New</span>-->
 
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('single')}}">Fortune Oil, 5L</a>
+                                        <a href="{{url('single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$399.99</span>
-                                        <del>$500.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -583,11 +583,11 @@
                     <!-- //third section (oils) -->
                     <!-- fourth section (noodles) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Pasta & Noodles</h3>
+                        <h3 class="heading-tittle">Dairy Foods</h3>
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="/images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
@@ -596,11 +596,11 @@
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('single')}}">Yippee Noodles, 65g</a>
+                                        <a href="{{url('single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$15.00</span>
-                                        <del>$25.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -625,22 +625,22 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+                                    <!--<span class="product-new-top">New</span>-->
 
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('single')}}">Wheat Pasta, 500g</a>
+                                        <a href="{{url('single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$98.00</span>
-                                        <del>$120.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -665,22 +665,22 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" alt="">
+                                    <img src="images/Fruit2.jpg" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
-                                    <span class="product-new-top">New</span>
+                                    <!--<span class="product-new-top">New</span>-->
 
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('website.single')}}">Chinese Noodles, 68g</a>
+                                        <a href="{{url('website.single')}}">Product Name</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$11.99</span>
-                                        <del>$15.00</del>
+                                        <span class="item_price">Ksh 0.00</span>
+                                        <del>Ksh 0.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
@@ -723,22 +723,22 @@
 				</span>
             </h3>
             <!-- //tittle heading -->
-           <!-- <div class="content-bottom-in">
+           <div class="content-bottom-in">
                 <ul id="flexiselDemo1">
                     <li>
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset2/images/s1.jpg')}}" alt="">
+                                    <img src="images/s1.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="{{url('website.single')}}">Aashirvaad, 5g</a>
+                                    <a href="{{url('website.single')}}">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$220.00</h6>
-                                    <p>Save $40.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -763,16 +763,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset2/images/s4.jpg')}}" alt="">
+                                    <img src="images/s4.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="{{url('website.single')}}">Kissan Tomato Ketchup, 950g</a>
+                                    <a href="{{url('website.single')}}">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$99.00</h6>
-                                    <p>Save $20.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -797,16 +797,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset2/images/s2.jpg')}}" alt="">
+                                    <img src="images/s2.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="{{url('website.single')}}">Madhur Pure Sugar, 1g</a>
+                                    <a href="{{url('website.single')}}">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$69.00</h6>
-                                    <p>Save $20.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -831,16 +831,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="{{asset('asset2/images/s3.jpg')}}" alt="">
+                                    <img src="images/s3.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single2.html">Surf Excel Liquid, 1.02L</a>
+                                    <a href="single2.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$187.00</h6>
-                                    <p>Save $30.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -865,16 +865,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset2/images/s8.jpg')}}" alt="">
+                                    <img src="images/s8.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="{{url('website.single')}}">Cadbury Choclairs, 655.5g</a>
+                                    <a href="{{url('website.single')}}">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$160.00</h6>
-                                    <p>Save $60.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -899,16 +899,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="{{asset('asset2/images/s6.jpg')}}" alt="">
+                                    <img src="images/s6.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single2.html">Fair & Lovely, 80 g</a>
+                                    <a href="single2.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$121.60</h6>
-                                    <p>Save $30.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -933,16 +933,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset2/images/s5.jpg')}}" alt="">
+                                    <img src="images/s5.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="{{url('website.single')}}">Sprite, 2.25L (Pack of 2)</a>
+                                    <a href="{{url('website.single')}}">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$180.00</h6>
-                                    <p>Save $30.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -967,16 +967,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="{{asset('asset2/images/s9.jpg')}}" alt="">
+                                    <img src="/images/s9.jpg" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single2.html">Lakme Eyeconic Kajal, 0.35 g</a>
+                                    <a href="single2.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$153.00</h6>
-                                    <p>Save $40.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -998,7 +998,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>-->
+            </div>
         </div>
     </div>
     <!-- //special offers -->
