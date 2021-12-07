@@ -53,12 +53,8 @@
                 <div class="clearfix"> </div>
             </div>
             <div class="w3l-welcome-text">
-                <p>Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus
-                    omnis optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.Sed ut perspiciatis unde omnis iste
-                    natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                    et quasi architecto beatae vitae </p>
-                <p>libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus
-                    omnis optio cumque nihil impedit </p>
+                <p>NewGreen Solutions is a FREE online marketplace where buyers and sellers meet to trade farm related products. It’s accessible through the internet and allows farmers to post free ads of their farm produce. The platform also is scaling to open a physical shop where farmers can have access to affordable farm products and inputs.</p>
+                <p>One of the most persistent problems for smallholder farmers in Kenya’s agricultural sector is accessing information and markets, which prevents them from pushing through commercialization. Our aim as NewGreen is to unlock the door to better markets and information access for these smallholder farmers. </p>
             </div>
         </div>
     </div>

@@ -30,7 +30,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [\App\Http\Controllers\LogoutController::class,'logout'])->name('logout');
 });
 
-
+//welcome page route
+Route::get('welcome', [\App\Http\Controllers\MainController::class,'show']);
 
 Route::resource('home', \App\Http\Controllers\MainController::class);
 Route::resource('inbox', \App\Http\Controllers\CheckController::class);

@@ -90,7 +90,7 @@
             <!-- product left -->
             <div class="side-bar col-md-3">
                 <div class="search-hotel">
-                    <h3 class="agileits-sear-head">Search for produce..</h3>
+                    <h3 class="agileits-sear-head">Search Category..</h3>
                     <form action="#" method="post">
                         <input type="search" placeholder="Product name..." name="search" required="">
                         <input type="submit" value=" ">
@@ -324,7 +324,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
@@ -346,10 +346,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Almonds, 100g" />
-                                                <input type="hidden" name="amount" value="149.00" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
                                                 <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -363,7 +363,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
@@ -386,10 +386,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Cashew Nuts, 100g" />
-                                                <input type="hidden" name="amount" value="200.00" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
                                                 <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -403,7 +403,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
@@ -426,10 +426,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Pista, 250g" />
-                                                <input type="hidden" name="amount" value="520.99" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
                                                 <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -463,7 +463,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
@@ -485,10 +485,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Freedom Sunflower Oil, 1L" />
-                                                <input type="hidden" name="amount" value="78.00" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
                                                 <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -502,7 +502,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href=""{{url('single')}} class="link-product-add-cart">Quick View</a>
@@ -525,10 +525,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Saffola Gold, 1L" />
-                                                <input type="hidden" name="amount" value="130.00" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
                                                 <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -542,7 +542,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
@@ -565,9 +565,9 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Fortune Oil, 5L" />
-                                                <input type="hidden" name="amount" value="399.99" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -587,7 +587,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="/images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
@@ -608,10 +608,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="YiPPee Noodles, 65g" />
-                                                <input type="hidden" name="amount" value="15.00" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
                                                 <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -625,7 +625,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
@@ -648,10 +648,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Wheat Pasta, 500g" />
-                                                <input type="hidden" name="amount" value="98.00" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
                                                 <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -665,7 +665,7 @@
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="images/Fruit2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
@@ -688,10 +688,10 @@
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Chinese Noodles, 68g" />
-                                                <input type="hidden" name="amount" value="11.99" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
+                                                <input type="hidden" name="item_name" value="Product Name" />
+                                                <input type="hidden" name="amount" value="0.00" />
+                                                <input type="hidden" name="discount_amount" value="0.00" />
+                                                <input type="hidden" name="currency_code" value="Ksh" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
                                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -729,7 +729,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="images/s1.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -746,10 +746,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Aashirvaad, 5g" />
-                                            <input type="hidden" name="amount" value="220.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -763,7 +763,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="images/s4.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -780,10 +780,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Kissan Tomato Ketchup, 950g" />
-                                            <input type="hidden" name="amount" value="99.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -797,7 +797,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="images/s2.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -814,10 +814,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Madhur Pure Sugar, 1g" />
-                                            <input type="hidden" name="amount" value="69.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -831,7 +831,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="images/s3.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -848,10 +848,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Surf Excel Liquid, 1.02L" />
-                                            <input type="hidden" name="amount" value="187.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -865,7 +865,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="images/s8.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -882,10 +882,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Cadbury Choclairs, 655.5g" />
-                                            <input type="hidden" name="amount" value="160.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -899,7 +899,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="images/s6.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -916,10 +916,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Fair & Lovely, 80 g" />
-                                            <input type="hidden" name="amount" value="121.60" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -933,7 +933,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="images/s5.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -950,10 +950,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Sprite, 2.25L (Pack of 2)" />
-                                            <input type="hidden" name="amount" value="180.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -967,7 +967,7 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="/images/s9.jpg" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
@@ -984,10 +984,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Lakme Eyeconic Kajal, 0.35 g" />
-                                            <input type="hidden" name="amount" value="153.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />

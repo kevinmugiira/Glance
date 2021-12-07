@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <a href="{{url('mtaa')}}">
                     <span>N</span>ewGreen
                     <span>S</span>olutions
-                    <!--<img src="{{asset('asset2/images/logo2.png')}}" alt=" ">-->
+                    <!--<img src="{{asset('asst2/images/logo2.png')}}" alt=" ">-->
                 </a>
             </h1>
         </div>
@@ -795,7 +795,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <!-- footer first section -->
         <p class="footer-main">
-            <span>"NewGreen"</span>Order online. All your farm products at low price at our online supermarket. Shop for grocery and we will deliver. We are located in Ruiru,
+            <span>"NewGreen"</span>Order online. All your farm products are at a low price in our online supermarket. We also provide delivery services for grocery shopping. We are located in Ruiru,
             Gwa Kairu, Bypass and Kahawa in Nairobi. Good affordable prices guaranteed by the farmers themselves. We get it straight from the Shamba to you. Our sellers are accredited and have the best in the market. No GMO'S</p>
         <!-- //footer first section -->
         <!-- footer second section -->

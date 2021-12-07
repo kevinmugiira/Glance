@@ -40,17 +40,17 @@
                 <div class="grid images_3_of_2">
                     <div class="flexslider">
                         <ul class="slides">
-                            <li data-thumb="{{asset('asset2/images/Fruit2.jpg')}}">
+                            <li data-thumb="{{asset('asset/images/placeholder2.png')}}">
                                 <div class="thumb-image">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
-                            <li data-thumb="{{asset('asset2/images/Fruit2.jpg')}}">
+                            <li data-thumb="{{asset('asset/images/placeholder2.png')}}">
                                 <div class="thumb-image">
-                                    <img src="{{asset('asset2/images/Fruit2.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
-                            <li data-thumb="{{asset('asset2/images/si3.jpg')}}">
+                            <li data-thumb="{{asset('asset/images/placeholder2.png')}}">
                                 <div class="thumb-image">
-                                    <img src="{{asset('asset2/images/si3.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
                         </ul>
                         <div class="clearfix"></div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="col-md-7 single-right-left simpleCart_shelfItem">
-                <h3>Zeeba Premium Basmati Rice - 5 KG</h3>
+                <h3>Product Name</h3>
                 <div class="rating1">
 					<span class="starRating">
 						<input id="rating5" type="radio" name="rating" value="5">
@@ -74,8 +74,8 @@
 					</span>
                 </div>
                 <p>
-                    <span class="item_price">$950.00</span>
-                    <del>$1300.00</del>
+                    <span class="item_price">$Ksh 0.00</span>
+                    <del>Ksh 0.00</del>
                     <label>Free delivery</label>
                 </p>
                 <div class="single-infoagile">
@@ -84,33 +84,33 @@
                             Cash on Delivery Eligible.
                         </li>
                         <li>
-                            Shipping Speed to Delivery.
+                            Shipping Speed to Deliver.
                         </li>
                         <li>
-                            Sold and fulfilled by Supple Tek (3.6 out of 5 | 8 ratings).
+                            Sold and fulfilled by (Seller name).
                         </li>
                         <li>
                             1 offer from
-                            <span class="item_price">$950.00</span>
+                            <span class="item_price">Ksh 0.00</span>
                         </li>
                     </ul>
                 </div>
                 <div class="product-single-w3l">
                     <p>
                         <i class="fa fa-hand-o-right" aria-hidden="true"></i>This is a
-                        <label>{{ $product->type }}</label> product.</p>
+                        <label><!--product --></label> product.</p>
                     <ul>
                         <li>
-                            {{ $product->description }}
+                            <!--product->description-->
                         </li>
                         <li>
-                            After cooking, Zeeba Basmati rice grains attain an extra ordinary length of upto 2.4 cm/~1 inch.
+                            Description.
                         </li>
                         <li>
-                            Zeeba Basmati rice adheres to the highest food afety standards as your health is paramount to us.
+                            Description.
                         </li>
                         <li>
-                            Contains only the best and purest grade of basmati rice grain of Export quality.
+                            Description.
                         </li>
                     </ul>
                     <p>
@@ -125,10 +125,10 @@
                                 <input type="hidden" name="cmd" value="_cart" />
                                 <input type="hidden" name="add" value="1" />
                                 <input type="hidden" name="business" value=" " />
-                                <input type="hidden" name="item_name" value="Zeeba Premium Basmati Rice - 5 KG" />
-                                <input type="hidden" name="amount" value="950.00" />
-                                <input type="hidden" name="discount_amount" value="1.00" />
-                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="hidden" name="item_name" value="Product Name" />
+                                <input type="hidden" name="amount" value="0.00" />
+                                <input type="hidden" name="discount_amount" value="0.00" />
+                                <input type="hidden" name="currency_code" value="Ksh" />
                                 <input type="hidden" name="return" value=" " />
                                 <input type="hidden" name="cancel_return" value=" " />
                                 <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -161,16 +161,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single.html">
-                                    <img src="{{asset('asset2/images/s1.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single.html">Aashirvaad, 5g</a>
+                                    <a href="single.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$220.00</h6>
-                                    <p>Save $40.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -178,10 +178,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Aashirvaad, 5g" />
-                                            <input type="hidden" name="amount" value="220.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -195,16 +195,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single.html">
-                                    <img src="{{asset('asset2/images/s4.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single.html">Kissan Tomato Ketchup, 950g</a>
+                                    <a href="single.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$99.00</h6>
-                                    <p>Save $20.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -212,10 +212,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Kissan Tomato Ketchup, 950g" />
-                                            <input type="hidden" name="amount" value="99.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -229,16 +229,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single.html">
-                                    <img src="{{asset('asset2/images/s2.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single.html">Madhur Pure Sugar, 1g</a>
+                                    <a href="single.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$69.00</h6>
-                                    <p>Save $20.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -246,10 +246,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Madhur Pure Sugar, 1g" />
-                                            <input type="hidden" name="amount" value="69.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -263,16 +263,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="{{asset('asset2/images/s3.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single2.html">Surf Excel Liquid, 1.02L</a>
+                                    <a href="single2.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$187.00</h6>
-                                    <p>Save $30.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -280,10 +280,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Surf Excel Liquid, 1.02L" />
-                                            <input type="hidden" name="amount" value="187.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -297,16 +297,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single.html">
-                                    <img src="{{asset('asset2/images/s8.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single.html">Cadbury Choclairs, 655.5g</a>
+                                    <a href="single.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$160.00</h6>
-                                    <p>Save $60.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -314,10 +314,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Cadbury Choclairs, 655.5g" />
-                                            <input type="hidden" name="amount" value="160.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -331,16 +331,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="{{asset('asset2/images/s6.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single2.html">Fair & Lovely, 80 g</a>
+                                    <a href="single2.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$121.60</h6>
-                                    <p>Save $30.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -348,10 +348,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Fair & Lovely, 80 g" />
-                                            <input type="hidden" name="amount" value="121.60" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -365,16 +365,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single.html">
-                                    <img src="{{asset('asset2/images/s5.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single.html">Sprite, 2.25L (Pack of 2)</a>
+                                    <a href="single.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$180.00</h6>
-                                    <p>Save $30.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -382,10 +382,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Sprite, 2.25L (Pack of 2)" />
-                                            <input type="hidden" name="amount" value="180.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
@@ -399,16 +399,16 @@
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="single2.html">
-                                    <img src="{{asset('asset2/images/s9.jpg')}}" alt="">
+                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="single2.html">Lakme Eyeconic Kajal, 0.35 g</a>
+                                    <a href="single2.html">Product Name</a>
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>$153.00</h6>
-                                    <p>Save $40.00</p>
+                                    <h6>Ksh 0.00</h6>
+                                    <p>Save Ksh 0.00</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                     <form action="#" method="post">
@@ -416,10 +416,10 @@
                                             <input type="hidden" name="cmd" value="_cart" />
                                             <input type="hidden" name="add" value="1" />
                                             <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Lakme Eyeconic Kajal, 0.35 g" />
-                                            <input type="hidden" name="amount" value="153.00" />
-                                            <input type="hidden" name="discount_amount" value="1.00" />
-                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="item_name" value="Product Name" />
+                                            <input type="hidden" name="amount" value="0.00" />
+                                            <input type="hidden" name="discount_amount" value="0.00" />
+                                            <input type="hidden" name="currency_code" value="Ksh" />
                                             <input type="hidden" name="return" value=" " />
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
