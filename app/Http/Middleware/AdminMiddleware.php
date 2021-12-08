@@ -17,22 +17,22 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-//        if (Auth::user()->role_as == 'admin')
-//        {
-//            return $next($request);
-//        }
-//        else
-//        {
-//            return redirect('mtaa')->with('status','Access action not allowed');
-//        }
+        if (Auth::user()->role_as == 'admin')
+        {
+            return $next($request);
+        }
+        else
+        {
+            return redirect('mtaa')->with('status','Access action not allowed');
+        }
 
         //using codegrepper explanation for laravel 8 Admin middleware
-        $isAuthenticatedAdmin = (Auth::check() && Auth::user()->role_as == 'admin');
-
-        if (!$isAuthenticatedAdmin) {
-            return redirect('/mtaa')->with('status', 'Authentication Error');
-        }
-        return $next($request);
+//        $isAuthenticatedAdmin = (Auth::check() && Auth::user()->role_as == 'admin');
+//
+//        if (!$isAuthenticatedAdmin) {
+//            return redirect('/mtaa')->with('status', 'Authentication Error');
+//        }
+//        return $next($request);
 
     }
 
