@@ -1,77 +1,77 @@
 
 
 
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+{{--<x-guest-layout>--}}
+{{--    <x-jet-authentication-card>--}}
+{{--        <x-slot name="logo">--}}
+{{--            <x-jet-authentication-card-logo />--}}
+{{--        </x-slot>--}}
 
-        <x-jet-validation-errors class="mb-4" />
+{{--        <x-jet-validation-errors class="mb-4" />--}}
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+{{--        <form method="POST" action="{{ route('register') }}">--}}
+{{--            @csrf--}}
 
-    <div>
-        <x-jet-label for="name" value="{{ __('First Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />
-
-
-            <x-jet-label for="name" value="{{ __('Last Name') }}" />
-            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />
-    </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-    <div class="mt-4">
-        <x-jet-label for="terms">
-            <div class="flex items-center">
-                <x-jet-checkbox name="terms" id="terms"/>
-
-                <div class="ml-2">
-{!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-        </div>
-    </div>
-</x-jet-label>
-</div>
-@endif
-
-    <div class="flex items-center justify-end mt-4">
-        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-    </a>
-
-    <x-jet-button class="ml-4">
-{{ __('Register') }}
-    </x-jet-button>
-</div>
-</form>
-</x-jet-authentication-card>
-</x-guest-layout>
+{{--    <div>--}}
+{{--        <x-jet-label for="name" value="{{ __('First Name') }}" />--}}
+{{--                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />--}}
 
 
+{{--            <x-jet-label for="name" value="{{ __('Last Name') }}" />--}}
+{{--            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />--}}
+{{--    </div>--}}
+
+{{--            <div class="mt-4">--}}
+{{--                <x-jet-label for="email" value="{{ __('Email') }}" />--}}
+{{--                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />--}}
+{{--            </div>--}}
+
+{{--            <div class="mt-4">--}}
+{{--                <x-jet-label for="password" value="{{ __('Password') }}" />--}}
+{{--                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />--}}
+{{--            </div>--}}
+
+{{--            <div class="mt-4">--}}
+{{--                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />--}}
+{{--                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />--}}
+{{--            </div>--}}
+
+{{--            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())--}}
+{{--    <div class="mt-4">--}}
+{{--        <x-jet-label for="terms">--}}
+{{--            <div class="flex items-center">--}}
+{{--                <x-jet-checkbox name="terms" id="terms"/>--}}
+
+{{--                <div class="ml-2">--}}
+{{--{!! __('I agree to the :terms_of_service and :privacy_policy', [--}}
+{{--                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',--}}
+{{--                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',--}}
+{{--                                ]) !!}--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</x-jet-label>--}}
+{{--</div>--}}
+{{--@endif--}}
+
+{{--    <div class="flex items-center justify-end mt-4">--}}
+{{--        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">--}}
+{{--                    {{ __('Already registered?') }}--}}
+{{--    </a>--}}
+
+{{--    <x-jet-button class="ml-4">--}}
+{{--{{ __('Register') }}--}}
+{{--    </x-jet-button>--}}
+{{--</div>--}}
+{{--</form>--}}
+{{--</x-jet-authentication-card>--}}
+{{--</x-guest-layout>--}}
 
 
 
-<x-guest-layout>
-    <x-jet-authentication-card>
+
+
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -121,19 +121,26 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <h2 class="title1">SignUp Here</h2>
                 <div class="sign-up-row widget-shadow">
                     <h5>Personal Information :</h5>
-                    <form action="{{ route('register') }}" method="post">
+
+                    <x-guest-layout>
+                        <x-jet-authentication-card>
+
+                    <!--<form action="{{ route('login') }}" method="POST">
 
                         @csrf
 
                         <div class="sign-u">
+                           {{-- <x-jet-label for="name" value="{{ __('First Name') }}" />--}}
                             <input type="text" name="firstname" placeholder="First Name" required="">
                             <div class="clearfix"> </div>
                         </div>
                         <div class="sign-u">
+                            <x-jet-label for="name" value="{{ __('Last Name') }}" />
                             <input type="text" placeholder="Last Name" required="">
                             <div class="clearfix"> </div>
                         </div>
                         <div class="sign-u">
+                            <x-jet-label for="email" value="{{ __('Email') }}" />
                             <input type="email" placeholder="Email Address" required="">
                             <div class="clearfix"> </div>
                         </div>
@@ -141,29 +148,91 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                         <h6>Login Information :</h6>
                         <div class="sign-u">
+                            <x-jet-label for="password" value="{{ __('Password') }}" />
                             <input type="password" placeholder="Password" required="">
                             <div class="clearfix"> </div>
                         </div>
                         <div class="sign-u">
+                            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                             <input type="password" placeholder="Confirm Password" required="">
                         </div>
                         <div class="clearfix"> </div>
                         <div class="sub_home">
-                            <!--<input type="submit" value="Submit">-->
+                            <input type="submit" name="register"  value="Submit">
 
-                            <x-jet-button class="ml-4">
-                                {{ __('Register') }}
-                            </x-jet-button>
+                            __('Register')
+
+{{--                            <x-jet-button class="ml-4">--}}
+{{--                                {{ __('Register') }}--}}
+{{--                            </x-jet-button>--}}
 
                             <div class="clearfix"> </div>
                         </div>
                         <div class="registration">
                             Already Registered.
-                            <a class="" href="{{ __('Register') }}">
+                            <a class="" href="{{ route('login') }}">
                                 Login
                             </a>
                         </div>
-                    </form>
+                    </form>-->
+
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+
+                            <div>
+                                <x-jet-label for="name" value="{{ __('First Name') }}" />
+                                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />
+
+
+                                <x-jet-label for="name" value="{{ __('Last Name') }}" />
+                                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-jet-label for="email" value="{{ __('Email') }}" />
+                                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-jet-label for="password" value="{{ __('Password') }}" />
+                                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                            </div>
+
+                            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                                <div class="mt-4">
+                                    <x-jet-label for="terms">
+                                        <div class="flex items-center">
+                                            <x-jet-checkbox name="terms" id="terms"/>
+
+                                            <div class="ml-2">
+                                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                                                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
+                                                                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                                                                                ]) !!}
+                                            </div>
+                                        </div>
+                                    </x-jet-label>
+                                </div>
+                            @endif
+
+                            <div class="flex items-center justify-end mt-4">
+                                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                                    {{ __('Already registered?') }}
+                                </a>
+
+                                <x-jet-button class="ml-4">
+                                    {{ __('Register') }}
+                                </x-jet-button>
+                            </div>
+                        </form>
+
+    </x-jet-authentication-card>
+                    </x-guest-layout>
                 </div>
             </div>
         </div>
@@ -210,5 +279,5 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 </html>
 
-    </x-jet-authentication-card>
-</x-guest-layout>
+
+

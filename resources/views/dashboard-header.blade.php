@@ -14,45 +14,45 @@
             <div class="profile_details_left"><!--notifications of menu start -->
                 <ul class="nofitications-dropdown">
                     <li class="dropdown head-dpdn">
-                        <a href="{{url('/home')}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><!--<span class="badge">4</span>--></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="notification_header">
-                                    <h3>You have 3 new messages</h3>
+                                    <h3>New messages</h3>
                                 </div>
                             </li>
                             <li><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/1.jpg')}}" alt=""></div>
+                                    <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
                                     <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet</p>
-                                        <p><span>1 hour ago</span></p>
+                                        <p>No messages</p>
+                                        <p><span>time</span></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </a></li>
                             <li class="odd"><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/4.jpg')}}" alt=""></div>
+                                    <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
                                     <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet </p>
-                                        <p><span>1 hour ago</span></p>
+                                        <p>No messages </p>
+                                        <p><span>time</span></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </a></li>
-                            <li><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/3.jpg')}}" alt=""></div>
-                                    <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet </p>
-                                        <p><span>1 hour ago</span></p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/2.jpg')}}" alt=""></div>
-                                    <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet </p>
-                                        <p><span>1 hour ago</span></p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </a></li>
+                        <!--<li><a href="#">
+                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
+                                        <div class="notification_desc">
+                                            <p>Lorem ipsum dolor amet </p>
+                                            <p><span>1 hour ago</span></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="user_img"><img src="{{asset('asset/images/2.jpg')}}" alt=""></div>
+                                        <div class="notification_desc">
+                                            <p>Lorem ipsum dolor amet </p>
+                                            <p><span>1 hour ago</span></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </a></li>-->
                             <li>
                                 <div class="notification_bottom">
                                     <a href="#">See all messages</a>
@@ -61,66 +61,66 @@
                         </ul>
                     </li>
                     <li class="dropdown head-dpdn">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">4</span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><!--<span class="badge blue">4</span>--></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="notification_header">
-                                    <h3>You have 3 new notification</h3>
+                                    <h3>Notifications</h3>
                                 </div>
                             </li>
                             <li><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/4.jpg')}}" alt=""></div>
+                                    <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
                                     <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet</p>
-                                        <p><span>1 hour ago</span></p>
+                                        <p>Notification Example</p>
+                                        <p><span>time</span></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </a></li>
                             <li class="odd"><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/1.jpg')}}" alt=""></div>
+                                    <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
                                     <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet </p>
-                                        <p><span>1 hour ago</span></p>
+                                        <p>Notification Example </p>
+                                        <p><span>time</span></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </a></li>
-                            <li><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/3.jpg')}}" alt=""></div>
-                                    <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet </p>
-                                        <p><span>1 hour ago</span></p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user_img"><img src="{{asset('asset/images/2.jpg')}}" alt=""></div>
-                                    <div class="notification_desc">
-                                        <p>Lorem ipsum dolor amet </p>
-                                        <p><span>1 hour ago</span></p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </a></li>
-                            <li>
-                                <div class="notification_bottom">
-                                    <a href="#">See all notifications</a>
-                                </div>
+                        <!--<li><a href="#">
+                                        <div class="user_img"><img src="{{asset('asset/images/3.jpg')}}" alt=""></div>
+                                        <div class="notification_desc">
+                                            <p>Lorem ipsum dolor amet </p>
+                                            <p><span>1 hour ago</span></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="user_img"><img src="{{asset('asset/images/2.jpg')}}" alt=""></div>
+                                        <div class="notification_desc">
+                                            <p>Lorem ipsum dolor amet </p>
+                                            <p><span>1 hour ago</span></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </a></li>
+                                <li>-->
+                            <div class="notification_bottom">
+                                <a href="#">See all notifications</a>
+                            </div>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown head-dpdn">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">8</span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><!--<span class="badge blue1">8</span>--></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="notification_header">
-                                    <h3>You have 8 pending task</h3>
+                                    <h3>Pending Orders</h3>
                                 </div>
                             </li>
                             <li><a href="#">
                                     <div class="task-info">
-                                        <span class="task-desc">Database update</span><span class="percentage">40%</span>
+                                        <span class="task-desc">Orders in progress</span><span class="percentage">40%</span>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <div class="progress progress-striped active">
+                                    <!--<div class="progress progress-striped active">
                                         <div class="bar yellow" style="width:40%;"></div>
                                     </div>
                                 </a></li>
@@ -150,7 +150,7 @@
                                     <div class="progress progress-striped active">
                                         <div class="bar  blue" style="width: 80%;"></div>
                                     </div>
-                                </a></li>
+                                </a></li>-->
                             <li>
                                 <div class="notification_bottom">
                                     <a href="#">See all pending tasks</a>
@@ -165,7 +165,6 @@
             <div class="clearfix"> </div>
         </div>
         <div class="header-right">
-
 
             <!--search-box-->
             <div class="search-box">

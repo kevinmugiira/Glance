@@ -187,7 +187,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{route('add-product')}}"><i class="fa fa-angle-right"></i> New </a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> New </a></li>
                                     <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> All</a></li>
                                     <!--<li><a href=""><i class="fa fa-angle-right"></i> Edit Product</a></li>-->
                                 </ul>
@@ -208,7 +208,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <li>
                                 <a href="{{url('mtaa')}}">
                                     <i class="fa fa-th"></i> <span>Website</span>
-                                    <small class="label pull-right label-info">Customer</small>
+                                    <small class="label pull-right label-info">Customer end</small>
                                 </a>
                             </li>
                             <li class="treeview">
@@ -217,9 +217,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Purchase report</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Users report</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> General report</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Purchase reports</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> User reports</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i> Print reports</a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -235,7 +235,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <li class="treeview">
                                 <a href="#">
                                     <i class="fa fa-envelope"></i> <span>Mailbox </span>
-                                    <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1">08</small><span class="label label-primary1 pull-right">02</span></a>
+                                    <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1"></small><span class="label label-primary1 pull-right">New</span></a>
                                 <ul class="treeview-menu">
                                     <li><a href="{{url('inbox')}}"><i class="fa fa-angle-right"></i> Inbox </a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
@@ -256,7 +256,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <li class="header">LABELS</li>
                             <!--<li><a href="#"><i class="fa fa-angle-right text-red"></i> <span>Important</span></a></li>
                             <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Warning</span></a></li>-->
-                            <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>Information</span></a></li>
+                            <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>System Information</span></a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -380,6 +380,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                             <span class="task-desc">Orders in progress</span><span class="percentage">40%</span>
                                             <div class="clearfix"></div>
                                         </div>
+                                    </a>
+                                </li>
                                         <!--<div class="progress progress-striped active">
                                             <div class="bar yellow" style="width:40%;"></div>
                                         </div>
@@ -490,7 +492,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
                             <div class="stats">
                                 <h5><!--<strong>$00</strong>--></h5>
-                                <span>Online Sales</span>
+                                <span>Total Online Sales</span>
                             </div>
                         </div>
                     </div>
@@ -499,7 +501,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <i class="pull-left fa fa-money user2 icon-rounded"></i>
                             <div class="stats">
                                 <h5><!--<strong>$00</strong>--></h5>
-                                <span>Requested Deliveries</span>
+                                <span>Pending Deliveries</span>
                             </div>
                         </div>
                     </div>
@@ -517,7 +519,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                             <div class="stats">
                                 <h5><!--<strong>00</strong>--></h5>
-                                <span>Users</span>
+                                <span>View Users</span>
                             </div>
                         </div>
                     </div>
@@ -528,7 +530,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-7 content-top-2 card">
                         <div class="agileinfo-cdr">
                             <div class="card-header">
-                                <h3>Weekly Sales</h3>
+                                <h3>Total Weekly Sales for Sellers</h3>
                             </div>
 
                             <!--<div id="Linegraph" style="width: 98%; height: 350px">-->
@@ -553,7 +555,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="content-top-1">
                             <div class="col-md-6 top-content">
-                                <h5>Pending Orders</h5>
+                                <h5>Pending Payments</h5>
                                 <!--<label>To be seen</label>-->
                             </div>
                             <div class="col-md-6 top-content1">
@@ -566,8 +568,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="content-top-1">
                             <div class="col-md-6 top-content">
-                                <h5>SEO Tools</h5>
-                                <label>site clicks</label>
+                                <h5>Pending Orders</h5>
+                                <!--<label>site clicks</label>-->
                             </div>
                             <div class="col-md-6 top-content1">
                                 <div id="demo-pie-3"
@@ -616,7 +618,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <div class="charts">
                     <div class="col-md-4 charts-grids widget">
                         <div class="card-header">
-                            <h3>Bar chart</h3>
+                            <h3>View Bar chart</h3>
                         </div>
 
                         <!--<div id="container" style="width: 100%; height:270px;">
@@ -632,7 +634,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                     <div class="col-md-4 charts-grids widget states-mdl">
                         <div class="card-header">
-                            <h3>Column & Line Graph</h3>
+                            <h3>View Column & Line Graph</h3>
                         </div>
                         <!--<div id="chartdiv"></div>-->
                     </div>
@@ -747,14 +749,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </div>-->
                             <form action="#" method="post">
-                                <input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+                                <input type="text"
+                                       value="Enter your text"
+                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
                                 <input type="submit" value="Submit"/>
                             </form>
                         </div>
                     </div>
                     <div class="col-md-4 span_8">
                         <div class="activity_box activity_box1">
-                            <h3>chat</h3>
+                            <h3>Timeline chat</h3>
                             <!--<div class="scrollbar" id="style-3">
                                 <div class="activity-row activity-row1">
                                     <div class="col-xs-3 activity-img"><img src='{{asset('asset/images/1.jpg')}}' class="img-responsive" alt=""/><span>06:01 AM</span></div>
@@ -802,7 +806,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </div>-->
                             <form action="#" method="post">
-                                <input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+                                <input type="text"
+                                       value="Enter your text"
+                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
                                 <input type="submit" value="Send"/>
                             </form>
                         </div>
@@ -862,7 +868,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             </div>-->
                             <form action="#" method="post">
                                 <input type="text"
-                                       value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}"
+                                       value="Enter your text"
+                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}"
                                        required="">
 
                                 <input type="submit"

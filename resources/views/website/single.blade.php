@@ -28,7 +28,7 @@
     <div class="banner-bootom-w3-agileits">
         <div class="container">
             <!-- tittle heading -->
-            <h3 class="tittle-w3l">Product Page
+            <h3 class="tittle-w3l">Product
                 <span class="heading-style">
 					<i></i>
 					<i></i>
@@ -76,7 +76,7 @@
                 <p>
                     <span class="item_price">$Ksh 0.00</span>
                     <del>Ksh 0.00</del>
-                    <label>Free delivery</label>
+                    <label>Free delivery Available</label>
                 </p>
                 <div class="single-infoagile">
                     <ul>

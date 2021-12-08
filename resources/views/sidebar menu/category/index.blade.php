@@ -51,7 +51,7 @@
                                             <a href="{{url('/edit-cat/{id}' )}}" class="btn btn-primary btn-sm">Edit</a>
                                         </td>
                                         <td>
-                                            <form action="#" method="POST">
+                                            <form action="{{ url('delete-category/'. $cate->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

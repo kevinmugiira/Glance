@@ -18,10 +18,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
+//
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('index');
+//})->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//Route::middleware(['auth','isAdmin'])->group(function() {
+//   Route::get('/home', function () {
+//       return view('index');
+//   });
+//});
+
+Route::get('dashboard', function () {
     return view('index');
-})->name('dashboard');
+})->middleware('isAdmin');
 
 Route::group(['middleware' => ['auth']], function() {
     /**
