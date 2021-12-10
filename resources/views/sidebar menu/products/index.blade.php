@@ -47,7 +47,7 @@
                                                 <img src="{{ asset('uploads/products/'.$product->file_path) }}" width="70px" height="70px" alt="Image">
                                             </td>
                                             <td>
-                                                <a href="{{url('edit-prod/{id}' )}}" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="{{url('edit-prod/' . $product->id )}}" class="btn btn-primary btn-sm">Edit</a>
                                             </td>
                                             <td>
                                                 <form action="{{ url('delete-product/'. $product->id) }}" method="POST">

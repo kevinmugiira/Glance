@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -13,8 +15,16 @@ class MainController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $user = User::count();
+        return view('layouts.Admin', compact('user'));
     }
+
+    public function indexSeller()
+    {
+        #$user = User::find($id);
+        return view('layouts.Seller');
+    }
+
 
     /**
      * Show the form for creating a new resource.

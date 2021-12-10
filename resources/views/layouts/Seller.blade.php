@@ -1,6 +1,6 @@
 
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -162,7 +162,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         <ul class="sidebar-menu">
                             <li class="header">MAIN NAVIGATION</li>
                             <li class="treeview">
-                                <a href="{{url('home')}}">
+                                <a href="{{url('layouts.Seller')}}">
                                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                 </a>
                             </li>
@@ -222,16 +222,28 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Print reports</a></li>
                                 </ul>
                             </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-table"></i> <span>Role Permissions</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Add User</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit User</a></li>
-                                </ul>
-                            </li>
+{{--                            <li class="treeview">--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-table"></i> <span>Role Permissions</span>--}}
+{{--                                    <i class="fa fa-angle-left pull-right"></i>--}}
+{{--                                </a>--}}
+{{--                                <ul class="treeview-menu">--}}
+{{--                                    <li><a href="#"><i class="fa fa-angle-right"></i> Add User</a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit User</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+
+{{--                            <li class="treeview">--}}
+{{--                                <a href="{{ url('registered-user') }}">--}}
+{{--                                    <i class="fa fa-users"></i> <span>Registered Users</span>--}}
+{{--                                    <!--<i class="fa fa-angle-left pull-right"></i>-->--}}
+{{--                                </a>--}}
+{{--                                <!--<ul class="treeview-menu">--}}
+{{--                                    <li><a href="#"><i class="fa fa-angle-right"></i> View Users</a></li>--}}
+
+{{--                                </ul>-->--}}
+{{--                            </li>--}}
+
                             <li class="treeview">
                                 <a href="#">
                                     <i class="fa fa-envelope"></i> <span>Mailbox </span>
@@ -248,7 +260,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Profile</a></li>
+                                    <!--change the route to profile.seller-show-->
+                                    <li><a href="{{ route('profile.admin-show') }}"><i class="fa fa-angle-right"></i> Profile</a></li>
                                     <li><a href="{{route('logout')}}"><i class="fa fa-angle-right"></i> Logout</a></li>
 
                                 </ul>
@@ -297,7 +310,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                         <div class="clearfix"></div>
                                     </a></li>
-                                <!--<li><a href="#">
+                            <!--<li><a href="#">
                                         <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
                                         <div class="notification_desc">
                                             <p>Lorem ipsum dolor amet </p>
@@ -344,7 +357,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                         <div class="clearfix"></div>
                                     </a></li>
-                                <!--<li><a href="#">
+                            <!--<li><a href="#">
                                         <div class="user_img"><img src="{{asset('asset/images/3.jpg')}}" alt=""></div>
                                         <div class="notification_desc">
                                             <p>Lorem ipsum dolor amet </p>
@@ -361,9 +374,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         <div class="clearfix"></div>
                                     </a></li>
                                 <li>-->
-                                    <div class="notification_bottom">
-                                        <a href="#">See all notifications</a>
-                                    </div>
+                                <div class="notification_bottom">
+                                    <a href="#">See all notifications</a>
+                                </div>
                                 </li>
                             </ul>
                         </li>
@@ -382,37 +395,37 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                     </a>
                                 </li>
-                                        <!--<div class="progress progress-striped active">
-                                            <div class="bar yellow" style="width:40%;"></div>
-                                        </div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="task-info">
-                                            <span class="task-desc">Dashboard done</span><span class="percentage">Coming</span>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="progress progress-striped active">
-                                            <div class="bar green" style="width:90%;"></div>
-                                        </div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="task-info">
-                                            <span class="task-desc">Mobile App</span><span class="percentage">To be connected</span>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="progress progress-striped active">
-                                            <div class="bar red" style="width: 33%;"></div>
-                                        </div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="task-info">
-                                            <span class="task-desc">Issues fixed</span><span class="percentage">none</span>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="progress progress-striped active">
-                                            <div class="bar  blue" style="width: 80%;"></div>
-                                        </div>
-                                    </a></li>-->
+                                <!--<div class="progress progress-striped active">
+                                    <div class="bar yellow" style="width:40%;"></div>
+                                </div>
+                            </a></li>
+                        <li><a href="#">
+                                <div class="task-info">
+                                    <span class="task-desc">Dashboard done</span><span class="percentage">Coming</span>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="progress progress-striped active">
+                                    <div class="bar green" style="width:90%;"></div>
+                                </div>
+                            </a></li>
+                        <li><a href="#">
+                                <div class="task-info">
+                                    <span class="task-desc">Mobile App</span><span class="percentage">To be connected</span>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="progress progress-striped active">
+                                    <div class="bar red" style="width: 33%;"></div>
+                                </div>
+                            </a></li>
+                        <li><a href="#">
+                                <div class="task-info">
+                                    <span class="task-desc">Issues fixed</span><span class="percentage">none</span>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="progress progress-striped active">
+                                    <div class="bar  blue" style="width: 80%;"></div>
+                                </div>
+                            </a></li>-->
                                 <li>
                                     <div class="notification_bottom">
                                         <a href="#">See all pending tasks</a>
@@ -463,7 +476,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <ul class="dropdown-menu drp-mnu">
                                 <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
                                 <li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li>
-                                <li> <a href="{{ url('profile.admin-show') }}"><i class="fa fa-suitcase"></i> Profile</a> </li>
+                                <li> <a href="{{url('profile.admin-show')}}"><i class="fa fa-suitcase"></i> Profile</a> </li>
                                 <li> <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a> </li>
                             </ul>
                         </li>
@@ -514,15 +527,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 widget">
-                        <div class="r3_counter_box">
-                            <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
-                            <div class="stats">
-                                <h5><!--<strong>00</strong>--></h5>
-                                <span>View Users</span>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-3 widget">--}}
+{{--                        <div class="r3_counter_box">--}}
+{{--                            <i class="pull-left fa fa-users dollar2 icon-rounded"></i>--}}
+{{--                            <div class="stats">--}}
+{{--                                <span>All Users</span>--}}
+{{--                                <h5><strong> {{$user}}</strong></h5>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="clearfix"> </div>
                 </div>
 
@@ -530,168 +544,168 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-7 content-top-2 card">
                         <div class="agileinfo-cdr">
                             <div class="card-header">
-                                <h3>Total Weekly Sales for Sellers</h3>
+                                <h3>Total Weekly Sales for {{Auth()->user()->firstname}}</h3>
                             </div>
 
                             <!--<div id="Linegraph" style="width: 98%; height: 350px">-->
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 stat">
-                        <div class="content-top-1">
-                            <div class="col-md-6 top-content">
-                                <h5>Received payments </h5>
-                                <!--<label>00</label>-->
-                            </div>
-                            <div class="col-md-6 top-content1">
-                                <div
-                                    id="demo-pie-1"
-                                    class="pie-title-center"
-                                    data-percent="">
-                                    <span class="pie-value"></span> </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="content-top-1">
-                            <div class="col-md-6 top-content">
-                                <h5>Pending Payments</h5>
-                                <!--<label>To be seen</label>-->
-                            </div>
-                            <div class="col-md-6 top-content1">
-                                <div id="demo-pie-2"
-                                     class="pie-title-center"
-                                     data-percent="">
-                                    <span class="pie-value"></span> </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="content-top-1">
-                            <div class="col-md-6 top-content">
-                                <h5>Pending Orders</h5>
-                                <!--<label>site clicks</label>-->
-                            </div>
-                            <div class="col-md-6 top-content1">
-                                <div id="demo-pie-3"
-                                     class="pie-title-center"
-                                     data-percent="">
-                                    <span class="pie-value"></span> </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 stat">
-                        <div class="content-top">
-                            <div class="top-content facebook">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </div>
-                            <ul class="info">
-                                <li class="col-md-6"><b>Connect to Meta</b><p>Facebook</p></li>
-                                <li class="col-md-6"><!--<b>0</b><p>Likes</p>--></li>
-                                <div class="clearfix"></div>
-                            </ul>
-                        </div>
-                        <div class="content-top">
-                            <div class="top-content twitter">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </div>
-                            <ul class="info">
-                                <li class="col-md-6"><b>Connect to Twitter</b><p>twitter</p></li>
-                                <li class="col-md-6"><!--<b>No Tweets yet</b><p>Tweets</p>--></li>
-                                <div class="clearfix"></div>
-                            </ul>
-                        </div>
-                        <div class="content-top">
-                            <div class="top-content google-plus">
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                            <ul class="info">
-                                <li class="col-md-6"><b>Connect to Linkedin</b><p>linkedin</p></li>
-                                <li class="col-md-6"><!--<b>no shares yet</b><p>shares</p>--></li>
-                                <div class="clearfix"></div>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-
-                <div class="charts">
-                    <div class="col-md-4 charts-grids widget">
-                        <div class="card-header">
-                            <h3>View Bar chart</h3>
                         </div>
 
-                        <!--<div id="container" style="width: 100%; height:270px;">
-                            <canvas id="canvas"></canvas>
-                        </div>-->
-                        <button id="randomizeData">Analyze Data</button>
-                        <button id="addDataset">Add Dataset</button>
-                        <button id="removeDataset">Conduct Analytics</button>
-                        <!--<button id="addData">Add Data</button>
-                        <button id="removeData">Remove Data</button>-->
-
-                    </div>
-
-                    <div class="col-md-4 charts-grids widget states-mdl">
-                        <div class="card-header">
-                            <h3>View Column & Line Graph</h3>
-                        </div>
-                        <!--<div id="chartdiv"></div>-->
-                    </div>
-
-                    <div class="clearfix"> </div>
-                </div>
-
-
-                <!-- for amcharts js -->
-                <script src="{{asset('asset/js/amcharts.js')}}"></script>
-                <script src="{{asset('asset/js/serial.js')}}"></script>
-                <script src="{{asset('asset/js/export.min.js')}}"></script>
-                <link rel="stylesheet" href="{{asset('asset/css/export.css')}}" type="text/css" media="all" />
-                <script src="{{asset('asset/js/light.js')}}"></script>
-                <!-- for amcharts js -->
-
-                <script  src="{{asset('asset/js/index1.js')}}"></script>
-
-                <div class="charts">
-                    <div class="mid-content-top charts-grids">
-                        <div class="middle-content">
-                            <h4 class="title">Carousel Slider</h4>
-                            <!-- start content_slider -->
-                            <div id="owl-demo" class="owl-carousel text-center">
-                                <div class="item">
-                                    <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
-                                </div>
-                                <div class="item">
-                                    <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
-                                </div>
-                                <div class="item">
-                                    <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
-                                </div>
-                                <div class="item">
-                                    <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
-                                </div>
-                                <div class="item">
-                                    <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
-                                </div>
-                                <div class="item">
-                                    <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
-                                </div>
-                                <div class="item">
-                                    <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--//sreen-gallery-cursual---->
                     </div>
                 </div>
+                <div class="col-md-3 stat">
+                    <div class="content-top-1">
+                        <div class="col-md-6 top-content">
+                            <h5>Received payments </h5>
+                            <!--<label>00</label>-->
+                        </div>
+                        <div class="col-md-6 top-content1">
+                            <div
+                                id="demo-pie-1"
+                                class="pie-title-center"
+                                data-percent="">
+                                <span class="pie-value"></span> </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="content-top-1">
+                        <div class="col-md-6 top-content">
+                            <h5>Pending Payments</h5>
+                            <!--<label>To be seen</label>-->
+                        </div>
+                        <div class="col-md-6 top-content1">
+                            <div id="demo-pie-2"
+                                 class="pie-title-center"
+                                 data-percent="">
+                                <span class="pie-value"></span> </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="content-top-1">
+                        <div class="col-md-6 top-content">
+                            <h5>Pending Orders</h5>
+                            <!--<label>site clicks</label>-->
+                        </div>
+                        <div class="col-md-6 top-content1">
+                            <div id="demo-pie-3"
+                                 class="pie-title-center"
+                                 data-percent="">
+                                <span class="pie-value"></span> </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-2 stat">
+                    <div class="content-top">
+                        <div class="top-content facebook">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
+                        <ul class="info">
+                            <li class="col-md-6"><b>Connect to Meta</b><p>Facebook</p></li>
+                            <li class="col-md-6"><!--<b>0</b><p>Likes</p>--></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+                    <div class="content-top">
+                        <div class="top-content twitter">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                        <ul class="info">
+                            <li class="col-md-6"><b>Connect to Twitter</b><p>twitter</p></li>
+                            <li class="col-md-6"><!--<b>No Tweets yet</b><p>Tweets</p>--></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+                    <div class="content-top">
+                        <div class="top-content google-plus">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                        <ul class="info">
+                            <li class="col-md-6"><b>Connect to Linkedin</b><p>linkedin</p></li>
+                            <li class="col-md-6"><!--<b>no shares yet</b><p>shares</p>--></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
 
-                <div class="col_1">
-                    <div class="col-md-4 span_8">
-                        <div class="activity_box">
-                            <h2>Inbox</h2>
-                            <!--<div class="scrollbar" id="style-1">
+            <div class="charts">
+                <div class="col-md-4 charts-grids widget">
+                    <div class="card-header">
+                        <h3>View Bar chart</h3>
+                    </div>
+
+                    <!--<div id="container" style="width: 100%; height:270px;">
+                        <canvas id="canvas"></canvas>
+                    </div>-->
+                    <button id="randomizeData">Analyze Data</button>
+                    <button id="addDataset">Add Dataset</button>
+                    <button id="removeDataset">Conduct Analytics</button>
+                    <!--<button id="addData">Add Data</button>
+                    <button id="removeData">Remove Data</button>-->
+
+                </div>
+
+                <div class="col-md-4 charts-grids widget states-mdl">
+                    <div class="card-header">
+                        <h3>View Column & Line Graph</h3>
+                    </div>
+                    <!--<div id="chartdiv"></div>-->
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+
+
+            <!-- for amcharts js -->
+            <script src="{{asset('asset/js/amcharts.js')}}"></script>
+            <script src="{{asset('asset/js/serial.js')}}"></script>
+            <script src="{{asset('asset/js/export.min.js')}}"></script>
+            <link rel="stylesheet" href="{{asset('asset/css/export.css')}}" type="text/css" media="all" />
+            <script src="{{asset('asset/js/light.js')}}"></script>
+            <!-- for amcharts js -->
+
+            <script  src="{{asset('asset/js/index1.js')}}"></script>
+
+            <div class="charts">
+                <div class="mid-content-top charts-grids">
+                    <div class="middle-content">
+                        <h4 class="title">Carousel Slider</h4>
+                        <!-- start content_slider -->
+                        <div id="owl-demo" class="owl-carousel text-center">
+                            <div class="item">
+                                <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl img-responsive" data-src="{{asset('asset/images/placeholder1.png')}}" alt="name">
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--//sreen-gallery-cursual---->
+                </div>
+            </div>
+
+            <div class="col_1">
+                <div class="col-md-4 span_8">
+                    <div class="activity_box">
+                        <h2>Inbox</h2>
+                    <!--<div class="scrollbar" id="style-1">
                                 <div class="activity-row">
                                     <div class="col-xs-3 activity-img"><img src='{{asset('asset/images/1.jpg')}}' class="img-responsive" alt=""/></div>
                                     <div class="col-xs-7 activity-desc">
@@ -748,18 +762,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <div class="clearfix"> </div>
                                 </div>
                             </div>-->
-                            <form action="#" method="post">
-                                <input type="text"
-                                       value="Enter your text"
-                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
-                                <input type="submit" value="Submit"/>
-                            </form>
-                        </div>
+                        <form action="#" method="post">
+                            <input type="text"
+                                   value="Enter your text"
+                                   onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+                            <input type="submit" value="Submit"/>
+                        </form>
                     </div>
-                    <div class="col-md-4 span_8">
-                        <div class="activity_box activity_box1">
-                            <h3>Timeline chat</h3>
-                            <!--<div class="scrollbar" id="style-3">
+                </div>
+                <div class="col-md-4 span_8">
+                    <div class="activity_box activity_box1">
+                        <h3>Timeline chat</h3>
+                    <!--<div class="scrollbar" id="style-3">
                                 <div class="activity-row activity-row1">
                                     <div class="col-xs-3 activity-img"><img src='{{asset('asset/images/1.jpg')}}' class="img-responsive" alt=""/><span>06:01 AM</span></div>
                                     <div class="col-xs-5 activity-img1">
@@ -805,85 +819,85 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <div class="clearfix"> </div>
                                 </div>
                             </div>-->
-                            <form action="#" method="post">
-                                <input type="text"
-                                       value="Enter your text"
-                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
-                                <input type="submit" value="Send"/>
-                            </form>
-                        </div>
+                        <form action="#" method="post">
+                            <input type="text"
+                                   value="Enter your text"
+                                   onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+                            <input type="submit" value="Send"/>
+                        </form>
                     </div>
-                    <div class="col-md-4 span_8">
-                        <div class="activity_box activity_box2">
-                            <h3>Chat with Admin</h3>
-                            <!--<div class="scrollbar" id="style-2">
-                                <div class="activity-row activity-row1">
-                                    <div class="single-bottom">
-                                        <ul>
-                                            <li>
-                                                <input type="checkbox"  id="brand" value="">
-                                                <label for="brand"><span></span> Integer sollicitudin lacinia condimentum.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand1" value="">
-                                                <label for="brand1"><span></span> ligula sit amet hendrerit init lorem.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand2" value="">
-                                                <label for="brand2"><span></span>  Donec aliquam dolor eu augue condimentum.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand9" value="">
-                                                <label for="brand9"><span></span>  at tristique Pain that produces no resultant.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand8" value="">
-                                                <label for="brand8"><span></span> Nulla finibus rhoncus turpis quis tristique.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand7" value="">
-                                                <label for="brand7"><span></span> Cupidatat non proident Praising pain.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand3" value="">
-                                                <label for="brand3"><span></span>  libero vel elementum euismod, mauris tellus</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand4" value="">
-                                                <label for="brand4"><span></span> Donec aliquam dolor eu augue condimentum.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand5" value="">
-                                                <label for="brand5"><span></span> Orci varius natoque penatibus et magnis dis.</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox"  id="brand6" value="">
-                                                <label for="brand6"><span></span> parturient Dolorem ipsum quia.</label>
-                                            </li>
+                </div>
+                <div class="col-md-4 span_8">
+                    <div class="activity_box activity_box2">
+                        <h3>Chat with Admin</h3>
+                        <!--<div class="scrollbar" id="style-2">
+                            <div class="activity-row activity-row1">
+                                <div class="single-bottom">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox"  id="brand" value="">
+                                            <label for="brand"><span></span> Integer sollicitudin lacinia condimentum.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand1" value="">
+                                            <label for="brand1"><span></span> ligula sit amet hendrerit init lorem.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand2" value="">
+                                            <label for="brand2"><span></span>  Donec aliquam dolor eu augue condimentum.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand9" value="">
+                                            <label for="brand9"><span></span>  at tristique Pain that produces no resultant.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand8" value="">
+                                            <label for="brand8"><span></span> Nulla finibus rhoncus turpis quis tristique.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand7" value="">
+                                            <label for="brand7"><span></span> Cupidatat non proident Praising pain.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand3" value="">
+                                            <label for="brand3"><span></span>  libero vel elementum euismod, mauris tellus</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand4" value="">
+                                            <label for="brand4"><span></span> Donec aliquam dolor eu augue condimentum.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand5" value="">
+                                            <label for="brand5"><span></span> Orci varius natoque penatibus et magnis dis.</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox"  id="brand6" value="">
+                                            <label for="brand6"><span></span> parturient Dolorem ipsum quia.</label>
+                                        </li>
 
 
-                                        </ul>
-                                    </div>
+                                    </ul>
                                 </div>
-                            </div>-->
-                            <form action="#" method="post">
-                                <input type="text"
-                                       value="Enter your text"
-                                       onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}"
-                                       required="">
+                            </div>
+                        </div>-->
+                        <form action="#" method="post">
+                            <input type="text"
+                                   value="Enter your text"
+                                   onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}"
+                                   required="">
 
-                                <input type="submit"
-                                       value="Submit"/>
-                            </form>
-                        </div>
-                        <div class="clearfix"> </div>
+                            <input type="submit"
+                                   value="Submit"/>
+                        </form>
                     </div>
                     <div class="clearfix"> </div>
-
                 </div>
+                <div class="clearfix"> </div>
 
             </div>
+
         </div>
+    </div>
 
     </div>
 

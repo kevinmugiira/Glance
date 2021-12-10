@@ -22,11 +22,27 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
-            }
+//            if (Auth::guard($guard)->check()) {
+//
+//                $role = Auth::user()->role_as;
+//                switch ($role) {
+//                    case 'admin':
+//                        return 'layouts.Admin';
+//                        break;
+//                    case 'seller':
+//                        return 'layouts.Seller';
+//                        break;
+//
+//                    default:
+//                        return '/mtaa';
+//                        break;
+//                }
+
+                return redirect(RouteServiceProvider::USR_HOME);
+
         }
 
         return $next($request);
+
     }
 }

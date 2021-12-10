@@ -127,8 +127,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <!--<body class="font-sans antialiased">-->
 
 
-        <!--<div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')-->
+        <!--<div class="min-h-screen bg-gray-100">-->
+            @livewire('navigation-menu')
 
              <!--Page Heading -->
 
@@ -136,7 +136,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <!-- Page Content -->
             <main>
 
+                @yield('profile')
+
                 @yield('dash')
+
+
+
                 @yield('content')
             </main>
 
@@ -150,6 +155,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
         <!-- new added graphs chart js-->
+
+
+    <!--yielding the profile page-->
+   {{-- {{ $slot }} --}}
 
         <script src="{{asset('asset/js/Chart.bundle.js')}}"></script>
         <script src="{{asset('asset/js/utils.js')}}"></script>

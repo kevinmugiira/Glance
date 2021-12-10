@@ -18,20 +18,61 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
-//
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//    return view('index');
-//})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('index');
+})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified', 'isUser'])->group(function () {
+    Route::get('/mtaa', function () {
+        return view('website.index');
+    });
+});
+
+    //Route::get('mtaa', [HomeController::class,'index']);
+
+Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->group(function () {
+    Route::get('/home', function () {
+        return view('admin.index');
+    });
+
+    Route::get('layouts.Admin', [\App\Http\Controllers\MainController::class,'index']);
+    Route::get('registered-user',[\App\Http\Controllers\Admin\RegisteredController::class,'index']);
+    Route::get('role-edit/{id}', [\App\Http\Controllers\Admin\RegisteredController::class,'edit']);
+    Route::put('role-update/{id}', [\App\Http\Controllers\Admin\RegisteredController::class,'updaterole']);
+});
+
+//Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->get('/home', function () {
+//    return view('admin.index');
+//})->name('admin.index');
 
 //Route::middleware(['auth','isAdmin'])->group(function() {
 //   Route::get('/home', function () {
 //       return view('index');
 //   });
 //});
+//
+//Route::get('home', function () {
+//    return view('index');
+//})->middleware('isAdmin');
 
-Route::get('dashboard', function () {
-    return view('index');
-})->middleware('isAdmin');
+//Route::get('/seller-dashboard', function () {
+//    return view('index');
+//})->middleware('isSeller');
+
+Route::middleware(['auth:sanctum', 'verified', 'isSeller'])->group(function () {
+    Route::get('/seller/dashboard', function () {
+        return view('layouts.Seller');
+    });
+    Route::get('layouts.Seller', [\App\Http\Controllers\MainController::class,'indexSeller']);
+
+});
+//Route::middleware(['auth', 'isSeller'])->group(function () {
+//    Route::get('isSeller', function () {
+//        return 'home';
+//    });
+//});
+
 
 Route::group(['middleware' => ['auth']], function() {
     /**
@@ -43,9 +84,14 @@ Route::group(['middleware' => ['auth']], function() {
 //welcome page route
 Route::get('welcome', [\App\Http\Controllers\MainController::class,'show']);
 
-Route::resource('home', \App\Http\Controllers\MainController::class);
+//Route::resource('layouts.Admin', \App\Http\Controllers\MainController::class);
 Route::resource('inbox', \App\Http\Controllers\CheckController::class);
 Route::resource('master', \App\Http\Controllers\MasterController::class);
+//Route::get('layouts.Admin', [\App\Http\Controllers\MainController::class,'index']);
+
+
+//Seller routes
+//Route::get('layouts.Seller', [\App\Http\Controllers\MainController::class,'indexSeller']);
 
 
 //products
@@ -71,7 +117,7 @@ Route::delete('delete-category/{id}', [\App\Http\Controllers\CategoryController:
 
 
 //website
-Route::get('mtaa', [HomeController::class,'index']);
+//Route::get('mtaa', [HomeController::class,'index']);
 Route::get('product/page', [HomeController::class,'show']);
 Route::resource('about', \App\Http\Controllers\AboutController::class);
 Route::get('contact', [ContactController::class,'index']);
@@ -99,3 +145,15 @@ Route::get('table', [\App\Http\Controllers\CheckController::class,'create']);
 
 //testing login
 Route::get('logiin', [\App\Http\Controllers\CheckController::class,'login']);
+
+Route::get('/seller-dashboard', function(){
+    return view('seller-dashboard');
+});
+
+Route::get('profile.admin-show', function () {
+    return view('profile.admin-show');
+});
+
+//Route::get('layouts.Admin', function () {
+//    return view('layouts.Admin');
+//});
