@@ -1,13 +1,18 @@
+
+
+
 @extends('website.master')
 
 
 
 @section('stuff')
 
-    <!-- banner-2 -->
-    <div class="page-head_agile_info_w3l">
 
-    </div>
+
+    <!-- banner-2 -->
+    <!--<div class="page-head_agile_info_w3l">-->
+
+
     <!-- //banner-2 -->
     <!-- page -->
     <div class="services-breadcrumb">
@@ -26,6 +31,7 @@
     <!-- //page -->
     <!-- checkout page -->
     <div class="privacy">
+
         <div class="container">
             <!-- tittle heading -->
             <h3 class="tittle-w3l">Checkout
@@ -36,156 +42,174 @@
 				</span>
             </h3>
             <!-- //tittle heading -->
+
+
+
+            <form action="{{ url('place-order') }}" method="POST">
             <div class="checkout-right">
+
+
+                    @csrf
+
                 <h4>Your shopping cart contains:
-                    <span>3 Products</span>
+                    <span> Products</span>
                 </h4>
                 <div class="table-responsive">
-                    <table class="timetable_sub">
+                    @if(isset($cart_data))
+                        @if(Cookie::get('shopping_cart'))
+                            @php $total="0" @endphp
+                            <table class="timetable_sub">
                         <thead>
                         <tr>
-                            <th>SL No.</th>
-                            <th>Product</th>
-                            <th>Quality</th>
-                            <th>Product Name</th>
-
+                            <th>#</th>
+                            <th>Image</th>
                             <th>Price</th>
-                            <th>Remove</th>
+                            <th>Quantity</th>
+
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($cart_data as $data)
                         <tr class="rem1">
                             <td class="invert">1</td>
                             <td class="invert-image">
-                                <a href="single2.html">
-                                    <img src="{{asset('asset2/images/a7.jpg')}}" alt=" " class="img-responsive">
+                                <a href="#">
+                                    <img src="{{asset('uploads/products/'.$data['item_image'])}}" alt=" " width="70px" height="50px" class="img-responsive">
                                 </a>
                             </td>
                             <td class="invert">
-                                <div class="quantity">
-                                    <div class="quantity-select">
-                                        <div class="entry value-minus">&nbsp;</div>
-                                        <div class="entry value">
-                                            <span>1</span>
-                                        </div>
-                                        <div class="entry value-plus active">&nbsp;</div>
-                                    </div>
-                                </div>
+                                {{ number_format($data['item_price'], 0) }}
                             </td>
-                            <td class="invert">Spotzero Spin Mop</td>
-                            <td class="invert">$888.00</td>
-                            <td class="invert">
-                                <div class="rem">
-                                    <div class="close1"> </div>
-                                </div>
-                            </td>
+                            <td class="invert">{{ $data['item_quantity'] }}</td>
+                            @php $total = $total + ($data["item_quantity"] * $data["item_price"]) @endphp
                         </tr>
-                        <tr class="rem2">
-                            <td class="invert">2</td>
-                            <td class="invert-image">
-                                <a href="single2.html">
-                                    <img src="{{asset('asset2/images/s6.jpg')}}" alt=" " class="img-responsive">
-                                </a>
-                            </td>
-                            <td class="invert">
-                                <div class="quantity">
-                                    <div class="quantity-select">
-                                        <div class="entry value-minus">&nbsp;</div>
-                                        <div class="entry value">
-                                            <span>1</span>
-                                        </div>
-                                        <div class="entry value-plus active">&nbsp;</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="invert">Fair & Lovely, 80 g</td>
-                            <td class="invert">$121.60</td>
-                            <td class="invert">
-                                <div class="rem">
-                                    <div class="close2"> </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="rem3">
-                            <td class="invert">3</td>
-                            <td class="invert-image">
-                                <a href="single.html">
-                                    <img src="{{asset('asset2/images/s5.jpg')}}" alt=" " class="img-responsive">
-                                </a>
-                            </td>
-                            <td class="invert">
-                                <div class="quantity">
-                                    <div class="quantity-select">
-                                        <div class="entry value-minus">&nbsp;</div>
-                                        <div class="entry value">
-                                            <span>1</span>
-                                        </div>
-                                        <div class="entry value-plus active">&nbsp;</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="invert">Sprite, 2.25L (Pack of 2)</td>
-                            <td class="invert">$180.00</td>
-                            <td class="invert">
-                                <div class="rem">
-                                    <div class="close3"> </div>
-                                </div>
-                            </td>
-                        </tr>
+                        @endforeach
+
                         </tbody>
                     </table>
+                            <hr>
+                            <div class="text-right">
+                                <h3>Grand Total: Ksh {{ number_format($total, 0) }}</h3>
+                            </div>
+                        @endif
+                    @else
+                        <div class="row">
+                            <div class="col-md-12 mycard py-5 text-center">
+                                <div class="mycards">
+                                    <h4>Your cart is currently empty.</h4>
+                                    <a href="{{ url('prodcategory/veg') }}" class="btn btn-upper btn-primary outer-left-xs mt-5">Continue Shopping</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
+
             </div>
             <div class="checkout-left">
                 <div class="address_form_agile">
-                    <h4>Add a new Details</h4>
-                    <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+                    <h4>Add Delivery Details</h4>
+
+
+
                         <div class="creditly-wrapper wthree, w3_agileits_wrapper">
                             <div class="information-wrapper">
                                 <div class="first-row">
+                                    <div class="col-md-6">
                                     <div class="controls">
-                                        <input class="billing-address-name" type="text" name="name" placeholder="Full Name" required="">
+                                        <input class="billing-address-name"
+                                               type="text"
+                                               name="firstname"
+                                               placeholder="First Name"
+                                               value="{{Auth::user()->firstname}}"
+                                               required="">
+                                    </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                    <div class="controls">
+                                        <input class="billing-address-name"
+                                               type="text"
+                                               name="lastname"
+                                               placeholder="Last Name"
+                                               value="{{Auth::user()->lastname}}"
+                                               required="">
+                                    </div>
                                     </div>
                                     <div class="w3_agileits_card_number_grids">
                                         <div class="w3_agileits_card_number_grid_left">
-                                            <div class="controls">
-                                                <input type="text" placeholder="Mobile Number" name="number" required="">
+                                            <div class="controls col-md-6">
+                                                <input type="text"
+                                                       placeholder="Mobile Number"
+                                                       name="mobile"
+                                                       value="{{Auth::user()->phone}}"
+                                                       required="">
                                             </div>
                                         </div>
+                                        <div class="controls col-md-6">
+                                            <input type="text"
+                                                   placeholder="email"
+                                                   name="email"
+                                                   value="{{Auth::user()->email}}"
+                                                   required="">
+                                        </div>
+                                    </div>
                                         <div class="w3_agileits_card_number_grid_right">
-                                            <div class="controls">
-                                                <input type="text" placeholder="Landmark" name="landmark" required="">
+                                            <div class="controls col-md-4">
+                                                <input type="text"
+                                                       placeholder="county"
+                                                       name="county"
+                                                       value="{{Auth::user()->county}}"
+                                                       required="">
                                             </div>
                                         </div>
                                         <div class="clear"> </div>
-                                    </div>
-                                    <div class="controls">
-                                        <input type="text" placeholder="Town/City" name="city" required="">
-                                    </div>
-                                    <div class="controls">
-                                        <select class="option-w3ls">
-                                            <option>Select Address type</option>
-                                            <option>Office</option>
-                                            <option>Home</option>
-                                            <option>Commercial</option>
 
-                                        </select>
+                                    <div class="controls col-md-4">
+                                        <input type="text"
+                                               placeholder="Town/City"
+                                               name="city"
+                                               value="{{Auth::user()->city}}"
+                                               required="">
                                     </div>
+
+                                    <div class="controls col-md-4">
+                                        <input type="text"
+                                               placeholder="Address"
+                                               name="address"
+                                               value="{{Auth::user()->address}}"
+                                               required="">
+                                    </div>
+
+
+                                    <div class="checkout-right-basket">
+                                        <button type="submit" name="place_order" class="btn btn-primary btn-block fa fa-hand-o-right" aria-hidden="true">Place your order</button>
                                 </div>
-                                <button class="submit check_out">Delivery to this Address</button>
+                                <button type="button" style="padding-top: 5px; margin-top: 3px" class="razor_pay_btn btn btn-info btn-block ">Place order with RazorPay</button>
                             </div>
                         </div>
-                    </form>
-                    <div class="checkout-right-basket">
-                        <a href="payment.html">Make a Payment
-                            <span class="fa fa-hand-o-right" aria-hidden="true"></span>
-                        </a>
-                    </div>
+
+
+
+        </div>
                 </div>
+            </div>
+            </form>
                 <div class="clearfix"> </div>
             </div>
         </div>
-    </div>
+
     <!-- //checkout page -->
 
+{{--    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>--}}
+
+
+
     @stop
+
+
+@section('script')
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="{{asset('asset2/js/checkout.js')}}"></script>
+
+@endsection

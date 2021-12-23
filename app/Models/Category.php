@@ -10,7 +10,19 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
+        'group_id',
         'name',
-        'type',
+        'url',
+        'description',
+        'image',
+        'icon',
+        'status',
+
     ];
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class,'group_id','id');
+    }
+
 }

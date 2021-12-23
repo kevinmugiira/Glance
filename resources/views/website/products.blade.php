@@ -265,6 +265,8 @@
                 <div class="wrapper">
                     <!-- first section -->
                     <div class="product-sec1">
+                        @foreach($category as $cate_item)
+
                         <div class="col-xs-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
@@ -304,6 +306,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                         <div class="col-xs-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">

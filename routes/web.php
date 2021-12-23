@@ -25,10 +25,22 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified', 'isUser'])->group(function () {
     Route::get('/mtaa', function () {
-        return view('website.index');
+        return view('website.home');
     });
+
+    Route::get('checkout', [\App\Http\Controllers\CheckoutController::class,'index']);
+    Route::post('place-order',[\App\Http\Controllers\CheckoutController::class,'storeorder']);
+
+    //razorpay
+    Route::post('confirm-razorpay-payment', [\App\Http\Controllers\CheckoutController::class,'checkamount']);
 });
 
+Route::get('/profile', \App\Http\Livewire\User\UserProfileComponent::class)->name('profile');
+//Route::get('/profile/user/edit', \App\Http\Livewire\User\UserEditProfileComponent:: class)->name('user.editProfile');
+
+//profile routes
+Route::get('profile/edit', [\App\Http\Controllers\CheckController::class,'edit']);
+Route::put('/updateProfile/{id}', [\App\Http\Controllers\CheckController::class,'profileupdate']);
     //Route::get('mtaa', [HomeController::class,'index']);
 
 Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->group(function () {
@@ -40,6 +52,49 @@ Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->group(function () {
     Route::get('registered-user',[\App\Http\Controllers\Admin\RegisteredController::class,'index']);
     Route::get('role-edit/{id}', [\App\Http\Controllers\Admin\RegisteredController::class,'edit']);
     Route::put('role-update/{id}', [\App\Http\Controllers\Admin\RegisteredController::class,'updaterole']);
+
+    //Groups
+    Route::get('group', [\App\Http\Controllers\Admin\GroupController::class,'index']);
+    Route::get('group-add', [\App\Http\Controllers\Admin\GroupController::class,'create']);
+    Route::post('group-store', [\App\Http\Controllers\Admin\GroupController::class,'store']);
+    Route::get('group-edit/{id}', [\App\Http\Controllers\Admin\GroupController::class,'edit']);
+    Route::put('group-update/{id}', [\App\Http\Controllers\Admin\GroupController::class,'update']);
+    Route::get('group-delete/{id}', [\App\Http\Controllers\Admin\GroupController::class,'delete']);
+    Route::get('group-deleted-records',[\App\Http\Controllers\Admin\GroupController::class,'deletedrecords']);
+    Route::get('group-re-store/{id}', [\App\Http\Controllers\Admin\GroupController::class,'deletedrestore']);
+
+    //Category
+    Route::get('/category', [\App\Http\Controllers\Admin\CategoryController::class,'index'] );
+    Route::get('category-add', [\App\Http\Controllers\Admin\CategoryController::class,'create']);
+    Route::post('category-store', [\App\Http\Controllers\Admin\CategoryController::class,'store']);
+    Route::get('category-edit/{id}', [\App\Http\Controllers\Admin\CategoryController::class,'edit']);
+    Route::put('category-update/{id}', [\App\Http\Controllers\Admin\CategoryController::class,'update']);
+    Route::get('category-delete/{id}', [\App\Http\Controllers\Admin\CategoryController::class,'delete']);
+    Route::get('category-deleted-records', [\App\Http\Controllers\Admin\CategoryController::class,'deletedrecords']);
+    Route::get('category-re-store/{id}', [\App\Http\Controllers\Admin\CategoryController::class,'deletedrestore']);
+
+    //sub-category
+    Route::get('sub-category', [\App\Http\Controllers\Admin\SubcategoryController::class,'index']);
+    Route::post('sub-category-store', [\App\Http\Controllers\Admin\SubcategoryController::class,'store']);
+    Route::get('sub-category/edit/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'edit']);
+    Route::put('sub-category-update/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'update']);
+    Route::get('sub-category/delete/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'delete']);
+    Route::get('sub-category-deleted-records', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrecords']);
+    Route::get('sub-category-re-store/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrestore']);
+
+    //product routes
+    Route::get('product', [\App\Http\Controllers\ProductController::class,'index']);
+    Route::get('product-add', [\App\Http\Controllers\ProductController::class,'create']);
+    Route::post('product-store', [\App\Http\Controllers\ProductController::class,'store']);
+    Route::get('product-edit/{id}', [\App\Http\Controllers\ProductController::class,'edit']);
+    Route::put('product-update/{id}', [\App\Http\Controllers\ProductController::class,'update']);
+    Route::get('product-delete/{id}', [\App\Http\Controllers\ProductController::class,'delete']);
+    Route::get('product-deleted-records', [\App\Http\Controllers\ProductController::class,'deletedrecords']);
+    Route::get('product-re-store/{order_id}', [\App\Http\Controllers\ProductController::class,'deletedrestore']);
+
+    //Order management
+    Route::get('orders', [\App\Http\Controllers\Admin\OrderController::class,'index']);
+    Route::get('order-view/{id}', [\App\Http\Controllers\Admin\OrderController::class,'vieworder']);
 });
 
 //Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->get('/home', function () {
@@ -64,7 +119,30 @@ Route::middleware(['auth:sanctum', 'verified', 'isSeller'])->group(function () {
     Route::get('/seller/dashboard', function () {
         return view('layouts.Seller');
     });
+    Route::get('/seller-dashboard', function(){
+        return view('seller-dashboard');
+    });
     Route::get('layouts.Seller', [\App\Http\Controllers\MainController::class,'indexSeller']);
+
+    //seller sub-category routes
+    Route::get('sub-category', [\App\Http\Controllers\Admin\SubcategoryController::class,'index']);
+    Route::post('sub-category-store', [\App\Http\Controllers\Admin\SubcategoryController::class,'store']);
+    Route::get('sub-category/edit/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'edit']);
+    Route::put('sub-category-update/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'update']);
+    Route::get('sub-category/delete/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'delete']);
+    Route::get('sub-category-deleted-records', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrecords']);
+    Route::get('sub-category-re-store/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrestore']);
+
+    //product routes
+    Route::get('product', [\App\Http\Controllers\ProductController::class,'index']);
+    Route::get('product-add', [\App\Http\Controllers\ProductController::class,'create']);
+    Route::post('product-store', [\App\Http\Controllers\ProductController::class,'store']);
+    Route::get('product-edit/{id}', [\App\Http\Controllers\ProductController::class,'edit']);
+    Route::put('product-update/{id}', [\App\Http\Controllers\ProductController::class,'update']);
+    Route::get('product-delete/{id}', [\App\Http\Controllers\ProductController::class,'delete']);
+    Route::get('product-deleted-records', [\App\Http\Controllers\ProductController::class,'deletedrecords']);
+    Route::get('product-re-store/{id}', [\App\Http\Controllers\ProductController::class,'deletedrestore']);
+
 
 });
 //Route::middleware(['auth', 'isSeller'])->group(function () {
@@ -117,17 +195,18 @@ Route::delete('delete-category/{id}', [\App\Http\Controllers\CategoryController:
 
 
 //website
-//Route::get('mtaa', [HomeController::class,'index']);
-Route::get('product/page', [HomeController::class,'show']);
+Route::get('mtaa', [HomeController::class,'index']);
+Route::get('product/page/{group_url}', [HomeController::class,'show']);
 Route::resource('about', \App\Http\Controllers\AboutController::class);
 Route::get('contact', [ContactController::class,'index']);
+Route::post('/send-message', [ContactController::class,'sendEmail'])->name('contact.send');
 Route::get('website.single', [\App\Http\Controllers\SingleController::class,'index']);
+Route::get('thank-you',[\App\Http\Controllers\CheckoutController::class,'thankyou']);
 
 
 
 
-Route::resource('single',\App\Http\Controllers\SingleController::class);
-Route::resource('checkout', \App\Http\Controllers\CheckoutController::class);
+#Route::resource('single',\App\Http\Controllers\SingleController::class);
 Route::resource('payment', \App\Http\Controllers\PaymentController::class);
 //Route::get('comments', [ConversationController::class,'index']);
 
@@ -146,13 +225,22 @@ Route::get('table', [\App\Http\Controllers\CheckController::class,'create']);
 //testing login
 Route::get('logiin', [\App\Http\Controllers\CheckController::class,'login']);
 
-Route::get('/seller-dashboard', function(){
-    return view('seller-dashboard');
-});
 
-Route::get('profile.admin-show', function () {
-    return view('profile.admin-show');
-});
+
+Route::get('profile.admin-show', [\App\Http\Controllers\CheckController::class,'index'])->name('profile.admin-show');
+Route::get('profile-seller', [\App\Http\Controllers\CheckController::class,'sellershow']);
+
+
+  //Testing product frontend viewing routes
+Route::get('prodindex', [ \App\Http\Controllers\TestingController::class,'index']);
+Route::get('prodcategory/{group_url}', [\App\Http\Controllers\TestingController::class,'groupview']);
+Route::get('sub-category/{group_url}/{cate_url}', [\App\Http\Controllers\TestingController::class,'categoryview']);
+Route::get('product/{group_url}/{cate_url}/{subcate_url}', [\App\Http\Controllers\TestingController::class,'subcategoryview']);
+Route::get('product-page/{group_url}/{cate_url}/{subcate_url}/{prod_url}', [\App\Http\Controllers\TestingController::class,'productview'])->name('productpage');
+
+
+Route::post('add-to-cart', [\App\Http\Controllers\Frontend\CartController::class,'addtocart']);
+Route::get('cart', [\App\Http\Controllers\Frontend\CartController::class,'index']);
 
 //Route::get('layouts.Admin', function () {
 //    return view('layouts.Admin');

@@ -42,7 +42,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <link href="{{asset('asset/css/SidebarNav.min.css')}}" media='all' rel='stylesheet' type='text/css'/>
             <!-- //side nav css file -->
 
-            <!-- js-->
+        <!-- datatables for the admin users table css -->
+        <link href="{{asset('asset/css/jquery.datatables.min.css')}}" rel="stylesheet">
+
+
+        <!-- js-->
             <script src="{{asset('asset/js/jquery-1.11.1.min.js')}}"></script>
             <script src="{{asset('asset/js/modernizr.custom.js')}}"></script>
 
@@ -579,5 +583,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         <!-- //Bootstrap Core JavaScript -->
 
         <!-- //index (js) -->
+    <!-- datatables Javascript -->
+    <script src="{{asset('asset/js/addons/datatable1.js')}}"> </script>
+    <script src="{{asset('asset/js/addons/datatables2.min.js')}}"> </script>
+
+    @yield('myjsscripts')
+
+
+
     </body>
 </html>

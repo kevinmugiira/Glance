@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Cache;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
@@ -29,6 +30,14 @@ class User extends Authenticatable
         'email',
         'password',
         'role_as',
+        'image',
+        'mobile',
+        'line1',
+        'line2',
+        'city',
+        'county',
+        'postcode',
+
     ];
 
     /**
@@ -60,4 +69,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function isUserOnline()
+    {
+        return Cache::has('user-is-online' . $this->id);
+    }
+
+//    public function profile()
+//    {
+//        return $this->hasOne(Profile::class,'user_id');
+//    }
 }

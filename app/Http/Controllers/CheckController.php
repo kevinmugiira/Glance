@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+//use Faker\Core\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class CheckController extends Controller
 {
@@ -21,7 +25,13 @@ class CheckController extends Controller
 
     public function index()
     {
-        return view('sidebar menu.mail.inbox');
+        #$userss = User::find($id);
+        return view('profile.admin-show');
+    }
+
+    public function sellershow()
+    {
+        return view('profile.seller-show');
     }
 
     /**
@@ -62,9 +72,11 @@ class CheckController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $user = Auth::user()->get();
+
+        return view('profile.update', compact('user',));
     }
 
     /**
@@ -74,9 +86,43 @@ class CheckController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function profileupdate(Request $request, $id)
     {
-        //
+//
+//        $user_id = Auth::user();
+//        $user = User::findOrFail($user_id);
+        $user = User::find($id);
+
+
+        $user->firstname = $request->input('firstname');
+        $user->lastname = $request->input('lastname');
+        $user->mobile = $request->input('mobile');
+        $user->line1 = $request->input('line1');
+        $user->line2 = $request->input('line2');
+        $user->city = $request->input('city');
+        $user->county = $request->input('county');
+        $user->postcode = $request->input('postcode');
+
+        #dump($request);
+        if ($request->hasFile('image')) {
+            $destination = 'uploads/profile' . $user->image;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . "." . $extension;
+            $file->move('uploads/profile/', $filename);
+            $user->image = $filename;
+
+        }
+
+            $user->update();
+
+            return redirect('profile.admin-show')
+                ->with('status', 'Profile updated Successfully!');
+
+
     }
 
     /**
@@ -88,5 +134,10 @@ class CheckController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function next()
+    {
+        return view ('profile.admin-show');
     }
 }

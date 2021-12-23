@@ -12,9 +12,9 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  ...$guards
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
+     * @param string|null ...$guards
      * @return mixed
      */
     public function handle(Request $request, Closure $next, ...$guards)
@@ -22,27 +22,28 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-//            if (Auth::guard($guard)->check()) {
-//
-//                $role = Auth::user()->role_as;
-//                switch ($role) {
-//                    case 'admin':
-//                        return 'layouts.Admin';
-//                        break;
-//                    case 'seller':
-//                        return 'layouts.Seller';
-//                        break;
-//
-//                    default:
-//                        return '/mtaa';
-//                        break;
-//                }
+            if (Auth::guard($guard)->check()) {
 
-                return redirect(RouteServiceProvider::USR_HOME);
+                $role = Auth::user()->role_as;
+                switch ($role) {
+                    case 'admin':
+                        return 'layouts.Admin';
+                        break;
+                    case 'seller':
+                        return 'layouts.Seller';
+                        break;
 
+                    default:
+                        return '/mtaa';
+                        break;
+                }
+
+                # return redirect(RouteServiceProvider::USR_HOME);
+            }
         }
 
         return $next($request);
 
     }
+
 }

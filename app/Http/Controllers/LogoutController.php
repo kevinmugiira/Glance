@@ -12,10 +12,24 @@ class LogoutController extends Controller
 
         Auth::logout();
 
+        #$request->user()->session()->logout();
+
+        #$request->user()->token()->revoke();
+
+        #$this->guard('user')->logout();
+
+
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
         return redirect('login');
     }
+
+
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
+    }
+
 }

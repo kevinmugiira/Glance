@@ -122,9 +122,9 @@
                                     </div>
                                     <!--<div class="progress progress-striped active">
                                         <div class="bar yellow" style="width:40%;"></div>
-                                    </div>
+                                    </div>-->
                                 </a></li>
-                            <li><a href="#">
+                            <!--<li><a href="#">
                                     <div class="task-info">
                                         <span class="task-desc">Dashboard done</span><span class="percentage">Coming</span>
                                         <div class="clearfix"></div>
@@ -183,7 +183,7 @@
                     <li class="dropdown profile_details_drop">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <div class="profile_img">
-                                <span class="prfil-img"><img src="#" alt=""> </span>
+                                <span class="prfil-img"><img src="{{asset('uploads/profile/'. Auth::user()->image)}}" width="50px" height="50px" alt="Image" /> </span>
                                 <div class="user-name">
                                     <p>Admin</p>
                                     <span>{{auth()->user()->firstname}} {{ auth()->user()->lastname }}</span>

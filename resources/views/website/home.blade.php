@@ -322,6 +322,7 @@
                     <div class="product-sec1">
                         <h3 class="heading-tittle">Fruits</h3>
                         <div class="col-md-4 product-men">
+                            @foreach()
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
                                     <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
@@ -359,87 +360,9 @@
 
                                 </div>
                             </div>
+                                @endforeach
                         </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
 
-
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="{{url('website.single')}}">Product Name</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="{{url('website.single')}}">Product Name</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                         <div class="clearfix"></div>
                     </div>
                     <!-- //first section (nuts) -->

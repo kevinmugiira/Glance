@@ -15,6 +15,13 @@
             <div class="forms">
                 <h2 class="title1">Current Role: {{$user_roles->role_as}}</h2>
 
+                Account Status:
+            @if($user_roles->isban == '0')
+                    <label class="badge badge-primary" >Active</label>
+                @elseif($user_roles->isban == '1')
+                    <label class="badge badge-danger">Deactivated</label>
+                @endif
+
                 @if(Session::get('success'))
                     <div class="alert alert-success">
                         {{ Session::get('success') }}
@@ -47,7 +54,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Firstname</label>
+                                <label for="exampleInputName1">Firstname</label>
                                 <input type="text"
                                        name="firstname"
                                        class="form-control"
@@ -56,7 +63,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Lastname</label>
+                                <label for="exampleInputName1">Lastname</label>
                                 <input type="text"
                                        name="lastname"
                                        class="form-control"
@@ -77,20 +84,33 @@
 
                             <div class="form-group">
                                 <label for="selector1" class="col-sm-2 control-label">Roles</label>
-                                <div class="col-sm-8"><select name="roles" id="selector1" class="form-control1">
+                                <div class="col-sm-8"><select name="role_as" id="selector1" class="form-control1">
                                         <option value="">--Select--</option>
                                         <option value="admin">Admin</option>
                                         <option value="seller">Seller</option>
-                                        <option value="">User</option>
+                                        <option value="user">User</option>
                                     </select>
                                 </div>
                             </div>
+                            <hr>
+                            <hr>
+                            <div class="form-group">
+                                <label for="selector1" class="col-sm-2 control-label">Status</label>
+                                <div class="col-sm-8"><select name="isban" id="selector1" class="form-control1">
+                                        <option value="">--Select Activate or Deactivate--</option>
+                                        <option value="0">Activate</option>
+                                        <option value="1">Deactivate</option>
+                                    </select>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
 
 
-
-
+                            <div class="form-group">
                             <!--<a href="#"><span class="label label-success">Success</span></a>-->
                             <button type="submit"  class="btn btn-default ">Update</button>
+                            </div>
                         </form>
                     </div>
                 </div>

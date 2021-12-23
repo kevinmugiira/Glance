@@ -40,6 +40,15 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+//        'logout' => [
+//            'driver' => 'session',
+//            'provider' => 'logouts',
+//        ],
+
+        'api' => [
+            'driver' => 'logout',
+        ],
     ],
 
     /*
@@ -64,6 +73,13 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'logouts' => [
+            'driver' => 'eloquent',
+            'controller' => \App\Http\Controllers\LogoutController::class,
+        ],
+
+
 
         // 'users' => [
         //     'driver' => 'database',

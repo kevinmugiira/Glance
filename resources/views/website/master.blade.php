@@ -7,6 +7,7 @@
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--<meta name="keywords" content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />-->
     <script>
@@ -18,6 +19,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         }
     </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    @yield('script')
+
     <!--//tags -->
     <link href="{{asset('asset2/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{asset('asset2/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
@@ -25,6 +29,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--pop-up-box-->
     <link href="{{asset('asset2/css/popuo-box.css')}}" rel="stylesheet" type="text/css" media="all" />
     <!--//pop-up-box-->
+
+
+
+    <!--alertifycss-->
+    <link rel="stylesheet" href="{{asset('asset2/css/alertify.min.css')}}"/>
+
+    <!--checkout Js-->
+
+
     <!-- price range -->
     <link rel="stylesheet" type="text/css" href="{{asset('asset2/css/jquery-ui1.css')}}">
     <!-- flexslider -->
@@ -52,6 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </a>
             </h1>
         </div>
+
         <!-- header-bot -->
         <div class="col-md-8 header">
             <!-- header lists -->
@@ -90,9 +104,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- cart details -->
             <div class="top_nav_right">
                 <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-                    <form action="#" method="post" class="last">
-                        <input type="hidden" name="cmd" value="_cart">
-                        <input type="hidden" name="display" value="1">
+                    <form action="{{url('cart')}}" method="get" class="last">
+{{--                        <input type="hidden" name="cmd" value="_cart">--}}
+{{--                        <input type="hidden" name="display" value="1">--}}
                         <button class="w3view-cart" type="submit" name="submit" value="">
                             <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                         </button>
@@ -621,7 +635,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <div class="col-sm-4 multi-gd-img">
                                             <ul class="single-column-dropdown">
                                                 <li>
-                                                    <a href="{{url('products')}}">Food Crops</a>
+                                                    <a href="{{url('product/page/{group_url}')}}">Food Crops</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{url('produtcs')}}">Feed Crops</a>
@@ -766,6 +780,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <!-- //navigation -->
+
 
 @yield('stuff')
 
@@ -1315,6 +1330,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('asset2/js/bootstrap.js')}}"></script>
 <!-- //for bootstrap working -->
 <!-- //js-files -->
+
+{{--custom js--}}
+<script src="{{asset('asset2/js/custom.js')}}"></script>
+
+{{--AlertifyJs--}}
+<script src="{{asset('asset2/js/alertify.min.js')}}"></script>
+{{--<script>--}}
+{{--    alertify.success('Success notification message.');--}}
+{{--</script>--}}
+
 
 
 </body>

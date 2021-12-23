@@ -166,18 +166,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-laptop"></i>
-                                    <span>Products</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="{{url('/products/create')}}"><i class="fa fa-angle-right"></i> Add Product</a></li>
-                                    <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> Product list</a></li>
-                                    <li><a href="{{ url('/list-prod')}}"><i class="fa fa-angle-right"></i> Edit Products</a></li>
-                                </ul>
-                            </li>
+{{--                            <li class="treeview">--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-laptop"></i>--}}
+{{--                                    <span>Products</span>--}}
+{{--                                    <i class="fa fa-angle-left pull-right"></i>--}}
+{{--                                </a>--}}
+{{--                                <ul class="treeview-menu">--}}
+{{--                                    <li><a href="{{url('/products/create')}}"><i class="fa fa-angle-right"></i> Add Product</a></li>--}}
+{{--                                    <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> Product list</a></li>--}}
+{{--                                    <li><a href="{{ url('/list-prod')}}"><i class="fa fa-angle-right"></i> Edit Products</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                             <li class="treeview">
                                 <a href="{{url('orders')}}">
                                     <i class="fa fa-pie-chart"></i>
@@ -196,13 +196,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <li class="treeview">
                                 <a href="#">
                                     <i class="fa fa-laptop"></i>
-                                    <span>Category</span>
+                                    <span>Collections</span>
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{route('add-category')}}"><i class="fa fa-angle-right"></i> Add Category</a></li>
-                                    <li><a href="{{url('list-categories')}}"><i class="fa fa-angle-right"></i> Category List</a></li>
-                                    <li><a href="{{url('list-cat')}}"><i class="fa fa-angle-right"></i> Edit Category</a></li>
+{{--                                    <li><a href="{{route('add-category')}}"><i class="fa fa-angle-right"></i> Add Category</a></li>--}}
+                                    <li><a href="{{url('sub-category')}}"><i class="fa fa-angle-right"></i> Sub-Category</a></li>
+                                    <li><a href="{{url('product')}}"><i class="fa fa-angle-right"></i> Products</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -261,7 +261,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </a>
                                 <ul class="treeview-menu">
                                     <!--change the route to profile.seller-show-->
-                                    <li><a href="{{ route('profile.admin-show') }}"><i class="fa fa-angle-right"></i> Profile</a></li>
+                                    <li><a href="{{ url('profile.admin-show') }}"><i class="fa fa-angle-right"></i> Profile</a></li>
                                     <li><a href="{{route('logout')}}"><i class="fa fa-angle-right"></i> Logout</a></li>
 
                                 </ul>
@@ -463,9 +463,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <div class="profile_img">
-                                    <span class="prfil-img"><img src="{{asset('asset/images/Black _ White 1.png')}}" alt=""> </span>
+                                    <span class="prfil-img"><img src="{{asset('uploads/profile/'. Auth::user()->image)}}" width="50px" height="50px" alt="Image" /> </span>
                                     <div class="user-name">
-                                        <p>Admin</p>
+                                        <p>Seller</p>
                                         <span>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</span>
                                     </div>
                                     <i class="fa fa-angle-down lnr"></i>

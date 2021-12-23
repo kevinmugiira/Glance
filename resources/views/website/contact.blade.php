@@ -40,18 +40,39 @@
             <div class="contact agileits">
                 <div class="contact-agileinfo">
                     <div class="contact-form wthree">
-                        <form action="#" method="post">
+                        @if(Session::get('message_sent'))
+                            <div class="alert alert-success" role="alert">
+                                {{Session::get('message_sent')}}
+                            </div>
+                            @endif
+                        <form action="{{ route('contact.send') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+
                             <div class="">
-                                <input type="text" name="name" placeholder="Name" required="">
+                                <input type="text"
+                                       name="name"
+                                       placeholder="Name"
+                                       required="">
                             </div>
                             <div class="">
-                                <input class="text" type="text" name="subject" placeholder="Subject" required="">
+                                <input class="text"
+                                       type="text"
+                                       name="subject"
+                                       placeholder="Subject"
+                                       required="">
                             </div>
                             <div class="">
-                                <input class="email" type="email" name="email" placeholder="Email" required="">
+                                <input class="email"
+                                       type="email"
+                                       name="email"
+                                       placeholder="Email"
+                                       required="">
                             </div>
                             <div class="">
-                                <textarea placeholder="Message" name="message" required=""></textarea>
+                                <textarea placeholder="Message"
+                                          name="message"
+                                          required=""></textarea>
                             </div>
                             <input type="submit" value="Submit">
                         </form>

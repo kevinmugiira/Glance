@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class RegisteredController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $user = User::all();
-        return view('admin.users.index')->with('users', $user);
+        #$users = User::paginate(2);
+        $users = User::where('role_as', $request->get('role_as'))->get();
+        return view('admin.users.index',compact('users'));
     }
 
     public function edit($id)
@@ -26,11 +28,14 @@ class RegisteredController extends Controller
 
         $user->firstname = $request->input('firstname');
         $user->lastname = $request->input('lastname');
-        $user->role_as = $request->input('roles');
+        $user->role_as = $request->input('role_as');
+        $user->isban = $request->input('isban');
+
+        #dd($request);
 
         $user->update();
 
-        return back()->with('status', 'Role updated Succesfully');
+        return back()->with('status', 'User Updated Succesfully');
 
     }
 

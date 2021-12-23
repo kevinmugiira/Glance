@@ -47,6 +47,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <link href="{{asset('asset/css/SidebarNav.min.css')}}" media='all' rel='stylesheet' type='text/css'/>
     <!-- //side nav css file -->
 
+
+
     <!-- js-->
     <script src="{{asset('asset/js/jquery-1.11.1.min.js')}}"></script>
     <script src="{{asset('asset/js/modernizr.custom.js')}}"></script>
@@ -166,18 +168,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-laptop"></i>
-                                    <span>Products</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="{{url('/products/create')}}"><i class="fa fa-angle-right"></i> Add Product</a></li>
-                                    <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> Product list</a></li>
-                                    <li><a href="{{ url('/list-prod')}}"><i class="fa fa-angle-right"></i> Edit Products</a></li>
-                                </ul>
-                            </li>
+{{--                            <li class="treeview">--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-laptop"></i>--}}
+{{--                                    <span>Products</span>--}}
+{{--                                    <i class="fa fa-angle-left pull-right"></i>--}}
+{{--                                </a>--}}
+{{--                                <ul class="treeview-menu">--}}
+{{--                                    <li><a href="{{url('/products/create')}}"><i class="fa fa-angle-right"></i> Add Product</a></li>--}}
+{{--                                    <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> Product list</a></li>--}}
+{{--                                    <li><a href="{{ url('/list-prod')}}"><i class="fa fa-angle-right"></i> Edit Products</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                             <li class="treeview">
                                 <a href="{{url('orders')}}">
                                     <i class="fa fa-pie-chart"></i>
@@ -187,7 +189,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> New </a></li>
+                                    <li><a href="{{url('orders')}}"><i class="fa fa-angle-right"></i> New </a></li>
                                     <li><a href="{{route('list-product')}}"><i class="fa fa-angle-right"></i> All</a></li>
                                     <!--<li><a href=""><i class="fa fa-angle-right"></i> Edit Product</a></li>-->
                                 </ul>
@@ -196,13 +198,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <li class="treeview">
                                 <a href="#">
                                     <i class="fa fa-laptop"></i>
-                                    <span>Category</span>
+                                    <span>Collections</span>
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{route('add-category')}}"><i class="fa fa-angle-right"></i> Add Category</a></li>
-                                    <li><a href="{{url('list-categories')}}"><i class="fa fa-angle-right"></i> Category List</a></li>
-                                    <li><a href="{{url('list-cat')}}"><i class="fa fa-angle-right"></i> Edit Category</a></li>
+{{--                                    <li><a href="{{route('add-category')}}"><i class="fa fa-angle-right"></i> Add Category</a></li>--}}
+{{--                                    <li><a href="{{url('list-categories')}}"><i class="fa fa-angle-right"></i> Category List</a></li>--}}
+{{--                                    <li><a href="{{url('list-cat')}}"><i class="fa fa-angle-right"></i> Edit Category</a></li>--}}
+                                    <li><a href="{{url('group')}}"><i class="fa fa-angle-right"></i> Groups</a></li>
+                                    <li><a href="{{url('/category')}}"><i class="fa fa-angle-right"></i> Categories</a></li>
+                                    <li><a href="{{url('sub-category')}}"><i class="fa fa-angle-right"></i> Sub-Categories</a></li>
+                                    <li><a href="{{url('product')}}"><i class="fa fa-angle-right"></i> Products</a></li>
+
                                 </ul>
                             </li>
                             <li>
@@ -222,16 +229,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Print reports</a></li>
                                 </ul>
                             </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-table"></i> <span>Role Permissions</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Add User</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit User</a></li>
-                                </ul>
-                            </li>
+{{--                            <li class="treeview">--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-table"></i> <span>Role Permissions</span>--}}
+{{--                                    <i class="fa fa-angle-left pull-right"></i>--}}
+{{--                                </a>--}}
+{{--                                <ul class="treeview-menu">--}}
+{{--                                    <li><a href="#"><i class="fa fa-angle-right"></i> Add User</a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-angle-right"></i> Edit User</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
 
                             <li class="treeview">
                                 <a href="{{ url('registered-user') }}">
@@ -249,9 +256,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-envelope"></i> <span>Mailbox </span>
                                     <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1"></small><span class="label label-primary1 pull-right">New</span></a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{url('inbox')}}"><i class="fa fa-angle-right"></i> Inbox </a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i> Timeline </a></li>
+                                    <li><a href="{{url('inbox')}}"><i class="fa fa-angle-right"></i> My Profile </a></li>
+{{--                                    <li><a href="#"><i class="fa fa-angle-right"></i> Compose Mail </a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-angle-right"></i> Timeline </a></li>--}}
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -260,15 +267,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{ route('profile.admin-show') }}"><i class="fa fa-angle-right"></i> Profile</a></li>
+                                    <li><a href="{{ route('profile') }}"><i class="fa fa-angle-right"></i> Profile</a></li>
                                     <li><a href="{{route('logout')}}"><i class="fa fa-angle-right"></i> Logout</a></li>
 
                                 </ul>
                             </li>
                             <li class="header">LABELS</li>
                             <!--<li><a href="#"><i class="fa fa-angle-right text-red"></i> <span>Important</span></a></li>
-                            <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Warning</span></a></li>-->
-                            <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>System Information</span></a></li>
+                            <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Warning</span></a></li>
+                            <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>System Information</span></a></li>-->
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -286,29 +293,29 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <div class="profile_details_left"><!--notifications of menu start -->
                     <ul class="nofitications-dropdown">
                         <li class="dropdown head-dpdn">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><!--<span class="badge">4</span>--></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="notification_header">
-                                        <h3>New messages</h3>
-                                    </div>
-                                </li>
-                                <li><a href="#">
-                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
-                                        <div class="notification_desc">
-                                            <p>No messages</p>
-                                            <p><span>time</span></p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </a></li>
-                                <li class="odd"><a href="#">
-                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
-                                        <div class="notification_desc">
-                                            <p>No messages </p>
-                                            <p><span>time</span></p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </a></li>
+{{--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><!--<span class="badge">4</span>--></a>--}}
+{{--                            <ul class="dropdown-menu">--}}
+{{--                                <li>--}}
+{{--                                    <div class="notification_header">--}}
+{{--                                        <h3>New messages</h3>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li><a href="#">--}}
+{{--                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>--}}
+{{--                                        <div class="notification_desc">--}}
+{{--                                            <p>No messages</p>--}}
+{{--                                            <p><span>time</span></p>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="clearfix"></div>--}}
+{{--                                    </a></li>--}}
+{{--                                <li class="odd"><a href="#">--}}
+{{--                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>--}}
+{{--                                        <div class="notification_desc">--}}
+{{--                                            <p>No messages </p>--}}
+{{--                                            <p><span>time</span></p>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="clearfix"></div>--}}
+{{--                                    </a></li>--}}
                             <!--<li><a href="#">
                                         <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
                                         <div class="notification_desc">
@@ -325,37 +332,37 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                         <div class="clearfix"></div>
                                     </a></li>-->
-                                <li>
-                                    <div class="notification_bottom">
-                                        <a href="#">See all messages</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown head-dpdn">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><!--<span class="badge blue">4</span>--></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="notification_header">
-                                        <h3>Notifications</h3>
-                                    </div>
-                                </li>
-                                <li><a href="#">
-                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
-                                        <div class="notification_desc">
-                                            <p>Notification Example</p>
-                                            <p><span>time</span></p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </a></li>
-                                <li class="odd"><a href="#">
-                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>
-                                        <div class="notification_desc">
-                                            <p>Notification Example </p>
-                                            <p><span>time</span></p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </a></li>
+{{--                                <li>--}}
+{{--                                    <div class="notification_bottom">--}}
+{{--                                        <a href="#">See all messages</a>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                        <li class="dropdown head-dpdn">--}}
+{{--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><!--<span class="badge blue">4</span>--></a>--}}
+{{--                            <ul class="dropdown-menu">--}}
+{{--                                <li>--}}
+{{--                                    <div class="notification_header">--}}
+{{--                                        <h3>Notifications</h3>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li><a href="#">--}}
+{{--                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>--}}
+{{--                                        <div class="notification_desc">--}}
+{{--                                            <p>Notification Example</p>--}}
+{{--                                            <p><span>time</span></p>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="clearfix"></div>--}}
+{{--                                    </a></li>--}}
+{{--                                <li class="odd"><a href="#">--}}
+{{--                                        <div class="user_img"><img src="{{asset('asset/images/avatar1.png')}}" alt=""></div>--}}
+{{--                                        <div class="notification_desc">--}}
+{{--                                            <p>Notification Example </p>--}}
+{{--                                            <p><span>time</span></p>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="clearfix"></div>--}}
+{{--                                    </a></li>--}}
                             <!--<li><a href="#">
                                         <div class="user_img"><img src="{{asset('asset/images/3.jpg')}}" alt=""></div>
                                         <div class="notification_desc">
@@ -373,27 +380,27 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                         <div class="clearfix"></div>
                                     </a></li>
                                 <li>-->
-                                <div class="notification_bottom">
-                                    <a href="#">See all notifications</a>
-                                </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown head-dpdn">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><!--<span class="badge blue1">8</span>--></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="notification_header">
-                                        <h3>Pending Orders</h3>
-                                    </div>
-                                </li>
-                                <li><a href="#">
-                                        <div class="task-info">
-                                            <span class="task-desc">Orders in progress</span><span class="percentage">40%</span>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </a>
-                                </li>
+{{--                                <div class="notification_bottom">--}}
+{{--                                    <a href="#">See all notifications</a>--}}
+{{--                                </div>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                        <li class="dropdown head-dpdn">--}}
+{{--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><!--<span class="badge blue1">8</span>--></a>--}}
+{{--                            <ul class="dropdown-menu">--}}
+{{--                                <li>--}}
+{{--                                    <div class="notification_header">--}}
+{{--                                        <h3>Pending Orders</h3>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li><a href="#">--}}
+{{--                                        <div class="task-info">--}}
+{{--                                            <span class="task-desc">Orders in progress</span><span class="percentage">40%</span>--}}
+{{--                                            <div class="clearfix"></div>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                                 <!--<div class="progress progress-striped active">
                                     <div class="bar yellow" style="width:40%;"></div>
                                 </div>
@@ -425,12 +432,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <div class="bar  blue" style="width: 80%;"></div>
                                 </div>
                             </a></li>-->
-                                <li>
-                                    <div class="notification_bottom">
-                                        <a href="#">See all pending tasks</a>
-                                    </div>
-                                </li>
-                            </ul>
+{{--                                <li>--}}
+{{--                                    <div class="notification_bottom">--}}
+{{--                                        <a href="#">See all pending tasks</a>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
                         </li>
                     </ul>
                     <div class="clearfix"> </div>
@@ -442,27 +449,27 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
                 <!--search-box-->
-                <div class="search-box">
-                    <form class="input">
-                        <input
-                            class="sb-search-input input__field--madoka"
-                            placeholder="Search..."
-                            type="search"
-                            id="input-31" />
-                        <label class="input__label" for="input-31">
-                            <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                            </svg>
-                        </label>
-                    </form>
-                </div><!--//end-search-box-->
+{{--                <div class="search-box">--}}
+{{--                    <form class="input">--}}
+{{--                        <input--}}
+{{--                            class="sb-search-input input__field--madoka"--}}
+{{--                            placeholder="Search..."--}}
+{{--                            type="search"--}}
+{{--                            id="input-31" />--}}
+{{--                        <label class="input__label" for="input-31">--}}
+{{--                            <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">--}}
+{{--                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>--}}
+{{--                            </svg>--}}
+{{--                        </label>--}}
+{{--                    </form>--}}
+{{--                </div><!--//end-search-box-->--}}
 
                 <div class="profile_details">
                     <ul>
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <div class="profile_img">
-                                    <span class="prfil-img"><img src="{{asset('asset/images/Black _ White 1.png')}}" alt=""> </span>
+                                    <span class="prfil-img"><img src="{{asset('uploads/profile/'. Auth::user()->image)}}" width="50px" height="50px" alt="Image"/> </span>
                                     <div class="user-name">
                                         <p>Admin</p>
                                         <span>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</span>
@@ -473,9 +480,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </a>
                             <ul class="dropdown-menu drp-mnu">
-                                <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
-                                <li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li>
-                                <li> <a href="{{url('profile.admin-show')}}"><i class="fa fa-suitcase"></i> Profile</a> </li>
+
+                                <li> <a href="{{url('inbox')}}"><i class="fa fa-suitcase"></i> Profile</a> </li>
                                 <li> <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a> </li>
                             </ul>
                         </li>
@@ -531,7 +537,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                             <div class="stats">
                                 <span>All Users</span>
-                                <h5><strong> {{$user}}</strong></h5>
+                                <h5><strong> {{ $user }}</strong></h5>
 
                             </div>
                         </div>
@@ -1321,6 +1327,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <!-- //Bootstrap Core JavaScript -->
 
     <!-- //index (js) -->
+
+
 
 </main>
 </body>

@@ -12,21 +12,74 @@
             <div class="tables">
                 <h2 class="title1">Users</h2>
 
+
+
                 @if(session('status'))
                     <h6 class="alert alert-success">{{ session('status') }}</h6>
                 @endif
 
                 <div class="card-header">
                     <div class="bs-example widget-shadow" data-example-id="hoverable-table">
-                        <h4>Edit Products:
-                            <a href="{{ url('layouts.Admin') }}" class="btn btn-primary pull-right">Home</a>
+                        <h4>User Entries:
+                            <a href="{{ url('layouts.Admin') }}" class="btn fa fa-home btn-primary pull-right">Home</a>
                         </h4>
 
                         <div class="card-body">
 
+                        <div class="row">
+                            <form action="{{ url('registered-user') }}" method="GET">
 
 
-                            <table class="table table-hover">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <select name="role_as" class="form-control">
+                                                @if(isset($_GET['role_as']))
+                                                    <option value="{{ $_GET['role_as'] }}">{{$_GET['role_as']}}</option>
+                                                    <option value="user">Normal User</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="seller">Seller</option>
+
+                                                @else
+                                                    <option value="">Normal User</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="seller">Seller</option>
+
+                                                @endif
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary">Filter</button>
+                                    </div>
+                                    <div class="col-md-2 mt-3">
+                                        <div class="card-body">
+                                        <h3>
+                                            Users online:
+                                            @php $u_total = "0"; @endphp
+                                            2                                @foreach($users as $use)
+
+                                                @php
+                                                    if($use->isUserOnline())
+                                                        {
+                                                           $u_total =+ 1;
+                                                        }
+                                                @endphp
+                                            @endforeach
+                                            {{--                                Users online: {{ $u_total }}--}}
+                                        </h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+
+
+
+                            <table id="datatable1" class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -34,7 +87,8 @@
                                     <th>User Lastname</th>
                                     <th>User Email</th>
                                     <th>Role</th>
-                                    <th>Ban/unBan</th>
+                                    <th>Online/Offline</th>
+                                    <th>Account Status</th>
                                     <th>Action</th>
                                     <th>Action</th>
 
@@ -42,26 +96,33 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($users as $users )
+                                @foreach($users as $use )
                                     <tr>
-                                        <th scope="row">{{ $users->id}}</th>
-                                        <td>{{ $users->firstname }}</td>
-                                        <td>{{ $users->lastname }}</td>
-                                        <td>{{ $users->email }}</td>
-                                        <td>{{ $users->role_as }}</td>
+                                        <th scope="row">{{ $use->id}}</th>
+                                        <td>{{ $use->firstname }}</td>
+                                        <td>{{ $use->lastname }}</td>
+                                        <td>{{ $use->email }}</td>
+                                        <td>{{ $use->role_as }}</td>
                                         <td>
-                                            @if($users->isban == '0')
+                                            @if($use->isUserOnline())
+                                                <label class="badge badge-success">Online</label>
+                                            @else
+                                                <label class="badge badge-warning">Offline</label>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($use->isban == '0')
                                                 <label class="badge badge-primary" >Active</label>
-                                                @elseif($users->isban == '1')
+                                                @elseif($use->isban == '1')
                                                 <label class="badge badge-danger">Deactivated</label>
                                             @endif
 
                                         </td>
                                         <td>
-                                            <a href="{{url('role-edit/' . $users->id )}}" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="{{url('role-edit/' . $use->id )}}" class="btn btn-primary btn-sm">Edit</a>
                                         </td>
                                         <td>
-                                            <form action="{{ url('role-delete/'. $users->id) }}" method="POST">
+                                            <form action="{{ url('role-delete/'. $use->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -73,11 +134,13 @@
 
                                 </tbody>
                             </table>
-                            </form>
+                            <div class="text-right">
+{{--                                <h3>are you who you say u are?</h3>--}}
+{{--                                {{  $users->links() }}--}}
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -86,5 +149,13 @@
 @endsection
 
 
+@section('myjsscripts')
 
+<script>
+    $(document).ready(function() {
+        $('#datatable1').DataTable();
+    } );
+</script>
+
+    @stop
 
