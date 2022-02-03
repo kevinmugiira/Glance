@@ -33,7 +33,7 @@
 
                             <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Category Id (Name)</label>
+                                <label for="exampleInputEmail1">Category (Name)</label>
 
                                     <select name="category_id" class="form-control" id="exampleInputEmail1">
                                         <option value="{{ $subcategory->category_id }}"> {{$subcategory->category->name}}</option>
@@ -47,7 +47,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Category Name</label>
+                                        <label for="exampleInputEmail1">Sub-category Name</label>
                                         <input type="text"
                                            name="name"
                                            class="form-control"

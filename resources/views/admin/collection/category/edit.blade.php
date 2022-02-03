@@ -26,15 +26,15 @@
 
                     </div>
                     <div class="form-body">
-                        <form action="{{ url('category-update') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('category-update/'.$category->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Group Id (Name)</label>
+                                    <label for="exampleInputEmail1">Group (Name)</label>
                                     <select name="group_id" class="form-control" id="exampleInputEmail1">
-                                        <option value="{{ $category->category->category_id }}" >{{ $category->category->name }}</option>
+                                        <option value="{{ $category->id }}" >{{ $category->name }}</option>
                                         @foreach($group as $groups)
                                             <option value="{{ $groups->id }}" >{{ $groups->name }}</option>
                                         @endforeach

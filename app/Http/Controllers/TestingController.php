@@ -104,6 +104,6 @@ class TestingController extends Controller
 
         $finalprod = Product::where('id', $prod_id)->where('status','!=','2')->where('status','0')->get();
 
-        return view('website.home', compact('prod','finalprod'));
+        return view('website.collection.product-page', compact('prod','finalprod'));
     }
 }

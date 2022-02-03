@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\User;
 //use Faker\Core\File;
 use Illuminate\Http\Request;
@@ -91,11 +92,12 @@ class CheckController extends Controller
 //
 //        $user_id = Auth::user();
 //        $user = User::findOrFail($user_id);
-        $user = User::find($id);
+        $users = User::find($id);
+        $user = Profile::find($id);
 
 
-        $user->firstname = $request->input('firstname');
-        $user->lastname = $request->input('lastname');
+        $users->firstname = $request->input('firstname');
+        $users->lastname = $request->input('lastname');
         $user->mobile = $request->input('mobile');
         $user->line1 = $request->input('line1');
         $user->line2 = $request->input('line2');

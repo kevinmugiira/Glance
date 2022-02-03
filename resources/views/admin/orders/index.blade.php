@@ -37,6 +37,7 @@
                                         <th>Phone</th>
                                         <th>Status</th>
                                         <th>Action</th>
+                                        <th>Proceed</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -53,7 +54,10 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ url('order-view/'. $categories->id) }}" class="btn btn-info">View</a>
+                                                <a href="{{ url('order-view/'. $categories->id) }}" class="btn btn-info btn-sm">View</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ url('order-proceed/'. $categories->id) }}" class="btn btn-success btn-sm">Proceed</a>
                                             </td>
                                         </tr>
                                     @endforeach

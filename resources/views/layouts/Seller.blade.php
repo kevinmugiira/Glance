@@ -156,7 +156,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <h1><a class="navbar-brand" href="{{url('home')}}"><span class="fa fa-area-chart"></span> New Green<span class="dashboard_text"> Solutions </span></a></h1>
+                        <h1><a class="navbar-brand" href="{{url('home')}}"><span class="fa fa-area-chart"></span> NewGreen<span class="dashboard_text"> Solutions </span></a></h1>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="sidebar-menu">
@@ -249,7 +249,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                     <i class="fa fa-envelope"></i> <span>Mailbox </span>
                                     <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1"></small><span class="label label-primary1 pull-right">New</span></a>
                                 <ul class="treeview-menu">
-                                    <li><a href="{{url('inbox')}}"><i class="fa fa-angle-right"></i> Inbox </a></li>
+{{--                                    <li><a href="{{url('inbox')}}"><i class="fa fa-angle-right"></i> Inbox </a></li>--}}
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i> Timeline </a></li>
                                 </ul>
@@ -261,7 +261,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                                 </a>
                                 <ul class="treeview-menu">
                                     <!--change the route to profile.seller-show-->
-                                    <li><a href="{{ url('profile.admin-show') }}"><i class="fa fa-angle-right"></i> Profile</a></li>
+                                    <li><a href="{{ url('profile-seller') }}"><i class="fa fa-angle-right"></i> Profile</a></li>
                                     <li><a href="{{route('logout')}}"><i class="fa fa-angle-right"></i> Logout</a></li>
 
                                 </ul>
@@ -463,9 +463,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <div class="profile_img">
-                                    <span class="prfil-img"><img src="{{asset('uploads/profile/'. Auth::user()->image)}}" width="50px" height="50px" alt="Image" /> </span>
+                                    <span class="prfil-img"><img src="{{asset('uploads/profile/'. auth()->user()->image)}}" width="50px" height="50px" alt="Image" /> </span>
                                     <div class="user-name">
-                                        <p>Seller</p>
+                                        <p>{{ auth()->user()->role_as }}</p>
                                         <span>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</span>
                                     </div>
                                     <i class="fa fa-angle-down lnr"></i>
@@ -476,7 +476,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             <ul class="dropdown-menu drp-mnu">
                                 <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
                                 <li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li>
-                                <li> <a href="{{url('profile.admin-show')}}"><i class="fa fa-suitcase"></i> Profile</a> </li>
+                                <li> <a href="{{url('profile-seller')}}"><i class="fa fa-suitcase"></i> Profile</a> </li>
                                 <li> <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a> </li>
                             </ul>
                         </li>

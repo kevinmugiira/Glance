@@ -75,8 +75,8 @@ class User extends Authenticatable
         return Cache::has('user-is-online' . $this->id);
     }
 
-//    public function profile()
-//    {
-//        return $this->hasOne(Profile::class,'user_id');
-//    }
+    public function profile()
+    {
+        return $this->hasOne(Profile::class,'user_id','id');
+    }
 }

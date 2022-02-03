@@ -68,16 +68,17 @@ class CategoryController extends Controller
      public function update(Request $request, $id)
      {
          #$category = new Category();
-         $category = Category::find($id);
+         $cate = Category::find($id);
 
-         $category->group_id = $request->input('group_id');
-         $category->url = $request->input('url');
-         $category->name = $request->input('name');
-         $category->description = $request->input('description');
+         #dd($id);
+         $cate->group_id = $request->input('group_id');
+         $cate->url = $request->input('url');
+         $cate->name = $request->input('name');
+         $cate->description = $request->input('description');
 
          if ($request->hasFile('category_img'))
          {
-             $filepath_image = 'uploads/categoryimage/'. $category->image;
+             $filepath_image = 'uploads/categoryimage/'. $cate->image;
              if (File::exists($filepath_image)) {
                  File::delete($filepath_image);
              }
@@ -85,12 +86,12 @@ class CategoryController extends Controller
              $img_extension = $image_file->getClientOriginalExtension(); //getting the image extension
              $img_filename = time(). '.' . $img_extension;
              $image_file->move('uploads/categoryimage/', $img_filename);
-             $category->image = $img_filename;
+             $cate->image = $img_filename;
          }
 
          if ($request->hasFile('category_icon'))
          {
-             $filepath_icon = 'uploads/categoryicon/'. $category->icon;
+             $filepath_icon = 'uploads/categoryicon/'. $cate->icon;
              if (File::exists($filepath_icon)) {
                  File::delete($filepath_icon);
              }
@@ -98,13 +99,13 @@ class CategoryController extends Controller
              $icon_extension = $icon_file->getClientOriginalExtension(); //getting the image extension
              $icon_filename = time(). '.' . $icon_extension;
              $icon_file->move('uploads/categoryicon/', $icon_filename);
-             $category->icon = $icon_filename;
+             $cate->icon = $icon_filename;
          }
-         $category->status = $request->input('status') == true ? '1' : '0'; //0->show | 1->hide
+         $cate->status = $request->input('status') == true ? '1' : '0'; //0->show | 1->hide
 
-         $category->update();
+         $cate->update();
 
-         return redirect()->back()
+         return redirect('category')
              ->with('status','Category record updated Successfully!');
 
      }

@@ -319,49 +319,42 @@
             <div class="agileinfo-ads-display col-md-9">
                 <div class="wrapper">
                     <!-- first section (nuts) -->
+
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Fruits</h3>
-                        <div class="col-md-4 product-men">
-                            @foreach()
+                        <h3 class="heading-tittle">{{ $groupIII->name }} </h3>
+
+                            <!--foreach()-->
+                            @foreach($productsII as $prod)
+                            <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
+                                    <img src="{{asset('uploads/products/'. $prod->image)}}" height="150px" width="150px" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{url('product-page/'.$prod->subcategory->category->group->url.'/'.$prod->subcategory->category->url.'/'.$prod->subcategory->url.'/'.$prod->url)}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('website.single')}}">Product name</a>
+                                        {{ $prod->name }}
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
+                                        <span class="item_price">Ksh {{$prod->offer_price}}</span>
+                                        <del>Ksh {{$prod->original_price}}</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
+                                        <a class="btn btn-block button btn-primary" href="{{url('product-page/'.$prod->subcategory->category->group->url.'/'.$prod->subcategory->category->url.'/'.$prod->subcategory->url.'/'.$prod->url)}}">Item</a>
+
                                     </div>
 
                                 </div>
                             </div>
-                                @endforeach
-                        </div>
+                            </div>
+                            @endforeach
+
+
 
                         <div class="clearfix"></div>
                     </div>
@@ -382,251 +375,81 @@
                     <!-- //second section (nuts special) -->
                     <!-- third section (oils) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Cereals</h3>
-                        <div class="col-md-4 product-men">
+                        <h3 class="heading-tittle">{{ $groupI->name }}</h3>
+                            @foreach($productsIII  as $pro)
+                            <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
+                                    <img src="{{asset('uploads/products/'. $pro->image)}}" height="150px" width="150px" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="{{url('website.single')}}" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{url('product-page/'.$pro->subcategory->category->group->url.'/'.$pro->subcategory->category->url.'/'.$pro->subcategory->url.'/'.$pro->url)}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
                                     <!--<span class="product-new-top">Instock</span>-->
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="{{url('website.single')}}">Product Name</a>
+                                        <a href="{{url('website.single')}}">{{ $pro->name }}</a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
+                                        <span class="item_price">Ksh {{$pro->offer_price}}</span>
+                                        <del>Ksh {{$pro->original_price}}</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
+                                        <a class="btn btn-block button btn-primary" href="{{url('product-page/'.$pro->subcategory->category->group->url.'/'.$pro->subcategory->category->url.'/'.$pro->subcategory->url.'/'.$pro->url)}}">Item</a>
+
+
                                     </div>
 
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href=""{{url('single')}} class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <!--<span class="product-new-top">Out of Stock</span>-->
-
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="{{url('single')}}">Product Name</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <!--<span class="product-new-top">New</span>-->
+                            @endforeach
 
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="{{url('single')}}">Product Name</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                         <div class="clearfix"></div>
                     </div>
                     <!-- //third section (oils) -->
                     <!-- fourth section (noodles) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Dairy Foods</h3>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="{{url('single')}}">Product Name</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
+                        <h3 class="heading-tittle" >{{ $groupII->name }}</h3>
 
+                            <!--foreach()-->
+                            @foreach($products as $pr)
+                            <div class="col-md-4 product-men">
+                                <div class="men-pro-item simpleCart_shelfItem">
+                                    <div class="men-thumb-item">
+                                        <img src="{{asset('uploads/products/'. $pr->image)}}" height="150px" width="150px" alt="">
+                                        <div class="men-cart-pro">
+                                            <div class="inner-men-cart-pro">
+                                                <a href="{{url('product-page/'.$pr->subcategory->category->group->url.'/'.$pr->subcategory->category->url.'/'.$pr->subcategory->url.'/'.$pr->url)}}" class="link-product-add-cart">Quick View</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="item-info-product ">
+                                        <h4>
+                                            <a href="{{url('website.single')}}">{{ $pr->name }}</a>
+                                        </h4>
+                                        <div class="info-product-price">
+                                            <span class="item_price">Ksh {{$pr->offer_price}}</span>
+                                            <del>Ksh {{$pr->original_price}}</del>
+                                        </div>
+                                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                                            <a class="btn btn-block button btn-primary" href="{{url('product-page/'.$prod->subcategory->category->group->url.'/'.$prod->subcategory->category->url.'/'.$prod->subcategory->url.'/'.$prod->url)}}">Item</a>
+
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <!--<span class="product-new-top">New</span>-->
+                            @endforeach
 
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="{{url('single')}}">Product Name</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="{{url('single')}}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <!--<span class="product-new-top">New</span>-->
 
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="{{url('website.single')}}">Product Name</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">Ksh 0.00</span>
-                                        <del>Ksh 0.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Product Name" />
-                                                <input type="hidden" name="amount" value="0.00" />
-                                                <input type="hidden" name="discount_amount" value="0.00" />
-                                                <input type="hidden" name="currency_code" value="Ksh" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                         <div class="clearfix"></div>
                     </div>
+
                     <!-- //fourth section (noodles) -->
                 </div>
             </div>
@@ -638,7 +461,7 @@
     <div class="featured-section" id="projects">
         <div class="container">
             <!-- tittle heading -->
-            <h3 class="tittle-w3l">Vegetables
+            <h3 class="tittle-w3l">{{$groupIV->name}}
                 <span class="heading-style">
 					<i></i>
 					<i></i>
@@ -648,278 +471,31 @@
             <!-- //tittle heading -->
            <div class="content-bottom-in">
                 <ul id="flexiselDemo1">
+                    @foreach($productsII as $prd)
                     <li>
                         <div class="w3l-specilamk">
                             <div class="speioffer-agile">
                                 <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
+                                    <img src="{{asset('uploads/products/'. $prd->image)}}" height="150px" width="150px" alt="">
                                 </a>
                             </div>
                             <div class="product-name-w3l">
                                 <h4>
-                                    <a href="{{url('website.single')}}">Product Name</a>
+                                    {{ $prd->name }}
                                 </h4>
                                 <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
+                                    <h6>Ksh {{ $prd->offer_price }}</h6>
+                                    <p>From Ksh {{$pr->original_price}}</p>
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
+                                    <a class="btn btn-block button btn-primary" href="{{url('product-page/'.$prod->subcategory->category->group->url.'/'.$prod->subcategory->category->url.'/'.$prod->subcategory->url.'/'.$prod->url)}}">Item</a>
+
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="w3l-specilamk">
-                            <div class="speioffer-agile">
-                                <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="product-name-w3l">
-                                <h4>
-                                    <a href="{{url('website.single')}}">Product Name</a>
-                                </h4>
-                                <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
-                                </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l-specilamk">
-                            <div class="speioffer-agile">
-                                <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="product-name-w3l">
-                                <h4>
-                                    <a href="{{url('website.single')}}">Product Name</a>
-                                </h4>
-                                <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
-                                </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l-specilamk">
-                            <div class="speioffer-agile">
-                                <a href="single2.html">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="product-name-w3l">
-                                <h4>
-                                    <a href="single2.html">Product Name</a>
-                                </h4>
-                                <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
-                                </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l-specilamk">
-                            <div class="speioffer-agile">
-                                <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="product-name-w3l">
-                                <h4>
-                                    <a href="{{url('website.single')}}">Product Name</a>
-                                </h4>
-                                <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
-                                </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l-specilamk">
-                            <div class="speioffer-agile">
-                                <a href="single2.html">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="product-name-w3l">
-                                <h4>
-                                    <a href="single2.html">Product Name</a>
-                                </h4>
-                                <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
-                                </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l-specilamk">
-                            <div class="speioffer-agile">
-                                <a href="{{url('website.single')}}">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="product-name-w3l">
-                                <h4>
-                                    <a href="{{url('website.single')}}">Product Name</a>
-                                </h4>
-                                <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
-                                </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l-specilamk">
-                            <div class="speioffer-agile">
-                                <a href="single2.html">
-                                    <img src="{{asset('asset/images/placeholder2.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="product-name-w3l">
-                                <h4>
-                                    <a href="single2.html">Product Name</a>
-                                </h4>
-                                <div class="w3l-pricehkj">
-                                    <h6>Ksh 0.00</h6>
-                                    <p>Save Ksh 0.00</p>
-                                </div>
-                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <fieldset>
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="business" value=" " />
-                                            <input type="hidden" name="item_name" value="Product Name" />
-                                            <input type="hidden" name="amount" value="0.00" />
-                                            <input type="hidden" name="discount_amount" value="0.00" />
-                                            <input type="hidden" name="currency_code" value="Ksh" />
-                                            <input type="hidden" name="return" value=" " />
-                                            <input type="hidden" name="cancel_return" value=" " />
-                                            <input type="submit" name="submit" value="Add to cart" class="button" />
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    @endforeach
+
                 </ul>
             </div>
         </div>

@@ -183,9 +183,9 @@
                     <li class="dropdown profile_details_drop">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <div class="profile_img">
-                                <span class="prfil-img"><img src="{{asset('uploads/profile/'. Auth::user()->image)}}" width="50px" height="50px" alt="Image" /> </span>
+                                <span class="prfil-img"><img src="{{'uploads/profile/'. auth()->user()->image}}" width="50px" height="50px" alt="Image" /> </span>
                                 <div class="user-name">
-                                    <p>Admin</p>
+                                    <p>{{auth()->user()->role_as}}</p>
                                     <span>{{auth()->user()->firstname}} {{ auth()->user()->lastname }}</span>
                                 </div>
                                 <i class="fa fa-angle-down lnr"></i>

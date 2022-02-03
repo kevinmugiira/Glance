@@ -75,7 +75,7 @@
 												<span class="input-group-addon">
 													<i class="fa fa-mobile-phone"></i></span>
                                         <input type="text"
-                                               name="mobile"
+                                               name="phone"
                                                class="form-control1"
                                                placeholder="Phone"
                                                value="{{ auth()->user()->mobile }}"

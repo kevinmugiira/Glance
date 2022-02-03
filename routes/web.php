@@ -33,6 +33,9 @@ Route::middleware(['auth:sanctum', 'verified', 'isUser'])->group(function () {
 
     //razorpay
     Route::post('confirm-razorpay-payment', [\App\Http\Controllers\CheckoutController::class,'checkamount']);
+
+    //braintree
+    Route::post('braintree', [\App\Http\Controllers\CheckoutController::class,'braintree']);
 });
 
 Route::get('/profile', \App\Http\Livewire\User\UserProfileComponent::class)->name('profile');
@@ -95,6 +98,14 @@ Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->group(function () {
     //Order management
     Route::get('orders', [\App\Http\Controllers\Admin\OrderController::class,'index']);
     Route::get('order-view/{id}', [\App\Http\Controllers\Admin\OrderController::class,'vieworder']);
+    Route::get('order-proceed/{id}', [\App\Http\Controllers\Admin\OrderController::class,'proceedorder']);
+
+    Route::put('order/update-tracking-status/{order_id}', [\App\Http\Controllers\Admin\OrderController::class,'trackingstatus']);
+
+    //profile routes
+    Route::get('profile-admin', [\App\Http\Controllers\CheckController::class,'index']);
+    Route::get('profile/edit', [\App\Http\Controllers\CheckController::class,'edit']);
+    Route::put('/updateProfile/{id}', [\App\Http\Controllers\CheckController::class,'profileupdate']);
 });
 
 //Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->get('/home', function () {
@@ -125,23 +136,29 @@ Route::middleware(['auth:sanctum', 'verified', 'isSeller'])->group(function () {
     Route::get('layouts.Seller', [\App\Http\Controllers\MainController::class,'indexSeller']);
 
     //seller sub-category routes
-    Route::get('sub-category', [\App\Http\Controllers\Admin\SubcategoryController::class,'index']);
-    Route::post('sub-category-store', [\App\Http\Controllers\Admin\SubcategoryController::class,'store']);
-    Route::get('sub-category/edit/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'edit']);
-    Route::put('sub-category-update/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'update']);
-    Route::get('sub-category/delete/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'delete']);
-    Route::get('sub-category-deleted-records', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrecords']);
-    Route::get('sub-category-re-store/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrestore']);
+//    Route::get('sub-category', [\App\Http\Controllers\Admin\SubcategoryController::class,'index']);
+//    Route::post('sub-category-store', [\App\Http\Controllers\Admin\SubcategoryController::class,'store']);
+//    Route::get('sub-category/edit/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'edit']);
+//    Route::put('sub-category-update/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'update']);
+//    Route::get('sub-category/delete/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'delete']);
+//    Route::get('sub-category-deleted-records', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrecords']);
+//    Route::get('sub-category-re-store/{id}', [\App\Http\Controllers\Admin\SubcategoryController::class,'deletedrestore']);
 
     //product routes
-    Route::get('product', [\App\Http\Controllers\ProductController::class,'index']);
-    Route::get('product-add', [\App\Http\Controllers\ProductController::class,'create']);
-    Route::post('product-store', [\App\Http\Controllers\ProductController::class,'store']);
-    Route::get('product-edit/{id}', [\App\Http\Controllers\ProductController::class,'edit']);
-    Route::put('product-update/{id}', [\App\Http\Controllers\ProductController::class,'update']);
-    Route::get('product-delete/{id}', [\App\Http\Controllers\ProductController::class,'delete']);
-    Route::get('product-deleted-records', [\App\Http\Controllers\ProductController::class,'deletedrecords']);
-    Route::get('product-re-store/{id}', [\App\Http\Controllers\ProductController::class,'deletedrestore']);
+//    Route::get('product', [\App\Http\Controllers\ProductController::class,'index']);
+//    Route::get('product-add', [\App\Http\Controllers\ProductController::class,'create']);
+//    Route::post('product-store', [\App\Http\Controllers\ProductController::class,'store']);
+//    Route::get('product-edit/{id}', [\App\Http\Controllers\ProductController::class,'edit']);
+//    Route::put('product-update/{id}', [\App\Http\Controllers\ProductController::class,'update']);
+//    Route::get('product-delete/{id}', [\App\Http\Controllers\ProductController::class,'delete']);
+//    Route::get('product-deleted-records', [\App\Http\Controllers\ProductController::class,'deletedrecords']);
+//    Route::get('product-re-store/{id}', [\App\Http\Controllers\ProductController::class,'deletedrestore']);
+
+    //profile route
+    Route::get('profile-seller', [\App\Http\Controllers\CheckController::class,'sellershow']);
+    Route::get('profile/edit', [\App\Http\Controllers\CheckController::class,'edit']);
+    Route::put('/updateProfile/{id}', [\App\Http\Controllers\CheckController::class,'profileupdate']);
+
 
 
 });
@@ -163,7 +180,8 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('welcome', [\App\Http\Controllers\MainController::class,'show']);
 
 //Route::resource('layouts.Admin', \App\Http\Controllers\MainController::class);
-Route::resource('inbox', \App\Http\Controllers\CheckController::class);
+Route::get('profile-seller', [\App\Http\Controllers\CheckController::class,'sellershow']);
+
 Route::resource('master', \App\Http\Controllers\MasterController::class);
 //Route::get('layouts.Admin', [\App\Http\Controllers\MainController::class,'index']);
 
@@ -194,8 +212,10 @@ Route::delete('delete-category/{id}', [\App\Http\Controllers\CategoryController:
 
 
 
-//website
-Route::get('mtaa', [HomeController::class,'index']);
+//website/frontend
+Route::get('mtaa', [HomeController::class,'index']); //place under normal user middleware
+Route::get('collection/{group_url}', [HomeController::class,'groupview']);
+Route::get('collection/{group_url}/{cate_url}', [HomeController::class,'categoryview']);
 Route::get('product/page/{group_url}', [HomeController::class,'show']);
 Route::resource('about', \App\Http\Controllers\AboutController::class);
 Route::get('contact', [ContactController::class,'index']);
@@ -228,15 +248,15 @@ Route::get('logiin', [\App\Http\Controllers\CheckController::class,'login']);
 
 
 Route::get('profile.admin-show', [\App\Http\Controllers\CheckController::class,'index'])->name('profile.admin-show');
-Route::get('profile-seller', [\App\Http\Controllers\CheckController::class,'sellershow']);
+
 
 
   //Testing product frontend viewing routes
 Route::get('prodindex', [ \App\Http\Controllers\TestingController::class,'index']);
 Route::get('prodcategory/{group_url}', [\App\Http\Controllers\TestingController::class,'groupview']);
 Route::get('sub-category/{group_url}/{cate_url}', [\App\Http\Controllers\TestingController::class,'categoryview']);
-Route::get('product/{group_url}/{cate_url}/{subcate_url}', [\App\Http\Controllers\TestingController::class,'subcategoryview']);
-Route::get('product-page/{group_url}/{cate_url}/{subcate_url}/{prod_url}', [\App\Http\Controllers\TestingController::class,'productview'])->name('productpage');
+Route::get('collection/{group_url}/{cate_url}/{subcate_url}', [\App\Http\Controllers\TestingController::class,'subcategoryview']);
+Route::get('product-page/{group_url}/{cate_url}/{subcate_url}/{prod_url}', [\App\Http\Controllers\TestingController::class,'productview']);
 
 
 Route::post('add-to-cart', [\App\Http\Controllers\Frontend\CartController::class,'addtocart']);

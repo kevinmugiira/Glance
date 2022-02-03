@@ -585,9 +585,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="ban-top">
     <div class="container">
         <div class="agileits-navi_search">
-            <form action="#" method="post">
-                <select id="agileinfo-nav_search" name="agileinfo_search" required="">
-                    <option value="">Instock Categories</option>
+                @php
+                $group = App\Models\Group::where('status','!=','2')->get();
+                @endphp
+
+                <ul class="nav navbar-nav menu__list">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Instock Groups
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="agile_inner_drop_nav_info">
+                                <div class="col-sm-4 multi-gd-img">
+                                    <ul class="single-column-dropdown">
+                                        @foreach($group as $group_nav_item)
+                                            <li>
+                                                <a href="{{url('collection/'. $group_nav_item->url)}}">{{ $group_nav_item->name }}</a>
+                                            </li>
+                                        @endforeach
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+
+
+                </ul>
+{{--                        <a href="{{url('collection/'. $group_nav_item->url) }}"><option value="">  {{ $group_nav_item->name }}</option> </a>--}}
+{{--                        <option a href="{{url('collection/'. $group_nav_item->url) }}" class="px-4 text-white"> {{ $group_nav_item->name }}</a></option>--}}
+
                    <!-- <option value="Kitchen">Kitchen</option>
                     <option value="Household">Household</option>
                     <option value="Snacks &amp; Beverages">Snacks & Beverages</option>
@@ -599,8 +627,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <option value="Frozen Food">Frozen Food</option>
                     <option value="Bread &amp; Bakery">Bread & Bakery</option>
                     <option value="Sweets">Sweets</option>-->
-                </select>
-            </form>
+
+
         </div>
         <div class="top_nav_left">
             <nav class="navbar navbar-default">

@@ -29,4 +29,33 @@ class OrderController extends Controller
         }
     }
 
+    public function proceedorder($order_id)
+    {
+        if (Order::where('id', $order_id)->exists())
+        {
+            $order = Order::find($order_id);
+            return view('admin.orders.proceed', compact('order'));
+        }
+        else
+        {
+            return redirect()->back()
+                ->with('status','No Order Found');
+        }
+    }
+
+    public function trackingstatus(Request $request,$order_id)
+    {
+        $orders = Order::find($order_id);
+        if ($orders->order_status != '2')
+        {
+            $orders->tracking_msg = $request->input('tracking_msg');
+            $orders->update();
+            return redirect()->back()->with('status','Tracking status updated');
+        }
+        else
+        {
+            return redirect()->back()->with('status','Order is Cancelled');
+        }
+    }
+
 }
