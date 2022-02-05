@@ -46,11 +46,9 @@
 
 
             <form action="{{ url('place-order') }}" method="POST">
+                @csrf
+
             <div class="checkout-right">
-
-
-                    @csrf
-
                 <h4>Your shopping cart contains:
                     <span> Products</span>
                 </h4>
@@ -183,82 +181,108 @@
 
                                     <div class="checkout-right-basket">
                                         <button type="submit" name="place_order" class="btn btn-primary btn-block fa fa-hand-o-right" aria-hidden="true">Place your order</button>
-                                </div>
-                                <button type="button" style="padding-top: 5px; margin-top: 3px" class="razor_pay_btn btn btn-info btn-block ">Place order with RazorPay</button>
-
-                                    <form method="post" id="payment-form" action="{{ url('/checkout') }}">
-                                        @csrf
-                                        <section>
-                                            <label for="amount">
-                                                <span class="input-label">Amount</span>
-                                                <div class="input-wrapper amount-wrapper">
-                                                    <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
-                                                </div>
-                                            </label>
-
-                                            <div class="bt-drop-in-wrapper">
-                                                <div id="bt-dropin"></div>
-                                            </div>
-                                        </section>
-
-                                        <input id="nonce" name="payment_method_nonce" type="hidden" />
-                                        <button class="button" type="submit"><span>Test Transaction</span></button>
-                                    </form>
+                                    </div>
+                                    <button type="button" style="padding-top: 5px; margin-top: 3px" class="razor_pay_btn btn btn-info btn-block ">Place order with RazorPay</button>
+{{--                                <button type="button" style="padding-top: 5px; margin-top: 3px" class=" btn btn-info btn-block "><a href="{{url('braintree')}}"> Place order with Paypal</a></button>--}}
                                 </div>
                             </div>
+                        </div>
+                </div>
+            </div>
+            </form>
+                                <div class="row mt-10">
+                                    <div class="container mb-5">
 
-                            <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.min.js"></script>
-                            <script>
-                                var form = document.querySelector('#payment-form');
-                                var client_token = "{{ $token }}";
+                                    </div>
+                                </div>
 
-                                braintree.dropin.create({
-                                    authorization: client_token,
-                                    selector: '#bt-dropin',
-                                    paypal: {
-                                        flow: 'vault'
-                                    }
-                                }, function (createErr, instance) {
-                                    if (createErr) {
-                                        console.log('Create Error', createErr);
-                                        return;
-                                    }
-                                    form.addEventListener('submit', function (event) {
-                                        event.preventDefault();
+                                <form method="post" id="payment-form" action="{{ url('/braincheckout') }}">
+                                    @csrf
 
-                                        instance.requestPaymentMethod(function (err, payload) {
-                                            if (err) {
-                                                console.log('Request Payment Method Error', err);
-                                                return;
-                                            }
+                                    <div class="controls col-md-4 mt-10">
 
-                                            // Add the nonce to the form and submit
-                                            document.querySelector('#nonce').value = payload.nonce;
-                                            form.submit();
+
+                                            <input type="hidden"
+                                                   id="amount"
+                                                   name="amount"
+                                                   value="{{ number_format($total, 0) }}"
+                                            >
+
+                                    </div>
+
+                                    <div class="bt-drop-in-wrapper">
+                                        <div id="bt-dropin"></div>
+                                    </div>
+                                    <input id="nonce" name="payment_method_nonce" type="hidden" />
+                                    <button class="button" type="submit"><span>Test Transaction</span></button>
+                                </form>
+
+                                <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.min.js"></script>
+                                <script>
+                                    var form = document.querySelector('#payment-form');
+                                    var client_token = "{{ $token }}";
+
+                                    braintree.dropin.create({
+                                        authorization: client_token,
+                                        selector: '#bt-dropin',
+                                        paypal: {
+                                            flow: 'vault'
+                                        }
+                                    }, function (createErr, instance) {
+                                        if (createErr) {
+                                            console.log('Create Error', createErr);
+                                            return;
+                                        }
+
+                                        //removing the credit card option
+                                        // var elem = document.querySelector('.braintree-option__card');
+                                        // elem.parentNode.removeChild(elem);
+
+
+                                        form.addEventListener('submit', function (event) {
+                                            event.preventDefault();
+
+                                            instance.requestPaymentMethod(function (err, payload) {
+                                                if (err) {
+                                                    console.log('Request Payment Method Error', err);
+                                                    return;
+                                                }
+
+                                                // Add the nonce to the form and submit
+                                                document.querySelector('#nonce').value = payload.nonce;
+                                                form.submit();
+                                            });
                                         });
                                     });
-                                });
-                            </script>
+                                </script>
+                                <div class="clearfix"> </div>
                             </div>
                         </div>
 
 
 
-        </div>
-                </div>
-            </div>
+                    <!-- //checkout page -->
+
+                    {{--    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>--}}
+
+
+
+
+
+
+                            </div>
+
+
+                            </div>
             </form>
-                <div class="clearfix"> </div>
+                        </div>
             </div>
-        </div>
 
-    <!-- //checkout page -->
-
-{{--    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>--}}
+                <div class="clearfix"> </div>
 
 
 
-    @stop
+@stop
 
 
 @section('script')

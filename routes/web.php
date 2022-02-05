@@ -35,7 +35,8 @@ Route::middleware(['auth:sanctum', 'verified', 'isUser'])->group(function () {
     Route::post('confirm-razorpay-payment', [\App\Http\Controllers\CheckoutController::class,'checkamount']);
 
     //braintree
-    Route::post('braintree', [\App\Http\Controllers\CheckoutController::class,'braintree']);
+    Route::get('braintree', [\App\Http\Controllers\CheckoutController::class,'braintree']);
+    Route::post('braincheckout', [\App\Http\Controllers\CheckoutController::class,'brain']);
 });
 
 Route::get('/profile', \App\Http\Livewire\User\UserProfileComponent::class)->name('profile');

@@ -22,9 +22,19 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        $gateway = new \Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey'),
+
+        ]);
+
+        $token = $gateway->ClientToken()->generate();
+
         $cookie_data = stripslashes(Cookie::get('shopping_cart'));
         $cart_data = json_decode($cookie_data, true);
-        return view('website.checkout', compact('cart_data'));
+        return view('website.checkout', compact('cart_data','token'));
     }
 
     /**
@@ -96,7 +106,7 @@ class CheckoutController extends Controller
              'county' => $request->input('county'),
              'address' => $request->input('address'),
              'email' => $request->input('email'),
-             'trackingno' => $trackingno,
+             'trackingno' =>$request->Order->tracking_no, #$trackingno,
          ];
 
          $cookie_data = stripslashes(Cookie::get('shopping_cart'));
@@ -109,7 +119,7 @@ class CheckoutController extends Controller
     public function storeorder(Request $request)
     {
         /*
-         * payment status =
+         * payment status
          * 0 = Nothing Paid
          * 1 = Cash Paid
          * 2 = Razorpay payment successful
@@ -134,7 +144,7 @@ class CheckoutController extends Controller
              * */
             $order = new Order();
 
-            $trackno = rand(1111,9999);
+            $trackingno = rand(1111,9999);
 
             $order->user_id = $user_id;
             $order->tracking_no = 'newgreen'.$trackingno;
@@ -182,7 +192,38 @@ class CheckoutController extends Controller
             $this->insert_orderitem($last_order_id);
 
             //Send Mail
-            $this->placeorderMailable($request,$trackingno );
+            $this->placeorderMailable($request,$trackno );
+
+            Cookie::queue(Cookie::forget('shopping_cart'));
+            //ordered -cart items
+            $this->insert_orderitem($last_order_id);
+        }
+
+        if (isset($_POST['/braincheckout']))
+        {
+            $user_id = Auth::id();
+            $this->update_user($user_id, $request);
+
+            //placing order
+            $trackno = rand(1111,9999);
+            $order = new Order();
+            $order->user_id = $user_id;
+            $order->tracking_no = 'newgreen'.$trackno;
+            $order->payment_mode = 'Payment by PayPal';
+            #$order->payment_id = $request->input('razorpay_payment_id');
+            $order->payment_status = '4';
+            $order->order_status = '0';
+            $order->notify = '0';
+
+            $order->save();
+
+            $last_order_id = $order->id;
+
+            //ordered -cart items
+            $this->insert_orderitem($last_order_id);
+
+            //Send Mail
+            $this->placeorderMailable($request,$trackno );
 
             Cookie::queue(Cookie::forget('shopping_cart'));
             //ordered -cart items
@@ -276,9 +317,9 @@ class CheckoutController extends Controller
         }
     }
 
-    public function braintree(Request $request)
+    public function braintree()
     {
-        $gateway = new Braintree\Gateway([
+        $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
             'merchantId' => config('services.braintree.merchantId'),
             'publicKey' => config('services.braintree.publicKey'),
@@ -286,17 +327,26 @@ class CheckoutController extends Controller
 
         ]);
 
-        $amount = $request['amount'];
+        $token = $gateway->ClientToken()->generate();
+
+        return view('website.checkoutbraintree', compact('token'));
+    }
+    public function brain(Request $request)
+    {
+        $gateway = new \Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey'),
+
+        ]);
+
+        //$amount = $request['amount'];
         $nonce = $request['payment_method_nonce'];
 
         $result = $gateway->transaction()->sale([
-            'amount' => $amount,
+            'amount' => $this->checkamount(),
             'paymentMethodNonce' => $nonce,
-            'customer' => [
-                'firstName' => 'Blue',
-                'lastName' => 'Diamonds',
-                'email' => 'blue@diamonds.com'
-            ],
             'options' => [
                 'submitForSettlement' => true
             ]
@@ -304,7 +354,7 @@ class CheckoutController extends Controller
 
         if ($result->success) {
             $transaction = $result->transaction;
-            return back()->with('success_message', 'Transaction successful. The transaction id is: '.$transaction->id);
+            return redirect('thank-you')->with('success_message', 'Transaction successful. The transaction id is: '.$transaction->id);
         } else {
             $errorString = "";
 
@@ -317,9 +367,9 @@ class CheckoutController extends Controller
 
             return back()->withErrors('An error occurred with the message: ' .$result->message);
         }
-        $token = $gateway->ClientToken()->generate();
 
-        return view('website.checkout', compact('token'));
+
+
     }
 
 }
