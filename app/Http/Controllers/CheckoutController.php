@@ -341,26 +341,27 @@ class CheckoutController extends Controller
 
         ]);
 
-        //$amount = $request['amount'];
+        $amount = $request['amount'];
         $nonce = $request['payment_method_nonce'];
 
         $result = $gateway->transaction()->sale([
-            'amount' => $this->checkamount(),
+            'amount' => $amount,
             'paymentMethodNonce' => $nonce,
             'options' => [
                 'submitForSettlement' => true
             ]
         ]);
 
+        dd($request->input('amount'));
         if ($result->success) {
             $transaction = $result->transaction;
             return redirect('thank-you')->with('success_message', 'Transaction successful. The transaction id is: '.$transaction->id);
         } else {
-            $errorString = "";
-
-            foreach($result->errors->deepAll() as $error) {
-                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
-            }
+//            $errorString = "";
+//
+//            foreach($result->errors->deepAll() as $error) {
+//                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+//            }
 
 //        $_SESSION["errors"] = $errorString;
 //        header("Location: " . $baseUrl . "index.php");

@@ -49,7 +49,7 @@ Route::put('/updateProfile/{id}', [\App\Http\Controllers\CheckController::class,
 
 Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->group(function () {
     Route::get('/home', function () {
-        return view('admin.index');
+        return view('layouts.Admin');
     });
 
     Route::get('layouts.Admin', [\App\Http\Controllers\MainController::class,'index']);

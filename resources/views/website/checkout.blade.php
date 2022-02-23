@@ -89,7 +89,7 @@
                             <div class="text-right">
                                 <h3>Grand Total: Ksh {{ number_format($total, 0) }}</h3>
                             </div>
-                        @endif
+
                     @else
                         <div class="row">
                             <div class="col-md-12 mycard py-5 text-center">
@@ -196,7 +196,23 @@
                                     </div>
                                 </div>
 
-                                <form method="post" id="payment-form" action="{{ url('/braincheckout') }}">
+                @if(session('success_message'))
+                <div class="alert alert-success">
+                    {{ session('success_message') }}
+                </div>
+            @endif
+
+            @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li> {{ $error }} </li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+                                <form method="post" id="payment-form" action="{{ url('braincheckout') }}">
                                     @csrf
 
                                     <div class="controls col-md-4 mt-10">
@@ -205,8 +221,9 @@
                                             <input type="hidden"
                                                    id="amount"
                                                    name="amount"
-                                                   value="{{ number_format($total, 0) }}"
+{{--                                                   value="{{ $total }}"--}}
                                             >
+
 
                                     </div>
 
@@ -216,6 +233,7 @@
                                     <input id="nonce" name="payment_method_nonce" type="hidden" />
                                     <button class="button" type="submit"><span>Test Transaction</span></button>
                                 </form>
+            @endif
 
                                 <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.min.js"></script>
                                 <script>

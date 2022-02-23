@@ -8,16 +8,33 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 
-    public function redirectTo()
+//    public function redirectTo()
+//    {
+//        if (Auth::user()->role_as == 'admin')
+//        {
+//            return'dashboard';  //can also return to 'home'
+//        }
+//        else
+//        {
+//            return 'mtaa';
+//        }
+//    }
+
+    public function authenticated()
     {
         if (Auth::user()->role_as == 'admin')
         {
-            return'dashboard';  //can also return to 'home'
+            return redirect('layouts.Admin')->with('status','Welcome Admin, we missed you over here');
         }
-        else
+        elseif (Auth::user()->role_as == 'isSeller')
         {
-            return 'mtaa';
+            return redirect('layouts.Seller')->with('status','Welcome Vendor');
         }
+        elseif (Auth::user()->role_as == 'isUser')
+        {
+            return redirect()->back()->with('status', 'Welcome dear customer');
+        }
+
     }
 
 
