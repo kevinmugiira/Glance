@@ -14,10 +14,10 @@ class AddToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->mediumText('address');
-            $table->string('phone');
-            $table->string('county');
-            $table->string('city');
+            $table->mediumText('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('county')->nullable();
+            $table->string('city')->nullable();
         });
     }
 

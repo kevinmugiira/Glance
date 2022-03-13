@@ -48,7 +48,7 @@ Route::put('/updateProfile/{id}', [\App\Http\Controllers\CheckController::class,
     //Route::get('mtaa', [HomeController::class,'index']);
 
 Route::middleware(['auth:sanctum', 'verified', 'isAdmin'])->group(function () {
-    Route::get('/home', function () {
+    Route::get('layouts.Admin', function () {
         return view('layouts.Admin');
     });
 

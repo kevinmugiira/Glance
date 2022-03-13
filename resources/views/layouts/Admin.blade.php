@@ -469,7 +469,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <div class="profile_img">
-                                    <span class="prfil-img"><img src="{{asset('uploads/profile/'. auth()->user()->profile->image)}}" width="50px" height="50px" alt="Image"/> </span>
+{{--                                    <span class="prfil-img"><img src="{{asset('uploads/profile/'. auth()->user()->profile->image)}}" width="50px" height="50px" alt="Image"/> </span>--}}
                                     <div class="user-name">
                                         <p>Admin</p>
                                         <span>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</span>
