@@ -32,7 +32,6 @@ class RedirectIfAuthenticated
                     case 'seller':
                         return 'layouts.Seller';
                         break;
-
                     default:
                         return '/mtaa';
                         break;

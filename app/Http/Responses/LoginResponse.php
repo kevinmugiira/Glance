@@ -18,11 +18,15 @@ class LoginResponse implements LoginResponseContract
         // TODO: Implement toResponse() method.
         if (Auth::user()->role_as == 'admin')
         {
-            return'/home';  //can also return to 'home'
+            return view('layouts.Admin');  //can also return to 'home'
+        }
+        else if (Auth::user()->role_as == 'seller')
+        {
+            return view('layouts.Seller');
         }
         else
         {
-            return '/mtaa';
+            return view('mtaa');
         }
 
     }
