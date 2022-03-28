@@ -321,7 +321,7 @@
                     <!-- first section (nuts) -->
 
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">{{ $groupII->name }} </h3>
+                        <h3 class="heading-tittle">{{ $groupIII->name }} </h3>
 
                             <!--foreach()-->
                             @foreach($productsII as $prod)
