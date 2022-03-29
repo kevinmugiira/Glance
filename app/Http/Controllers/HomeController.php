@@ -31,10 +31,10 @@ class HomeController extends Controller
             $subcategory = Subcategory::where('category_id', $i)->where('id', $i)->where('status','!=','2')->where('status','0')->get();
             #$subcategory_id = $subcategory->id;
 
-            $products = Product::where('sub_category_id', 1)->where('status','!=','2')->where('status','0')->get();
-            $productsI = Product::where('sub_category_id', '2')->where('status','!=','2')->where('status','0')->get();
-            $productsII = Product::where('sub_category_id', '8')->where('status','!=','2')->where('status','0')->get();
-            $productsIII = Product::where('sub_category_id', '7')->where('status','!=','2')->where('status','0')->get();
+            $products = Product::where('sub_category_id', 4)->where('status','!=','2')->where('status','0')->get();
+            $productsI = Product::where('sub_category_id', '14')->where('status','!=','2')->where('status','0')->get();
+            $productsII = Product::where('sub_category_id', '24')->where('status','!=','2')->where('status','0')->get();
+            $productsIII = Product::where('sub_category_id', '34')->where('status','!=','2')->where('status','0')->get();
             #dd($productsIII);
             #$productsI = Product::where('subcategory_id->category->group')->where('status','!=','2')->where('status','0')->get();
 
