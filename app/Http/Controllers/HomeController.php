@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         #$groups = Group::where('status','0');
-        $groupI = Group::where('id',4)->first();
+        $groupI = Group::where('id','4')->first();
         $groupII = Group::where('id',14)->first();
         $groupIII = Group::where('id',24)->first();
         $groupIV = Group::where('id',34)->first();
