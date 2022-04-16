@@ -19,9 +19,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const USR_HOME = '/mtaa';
 
-    public const ADMIN_HOME = '/layouts.Admin';  //originally '/home'
+    public const HOME = '/layouts.Admin';  //originally '/home'
 
-    public const SELLER_HOME = '/layouts.Seller';
+    public const HOME2 = '/layouts.Seller';
 
     /**
      * The controller namespace for the application.

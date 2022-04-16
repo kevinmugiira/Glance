@@ -61,8 +61,8 @@ return [
     |
     */
 
-    'layouts.Admin' => RouteServiceProvider::ADMIN_HOME,
-    'layouts.Seller' => RouteServiceProvider::SELLER_HOME,
+    'home' => RouteServiceProvider::HOME,
+    'home2' => RouteServiceProvider::HOME2,
 
     /*
     |--------------------------------------------------------------------------
