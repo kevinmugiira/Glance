@@ -33,7 +33,7 @@ class RedirectIfAuthenticated
                         return 'layouts.Seller';
                         break;
                     default:
-                        return '/mtaa';
+                        return 'mtaa';
                         break;
                 }
 

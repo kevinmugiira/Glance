@@ -14,6 +14,10 @@ class LoginController extends Controller
         {
             return'layouts.Admin';  //can also return to 'home'
         }
+        elseif (Auth::user()->role_as == 'isSeller')
+        {
+            return redirect('layouts.Seller')->with('status','Welcome Vendor');
+        }
         else
         {
             return 'mtaa';

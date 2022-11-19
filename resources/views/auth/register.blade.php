@@ -122,58 +122,58 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <div class="sign-up-row widget-shadow">
                     <h5>Personal Information :</h5>
 
-                    <x-guest-layout>
-                    <x-jet-authentication-card>
-                        <x-slot name="logo">
-                            <x-jet-authentication-card-logo />
-                        </x-slot>
+{{--                    <x-guest-layout>--}}
+{{--                    <x-jet-authentication-card>--}}
+{{--                        <x-slot name="logo">--}}
+{{--                            <x-jet-authentication-card-logo />--}}
+{{--                        </x-slot>--}}
 
 {{--                        <x-jet-validation-errors class="mb-4" />--}}
 
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action="{{ route('register-user') }}" method="post">
 
-                        @csrf
+                        @CSRF
 
                         <div class="sign-u">
 {{--                            <x-jet-label for="firstname" value="{{ __('First Name') }}" />--}}
-{{--                            <input type="text" name="firstname" placeholder="First Name" required="">--}}
-                            <x-jet-label for="firstname" value="{{ __('First Name') }}" />
-                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="name" />
+                            <input type="text" name="firstname" placeholder="First Name" required="">
+{{--                            <x-jet-label for="firstname" value="{{ __('First Name') }}" />--}}
+{{--                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="name" />--}}
                             <div class="clearfix"> </div>
                         </div>
                         <div class="sign-u">
-                            <x-jet-label for="lastname" value="{{ __('Last Name') }}" />
-                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="name" />
-{{--                            <input type="text" placeholder="Last Name" required="">--}}
+{{--                            <x-jet-label for="lastname" value="{{ __('Last Name') }}" />--}}
+{{--                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="name" />--}}
+                            <input type="text" name="lastname" placeholder="Last Name" :value="old('lastname')" required="">
                             <div class="clearfix"> </div>
                         </div>
                         <div class="sign-u">
-                            <x-jet-label for="email" value="{{ __('Email') }}" />
-                            <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-{{--                            <input type="email" placeholder="Email Address" required="">--}}
+{{--                            <x-jet-label for="email" value="{{ __('Email') }}" />--}}
+{{--                            <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />--}}
+                            <input type="email" name="email" placeholder="Email Address" required="">
                             <div class="clearfix"> </div>
                         </div>
 
 
                         <h6>Login Information :</h6>
                         <div class="sign-u">
-                            <x-jet-label for="password" value="{{ __('Password') }}" />
-                            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-{{--                            <input type="password" placeholder="Password" required="">--}}
+{{--                            <x-jet-label for="password" value="{{ __('Password') }}" />--}}
+{{--                            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />--}}
+                            <input type="password" name="password" placeholder="Password" required="">
                             <div class="clearfix"> </div>
                         </div>
                         <div class="sign-u">
-                            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                            <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-{{--                            <input type="password" placeholder="Confirm Password" required="">--}}
+{{--                            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />--}}
+{{--                            <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />--}}
+                            <input type="password" name="password_confirmation" placeholder="Confirm Password" required="">
                         </div>
                         <div class="clearfix"> </div>
                         <div class="sub_home">
-{{--                            <input type="submit" name="register"  value="Submit">--}}
+                            <input type="submit" name="register"  value="Submit">
 
-                            <x-jet-button class="ml-4">
-                                {{ __('Register') }}
-                            </x-jet-button>
+{{--                            <x-jet-button class="ml-4">--}}
+{{--                                {{ __('Register') }}--}}
+{{--                            </x-jet-button>--}}
 
                             <div class="clearfix"> </div>
                         </div>
@@ -245,8 +245,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 {{--                            </div>--}}
 {{--                        </form>--}}
 
-    </x-jet-authentication-card>
-                    </x-guest-layout>
+{{--    </x-jet-authentication-card>--}}
+{{--                    </x-guest-layout>--}}
                 </div>
             </div>
         </div>

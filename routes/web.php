@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::post('/create', [\App\Http\Controllers\RegisterUserController::class, 'create'])->name('register-user');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('index');
